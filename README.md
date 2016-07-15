@@ -1,7 +1,7 @@
 ### PUI
 ===================
 
-Hey, here is an ui system of pjt.
+here is an ui system of pjt.
 
 ----------
 
