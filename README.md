@@ -11,10 +11,15 @@ Not documents yet.
 
 > **Parts of PUI:**
 > - Components
-	> - pui-ceng.js
+>	> - ceng.js
+>	> - table.js
+>	> - radio.js
+>	> - checkbox.js
+>	> - paginaion.js
+>	> - switch.js
+>	> - select.js
+
 > - Layout
 > - Modules
 > - Fonts
 > - Plugins
-
-
