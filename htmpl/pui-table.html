@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="pui-nav">
+        <div class="widthly clearfix">
+            <div class="pui-logo pdt10 fl">
+                <h1 class="pui-title c-blue fnormal ffm fs30">评鉴通 UI （PUI）</h1>
+                <h6 class="ffm fs fnormal c-gray3">Base on PJT4.0</h6>
+            </div>
+            <div class="fr">
+                <ul class="inline ffm fb">
+                    <li class="tc"><a href="pui-layout.html" class="c-gray5 ant">布局</a></li>
+                    <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a></li>
+                    <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                    <li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a></li>
+                    <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                    <li class="tc cur"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                    <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li>
+                    <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="pui-body">
+        <div class="widthly">
+            <h2 class="pui-category c-red fnormal fs20 ffm">表格及相关组件（table）</h2>
+            <div class="bgc-white pd20">
+                <div class="query-form">
+                    <form class="pui-form" id="queryForm">
+                        <div class="attach-filter clearfix">
+                            <div class="fr">
+                                <div class="input-group button inline">
+                                    <label>
+                                        <input class="txt" name="keyword" type="text">
+                                        <span><button class="icon icon-search gosubmit" type="button"></button></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="sp20"></div>
+                        </div>
+                    </form>
+                </div>
+                <!--query-form-->
+                <div class="page-table hasPagination">
+                    <div class="overflow-table">
+                        <table class="table table-center table-song table-relative table-big" id="tableObj">
+                            <thead>
+                                <tr class="header">
+                                    <th class="tl">管理员帐号</th>
+                                    <th>总人次</th>
+                                    <th>完成人次</th>
+                                    <th>外完成人次</th>
+                                    <th>剩余必填人次</th>
+                                    <th>完成比例</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--overflow-table-->
+                    <script type="text/javascript">
+                    var tabledata = {
+                        "Data": [{
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "Name": "缝小肛",
+                            "Sex": "男",
+                            "Password": "Ns76tu",
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "School": null,
+                            "CreatedDate": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "ExamStatus": 0,
+                            "UserExtensionFieldId": 280144,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }, {
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "Name": "缝小肛",
+                            "Sex": "男",
+                            "Password": "Ns76tu",
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "School": null,
+                            "CreatedDate": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "ExamStatus": 0,
+                            "UserExtensionFieldId": 280144,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }, {
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "Name": "缝小肛",
+                            "Sex": "男",
+                            "Password": "Ns76tu",
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "School": null,
+                            "CreatedDate": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "ExamStatus": 0,
+                            "UserExtensionFieldId": 280144,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }],
+                        "PageIndex": 1,
+                        "PageSize": 10,
+                        "TotalPages": 1,
+                        "TotalRecords": 33
+                    };
+                    </script>
+                    <script type="text/x-jquery-tmpl" id="tableTmpl">
+                        {{each(i, item) Data}}
+                        <tr>
+                            <td class="tl">
+                                <p>${item.Account}</p>
+                            </td>
+                            <td>
+                                <p>${item.Name}</p>
+                            </td>
+                            <td>
+                                <p>${item.Email}</p>
+                            </td>
+                            <td>
+                                <p>${item.Department}</p>
+                            </td>
+                            <td>
+                                <p>${item.Sex}</p>
+                            </td>
+                            <td>
+                                <p>${item.Mobile}</p>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </script>
+                </div>
+                <div class="sp10"></div>
+                <!--10像素间隔-->
+                <div class="sp10"></div>
+                <!--10像素间隔-->
+                <div class="sp10"></div>
+                <!--10像素间隔-->
+
+
+<pre><code class="language-markUp">
+    &lt;!-- 只说说大概结构 --&gt;
+    &lt;div class="query-form"&gt;
+        &lt;form class="pui-form" id="queryForm"&gt;
+            &lt;!-- 这里填写各种查询标签，譬如选项，搜索关键字，高级搜索，日期等 --&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+    &lt;!-- 下面表格结构 --&gt;
+    &lt;div class="page-table hasPagination"&gt;
+        &lt;div class="overflow-table"&gt;
+            &lt;table class="table table-center table-song table-relative table-big" id="tableObj"&gt;
+                &lt;thead&gt;
+                    &lt;tr class="header"&gt;
+                        &lt;th class="tl"&gt;管理员帐号&lt;/th&gt;
+                        &lt;th&gt;总人次&lt;/th&gt;
+                        &lt;th&gt;完成人次&lt;/th&gt;
+                        &lt;th&gt;外完成人次&lt;/th&gt;
+                        &lt;th&gt;剩余必填人次&lt;/th&gt;
+                        &lt;th&gt;完成比例&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;!-- 渲染后数据填充位置 --&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+
+<div class="sp10"></div>
+
+<pre><code class="language-javascript">
+    var tableObj = $('#tableObj');
+    var tableTmpl = $('#tableTmpl');
+    var queryform = $('#queryForm');
+    var queryformurl = 'assets/admin/v4.0.3/json/glysytj.json'; // 查询接口
+
+    var tablesimple = new TableSimple(tableObj, tableTmpl, {
+        bgcCtrl: true,      // 是否控制表格行背景色
+        hoverColor: '#ffc',
+        oddColor: '#fff',
+        evenColor: '#fff',
+        datastyle: 'local',     // 数据来源，首屏本地
+        dataSource: tabledata,      // 首屏数据
+        isBase64: false,        // 数据是否 base64 加密
+        isquery: true,          // 是否带查询
+        pageCtrl: true,        // 是否有分页
+        headCtrl: true,
+        container: $('tbody', tableObj),    // 数据dom容器
+        queryObj: queryform,        // 如果带查询，这里提供查询form的 $(id)
+        queryUrl: queryformurl,     // 数据接口
+        dateFormat: 'YYYY-MM-DD',       // 查询时间格式
+        afterLoadCallback: function () { }        // 数据渲染后回调事件
+    });
+</code></pre>
+
+
+                <div class="sp10"></div>
+                <!--10像素间隔-->
+                <div class="sp10"></div>
+                <!--10像素间隔-->
+                <div class="sp10"></div>
+                <!--10像素间隔-->
+                <div class="sp10"></div>
+                <!--10像素间隔-->
+                <div class="sp10"></div>
+                <!--10像素间隔-->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
