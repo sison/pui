@@ -15,9 +15,10 @@ Not documents yet.
 >	* table.js
 >	* radio.js
 >	* checkbox.js
->	* paginaion.js
+>	* page.js
 >	* switch.js
 >	* select.js
+>	* tree.js
 > - Layout
 > - Modules
 > - Fonts
