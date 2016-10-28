@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v4.0.3-360-我的产品</title>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/pui.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/layout.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/page-common.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/libs/jeDate/jedate/skin/jedate.css" />
+    <script type="text/javascript" src="assets/libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/libs/jeDate/jedate/jedate.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/layout.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-popop.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-page.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-ceng.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-radio.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-checkbox.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-table.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-query.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-valid.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-select.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-switch.js"></script>
+    <script type="text/javascript" src="assets/libs/jquery-tmpl/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="assets/libs/kindeditor/kindeditor-min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        importHeader();
+        importFooter();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="widthly">
+            <div class="page-crumb">
+                <p>
+                    <a href="/System/CustomerGroup/List">360反馈</a>
+                    <em>/</em>
+                    <span>我的产品</span>
+                </p>
+            </div>
+            <div class="query-form bgc-white pd20">
+                <form id="queryForm" class="pui-form">
+                    <input id="projectId" name="projectId" type="hidden" value="4750" />
+                    <input id="subProjectId" name="subProjectId" type="hidden" value="4751" />
+                    <input id="IsAdvSearch" name="IsAdvSearch" type="hidden" value="0" />
+                    <div class="clearfix spline bottom">
+                        <div class="sp20"></div>
+                        <p class="c-green fs fl lh34 fbold">共有<span class="txtsp ffm">102</span>条记录</p>
+                        <div class="attach-filter fr">
+                            <div class="fl selectDate pdr10">
+                                <div class="nbsp pdb10 relative">
+                                    <input class="txt ffm wpdate" id="limited" name="limited" type="text" value="" readonly>
+                                    <i class="icon icon-date2"></i>
+                                </div>
+                            </div>
+                            <div class="input-group search-group button inline pdr10">
+                                <label>
+                                    <input class="txt" name="key" type="text">
+                                    <span><button class="icon icon-search" type="submit"></button></span>
+                                </label>
+                            </div>
+                            <button class="btn btn-common c-gray4" id="btn-save-order" type="button">排序</button>
+                            <div class="fr pdl10">
+                                <a href="javascript:;" class="btn bgc-green" id="productAdd">
+                                    <i class="icon icon-addr"></i>
+                                    <span class="ffv">创建产品</span>
+                                </a>
+                            </div>
+                            <div class="sp20"></div>
+                        </div>
+                    </div>
+                    <div class="sp20"></div>
+                    <div class="setOrder mgb10 fs ffv">
+                        <!-- <input type="hidden" name="orderfield" value="complex" /> -->
+                        <!-- <input type="hidden" name="orderdir" value="desc" /> -->
+                        <ul class="radiuslist">
+                            <li class="relative cur">
+                                <a href="javascript:void(0)" class="desc" sort="desc" sortfield="joinTime">综合排序<i class="ico ico-order absolute"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+                <script type="text/javascript">
+                var tabledata = {
+                    "Data": [{
+                        "_rowid_": 1,
+                        "UserId": 503443,
+                        "CustomerId": 1000071,
+                        "Account": "123456",
+                        "Name": "缝小肛",
+                        "Sex": "男",
+                        "EnglishName": null,
+                        "Password": "Ns76tu",
+                        "OrgTreeCode": null,
+                        "Email": "123@123.com",
+                        "Mobile": "13690875421",
+                        "IdentityNum": null,
+                        "Phone": "",
+                        "Address": "",
+                        "PostalCode": "",
+                        "VocationalAbility": null,
+                        "Position": null,
+                        "Org": null,
+                        "Astop": 8,
+                        "Assame": 1,
+                        "Asbottom": 3,
+                        "Profession": null,
+                        "DomicilePlace": null,
+                        "Domicile": null,
+                        "CertificateNum": null,
+                        "Health": null,
+                        "Salary": null,
+                        "EducationName": null,
+                        "WorkYears": null,
+                        "Major": null,
+                        "SalaryExpectation": null,
+                        "SelfEvaluation": null,
+                        "School": null,
+                        "Jointime": "2016-04-22T17:48:01.07",
+                        "Creater": "jianfeng.zou",
+                        "ModifiedDate": "2016-05-25T10:52:02.29",
+                        "Modifier": "admin",
+                        "IsOpenApi": null,
+                        "BatchInsertId": null,
+                        "ServeBatchImportrQueueId": null,
+                        "IsSuspend": null,
+                        "UserGuid": null,
+                        "SendEmailStatus": null,
+                        "SendSmsStatus": null,
+                        "UserExamId": 403616,
+                        "EvaluationPersonId": 234777,
+                        "EvaluationRelationshipId": 1,
+                        "CustomerEvaluationRelationshipId": null,
+                        "IsOwnEvaluation": true,
+                        "IsEmailSent": null,
+                        "IsSmsSent": null,
+                        "ExamStatus": 0,
+                        "OriginalStatus": null,
+                        "UserExtensionFieldId": 280144,
+                        "CustomField3": null,
+                        "CustomField4": null,
+                        "ExamStatusDesc": "未开始",
+                        "EvaluationCount": 0,
+                        "Deletable": true,
+                        "Notifyable": true,
+                        "IsEvaluated": true,
+                        "Impersonatable": true,
+                        "EvaluationRelationshipName": "自评",
+                        "ExamMode": 1,
+                        "TotalSmsCount": null,
+                        "SentSmsCount": null,
+                        "LastSmsStatus": null,
+                        "LastSmsCreatedTime": null,
+                        "LastSentSmsCreatedTime": null,
+                        "TotalMailCount": null,
+                        "SentMailCount": null,
+                        "LastMailStatus": null,
+                        "LastMailCreatedTime": null,
+                        "LastSentMailCreatedTime": null,
+                        "CertificateType": null,
+                        "Education": null,
+                        "PoliticalStatus": null,
+                        "MaritalStatus": null,
+                        "Gender": null,
+                        "Birthday": null,
+                        "JoinTime": "2016-05-25 10:52:02",
+                        "Status": "正常"
+                    }, {
+                        "_rowid_": 1,
+                        "UserId": 503423,
+                        "CustomerId": 1000071,
+                        "Account": "123456",
+                        "Name": "缝小肛",
+                        "Sex": "男",
+                        "EnglishName": null,
+                        "Password": "Ns76tu",
+                        "OrgTreeCode": null,
+                        "Email": "123@123.com",
+                        "Mobile": "13690875421",
+                        "IdentityNum": null,
+                        "Phone": "",
+                        "Address": "",
+                        "PostalCode": "",
+                        "VocationalAbility": null,
+                        "Position": null,
+                        "Org": null,
+                        "Astop": 8,
+                        "Assame": 1,
+                        "Asbottom": 3,
+                        "Profession": null,
+                        "DomicilePlace": null,
+                        "Domicile": null,
+                        "CertificateNum": null,
+                        "Health": null,
+                        "Salary": null,
+                        "EducationName": null,
+                        "WorkYears": null,
+                        "Major": null,
+                        "SalaryExpectation": null,
+                        "SelfEvaluation": null,
+                        "School": null,
+                        "Jointime": "2016-04-22T17:48:01.07",
+                        "Creater": "jianfeng.zou",
+                        "ModifiedDate": "2016-05-25T10:52:02.29",
+                        "Modifier": "admin",
+                        "IsOpenApi": null,
+                        "BatchInsertId": null,
+                        "ServeBatchImportrQueueId": null,
+                        "IsSuspend": null,
+                        "UserGuid": null,
+                        "SendEmailStatus": null,
+                        "SendSmsStatus": null,
+                        "UserExamId": 403616,
+                        "EvaluationPersonId": 234777,
+                        "EvaluationRelationshipId": 1,
+                        "CustomerEvaluationRelationshipId": null,
+                        "IsOwnEvaluation": true,
+                        "IsEmailSent": null,
+                        "IsSmsSent": null,
+                        "ExamStatus": 0,
+                        "OriginalStatus": null,
+                        "UserExtensionFieldId": 280144,
+                        "CustomField3": null,
+                        "CustomField4": null,
+                        "ExamStatusDesc": "未开始",
+                        "EvaluationCount": 0,
+                        "Deletable": true,
+                        "Notifyable": true,
+                        "IsEvaluated": true,
+                        "Impersonatable": true,
+                        "EvaluationRelationshipName": "自评",
+                        "ExamMode": true,
+                        "TotalSmsCount": null,
+                        "SentSmsCount": null,
+                        "LastSmsStatus": null,
+                        "LastSmsCreatedTime": null,
+                        "LastSentSmsCreatedTime": null,
+                        "TotalMailCount": null,
+                        "SentMailCount": null,
+                        "LastMailStatus": null,
+                        "LastMailCreatedTime": null,
+                        "LastSentMailCreatedTime": null,
+                        "CertificateType": null,
+                        "Education": null,
+                        "PoliticalStatus": null,
+                        "MaritalStatus": null,
+                        "Gender": null,
+                        "Birthday": null,
+                        "JoinTime": "2016-05-25 10:52:02",
+                        "Status": "正常"
+                    }, {
+                        "_rowid_": 1,
+                        "UserId": 503143,
+                        "CustomerId": 1000071,
+                        "Account": "123456",
+                        "Name": "缝小肛",
+                        "Sex": "男",
+                        "EnglishName": null,
+                        "Password": "Ns76tu",
+                        "OrgTreeCode": null,
+                        "Email": "123@123.com",
+                        "Mobile": "13690875421",
+                        "IdentityNum": null,
+                        "Phone": "",
+                        "Address": "",
+                        "PostalCode": "",
+                        "VocationalAbility": null,
+                        "Position": null,
+                        "Org": null,
+                        "Astop": 8,
+                        "Assame": 1,
+                        "Asbottom": 3,
+                        "Profession": null,
+                        "DomicilePlace": null,
+                        "Domicile": null,
+                        "CertificateNum": null,
+                        "Health": null,
+                        "Salary": null,
+                        "EducationName": null,
+                        "WorkYears": null,
+                        "Major": null,
+                        "SalaryExpectation": null,
+                        "SelfEvaluation": null,
+                        "School": null,
+                        "Jointime": "2016-04-22T17:48:01.07",
+                        "Creater": "jianfeng.zou",
+                        "ModifiedDate": "2016-05-25T10:52:02.29",
+                        "Modifier": "admin",
+                        "IsOpenApi": null,
+                        "BatchInsertId": null,
+                        "ServeBatchImportrQueueId": null,
+                        "IsSuspend": null,
+                        "UserGuid": null,
+                        "SendEmailStatus": null,
+                        "SendSmsStatus": null,
+                        "UserExamId": 403616,
+                        "EvaluationPersonId": 234777,
+                        "EvaluationRelationshipId": 1,
+                        "CustomerEvaluationRelationshipId": null,
+                        "IsOwnEvaluation": true,
+                        "IsEmailSent": null,
+                        "IsSmsSent": null,
+                        "ExamStatus": false,
+                        "OriginalStatus": null,
+                        "UserExtensionFieldId": 280144,
+                        "CustomField3": null,
+                        "CustomField4": null,
+                        "ExamStatusDesc": "未开始",
+                        "EvaluationCount": 0,
+                        "Deletable": true,
+                        "Notifyable": true,
+                        "IsEvaluated": true,
+                        "Impersonatable": true,
+                        "EvaluationRelationshipName": "自评",
+                        "ExamMode": false,
+                        "TotalSmsCount": null,
+                        "SentSmsCount": null,
+                        "LastSmsStatus": null,
+                        "LastSmsCreatedTime": null,
+                        "LastSentSmsCreatedTime": null,
+                        "TotalMailCount": null,
+                        "SentMailCount": null,
+                        "LastMailStatus": null,
+                        "LastMailCreatedTime": null,
+                        "LastSentMailCreatedTime": null,
+                        "CertificateType": null,
+                        "Education": null,
+                        "PoliticalStatus": null,
+                        "MaritalStatus": null,
+                        "Gender": null,
+                        "Birthday": null,
+                        "JoinTime": "2016-05-25 10:52:02",
+                        "Status": "正常"
+                    }],
+                    "PageIndex": 1,
+                    "PageSize": 20,
+                    "TotalPages": 1,
+                    "TotalRecords": 3
+                };
+                </script>
+                <div class="page-table hasPagination">
+                    <div class="overflow-table">
+                        <!--列表式-->
+                        <table class="table table-center table-song table-relative table-big" id="tableObj">
+                            <thead>
+                                <tr class="header">
+                                    <th class="tl" width="300">产品名称 / 加入时间</th>
+                                    <th width="100">创建人</th>
+                                    <th>问卷数</th>
+                                    <th width="80">状态</th>
+                                    <th width="160">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--overflow-table-->
+                    <script type="text/x-jquery-tmpl" id="tableTmpl">
+                        {{each(i, item) Data}}
+                        <tr class="ant in">
+                            <td class="tl">
+                                {{if item.Right}}
+                                <div class="fl mgr10"><input type="text" user-id="${item.UserId}" class="reorder txt tl w40" /></div>
+                                {{/if}}
+                                <p><a href="http://www.benbenla.com?id=${item.UserId}" class="c-blue tu">${item.Name}</a></p>
+                                <p><span class="c-gray4">${item.Jointime}</span></p>
+                            </td>
+                            <td>
+                                <p>${item.Type}</p>
+                            </td>
+                            <td>
+                                <p><a href="">${item.Quantity}</a></p>
+                            </td>
+                            <td>
+                                <input class="hide switch" type="hidden" id="switch${item.UserId}" value="${item.ExamMode}" />
+                            </td>
+                            <td>
+                                <p>
+                                    <a href="http://www.benbenla.com/?talebaseID=${item.UserId}" class="c-blue tu">修改</a>
+                                    <a href="http://www.benbenla.com/?talebaseID=${item.UserId}" class="c-blue tu">复制</a>
+                                    <a href="http://www.benbenla.com/?talebaseID=${item.UserId}" class="c-blue tu">删除</a>
+                                    <br />
+                                    <a href="http://www.benbenla.com/?talebaseID=${item.UserId}" class="c-blue tu">问卷多语化</a>
+                                    <a href="http://www.benbenla.com/?talebaseID=${item.UserId}" class="c-blue tu">问卷说明多语化</a>
+                                </p>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </script>
+                    <!--
+                    <div class="makePGbottom">
+                        <div class="pagination-out">
+                            <div class="pagination"></div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+                <!--page-table-->
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+
+    var queryForm = $('#queryForm');
+    var tableObj = $('#tableObj');
+    var tableTmpl = $('#tableTmpl');
+    var queryformurl = 'assets/admin/v4.0.3/json/pjrtj-query.json'; // 查询条件接口
+    var rollpageurl = '/assets/admin/v4.0.3/json/pjrtj-roll.json'; // 翻页接口
+    var switchurl = '' // 切换状态接口
+
+    var limited = {
+        dateCell: '#limited',
+        format: 'YYYY-MM-DD',
+        minDate: '1900-01-01 00:00:00',
+        maxDate: '2099-12-31 23:59:59',
+        isTime: true
+    };
+    jeDate(limited);
+
+    $('#btn-save-order').on('click', function(){
+        if($(this).hasClass('ordering')){
+            ceng.msg('提交表格中的序号然后刷新页面');
+        }else{
+            $(this).text('保存排序').addClass('ordering');
+            $('input.reorder', tableObj).addClass('ordering').eq(0).focus();
+        }
+    });
+
+    var table = new TableSimple(tableObj, tableTmpl, {
+        bgcCtrl: false,
+        hoverColor: '#ffe',
+        oddColor: '#fff',
+        evenColor: '#fff',
+        datastyle: 'local',
+        dataSource: tabledata,
+        queryUrl: queryformurl,
+        queryObj: queryForm,
+        isquery: true,
+        pageCtrl: true,
+        afterLoadCallback: function() {}
+    });
+
+
+    $('.switch', tableObj).switchSmart({
+        isvalid: true,
+        validCallback: function(self) {
+            $.post(switchurl, {
+                id: self.attr('id'),
+                val: self.val()
+            },
+            function(data){
+                if(data.Status){
+                    toggleSwitchState(self);
+                }
+            });
+        }
+    });
+
+
+
+})
+</script>
+
+</html>

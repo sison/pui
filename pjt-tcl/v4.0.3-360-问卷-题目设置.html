@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>360-新建问卷</title>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/pui.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/layout.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/page-common.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/libs/jeDate/jedate/skin/jedate.css" />
+    <script type="text/javascript" src="assets/libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/libs/jeDate/jedate/jedate.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/layout.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-popop.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-page.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-ceng.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-radio.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-checkbox.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-table.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-query.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-valid.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-select.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-switch.js"></script>
+    <script type="text/javascript" src="assets/libs/jquery-tmpl/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="assets/libs/kindeditor/kindeditor-min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        importHeader();
+        importFooter();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="widthly">
+            <div class="page-crumb">
+                <p>
+                    <a href="/System/Home/Index">项目管理</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">项目列表</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">顺丰集团素质测评</a>
+                    <em>/</em>
+                    <span>进度统计</span>
+                </p>
+            </div>
+            <div class="bbthree">
+                <div class="pd20 pdb0 bgc-white">
+                    <div class="page-feature">
+                        <ul class="inline clearfix">
+                            <li class="cur"><a href="#">产品信息<em></em></a></li>
+                            <li><a href="#">账号分配<em></em></a></li>
+                            <li><a href="#">通知日志<em></em></a></li>
+                            <li><a href="#">数据下载<em></em></a></li>
+                            <li><a href="#">报告下载<em></em></a></li>
+                            <li><a href="#">进度统计<em></em></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sp10"></div>
+                <div class="sp10"></div>
+                <div class="page-step fm pd20 bgc-white">
+                    <ul>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">1 产品信息<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">2 模块结构<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">3 指标定义<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">4 指标权重<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">5 问卷<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">6 评价关系<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">7 完成<i></i></a></li>
+                    </ul>
+                </div>
+                <div class="pd20 clearfix">
+                    <div class="lh34 fs18 ffm clearfix">
+                        <p class="fbold c-blue fl pdr10">问卷名称：<span class="txtsp">问卷1</span></p>
+                        <p class="c-green fl pdl10">题目类型：<span class="txtsp">情景量表题</span></p>
+                    </div>
+                    <div class="sp20"></div>
+                    <div class="page-notice c-brown">
+                        <div>
+                            <p>温馨提示：单选题、情景题、量表题之间是互斥的，问答题可与任何题型搭配，请您在选择题目时留意当前问卷的题型。</p>
+                        </div>
+                    </div>
+                    <div class="setFunction bgc-gray6 clearfix">
+                        <div class="funBtns fl">
+                            <ul class="inline">
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-add-subject">添加题目</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-save-order">保存排序</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-delete">删除</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-insert-sparator">插入分页符</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-export-subject">导出题目</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-import-subject">导入题目</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-set-option">选项设置</a></li>
+                            </ul>
+                        </div>
+                        <div class="funBtns fr">
+                            <ul class="inline">
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-module-note">模块说明</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-set-practice">练习题设置</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-check-format">检查格式</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ext-table" id="paperSetter">
+                        <div class="ext-header">
+                            <div class="ext-tr c-gray4 clearfix">
+                                <div class="ext-th th1">
+                                    <div class="checkone">
+                                        <input type="checkbox" name="chkboxbj" class="chktall" value="x" /><span>题目</span>
+                                    </div>
+                                </div>
+                                <div class="ext-th th2 tc">指标</div>
+                                <div class="ext-th th3">操作</div>
+                            </div>
+                        </div>
+                        <div class="ext-body c-gray3">
+                            <div class="ext-one">
+                                <div class="ext-main">
+                                    <div class="ext-tr clearfix">
+                                        <div class="ext-td td1">
+                                            <div class="checkone">
+                                                <input type="checkbox" name="chkboxbj" class="chktall" value="x" />
+                                                <span class="c-blue">请您根据被评价人的实际行为展现，从“专注共享”方面对其进行评分</span>
+                                            </div>
+                                        </div>
+                                        <div class="ext-td td2 tc"></div>
+                                        <div class="ext-td td3 operate">
+                                            <p>
+                                                <a href="javascript" class="c-gray3 fb pdr10"><i class="icon icon-addr"></i></a>
+                                                <a href="javascript" class="c-gray3 fb pdr10"><i class="icon icon-edit"></i></a>
+                                                <a href="javascript" class="c-gray3 fb pdr10"><i class="icon icon-index"></i></a>
+                                                <a href="javascript" class="c-gray3 fb pdr10"><i class="icon icon-delete"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ext-category">
+                                    <div class="ext-tr clearfix">
+                                        <div class="ext-td td1">
+                                            <div class="checkone">
+                                                <input type="checkbox" name="chkboxbj" class="chktall" value="x" />
+                                                <span class="">请您根据被评价人的实际行为展现，从“专注共享”方面对其进行评分</span>
+                                            </div>
+                                        </div>
+                                        <div class="ext-td td2 tc"><span class="">共享專注</span></div>
+                                        <div class="ext-td td3 operate">
+                                            <p>
+                                                <a href="javascript" class="c-blue tu pdr10">选项</a>
+                                                <a href="javascript" class="c-blue tu pdr10">编辑</a>
+                                                <a href="javascript" class="c-blue tu pdr10">点我排序</a>
+                                                <a href="javascript" class="c-blue tu pdr10">删除</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="ext-tr clearfix">
+                                        <div class="ext-td td1">
+                                            <div class="checkone">
+                                                <input type="checkbox" name="chkboxbj" class="chktall" value="x" />
+                                                <span class="">请您根据被评价人的实际行为展现，从“专注共享”方面对其进行评分</span>
+                                            </div>
+                                        </div>
+                                        <div class="ext-td td2 tc"><span class="">共享專注</span></div>
+                                        <div class="ext-td td3 operate">
+                                            <p>
+                                                <a href="javascript" class="c-blue tu pdr10">选项</a>
+                                                <a href="javascript" class="c-blue tu pdr10">编辑</a>
+                                                <a href="javascript" class="c-blue tu pdr10">点我排序</a>
+                                                <a href="javascript" class="c-blue tu pdr10">删除</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ext-one ext-sparate">
+                                <div class="sp-line bc-blue tc">
+                                    <p class="bgc-blue c-white sp-txt">
+                                        <span class="fl txtsp">分页符</span>
+                                        <i class="fl txtsp icon icon-sign-full"></i>
+                                    </p>
+                                </div>
+                                <p class="tc c-gray4"><span>第1页</span>/<span>共2页</span></p>
+                            </div>
+                            <div class="ext-one">
+                                <div class="ext-main">
+                                    <div class="ext-tr clearfix">
+                                        <div class="ext-td td1">
+                                            <div class="checkone">
+                                                <input type="checkbox" name="chkboxbj" class="chktall" value="x" />
+                                                <span class="c-blue">请您根据被评价人的实际行为展现，从“专注共享”方面对其进行评分</span>
+                                            </div>
+                                        </div>
+                                        <div class="ext-td td2 tc"></div>
+                                        <div class="ext-td td3 operate">
+                                            <p>
+                                                <a href="javascript" class="c-gray3 fb pdr10"><i class="icon icon-addr"></i></a>
+                                                <a href="javascript" class="c-gray3 fb pdr10"><i class="icon icon-edit"></i></a>
+                                                <a href="javascript" class="c-gray3 fb pdr10"><i class="icon icon-index"></i></a>
+                                                <a href="javascript" class="c-gray3 fb pdr10"><i class="icon icon-delete"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ext-category">
+                                    <div class="ext-tr clearfix">
+                                        <div class="ext-td td1">
+                                            <div class="checkone">
+                                                <input type="checkbox" name="chkboxbj" class="chktall" value="x" />
+                                                <span class="">请您根据被评价人的实际行为展现，从“专注共享”方面对其进行评分</span>
+                                            </div>
+                                        </div>
+                                        <div class="ext-td td2 tc"><span class="">共享專注</span></div>
+                                        <div class="ext-td td3 operate">
+                                            <p>
+                                                <a href="javascript" class="c-blue tu pdr10">选项</a>
+                                                <a href="javascript" class="c-blue tu pdr10">编辑</a>
+                                                <a href="javascript" class="c-blue tu pdr10">点我排序</a>
+                                                <a href="javascript" class="c-blue tu pdr10">删除</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="ext-tr clearfix">
+                                        <div class="ext-td td1">
+                                            <div class="checkone">
+                                                <input type="checkbox" name="chkboxbj" class="chktall" value="x" />
+                                                <span class="">请您根据被评价人的实际行为展现，从“专注共享”方面对其进行评分</span>
+                                            </div>
+                                        </div>
+                                        <div class="ext-td td2 tc"><span class="">共享專注</span></div>
+                                        <div class="ext-td td3 operate">
+                                            <p>
+                                                <a href="javascript" class="c-blue tu pdr10">选项</a>
+                                                <a href="javascript" class="c-blue tu pdr10">编辑</a>
+                                                <a href="javascript" class="c-blue tu pdr10">点我排序</a>
+                                                <a href="javascript" class="c-blue tu pdr10">删除</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-btns clearfix">
+                        <div class="absolutecenter">
+                            <div class="sp50"></div>
+                            <div class="acsub">
+                                <button class="btn bb bgc-blue" type="submit">下一步</button>
+                            </div>
+                            <div class="acsub">
+                                <button class="btn bb bgc-blue" id="btn-opt-preview" type="button">预览</button>
+                            </div>
+                            <div class="acsub">
+                                <button class="btn bb btn-common btn-cancel" type="button">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ceng-ready" id="addNewProject">
+        <form action="" class="pui-form" id="addNewForm">
+            <div class="pd20">
+                <div class="radio-group clearfix" id="formRadiobox" data-req="true" data-reqs="radio">
+                    <div class="radione inline">
+                        <input type="radio" name="radiobj" value="create" /><span>新建题目</span>
+                    </div>
+                    <div class="radione inline">
+                        <input type="radio" name="radiobj" value="import" /><span>导入题目</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+
+    $('#paperSetter input[type=checkbox]').checkboxSmart();
+    $('#formRadiobox input[type=radio]').radioSmart();
+
+    $('#btn-add-subject').on('click', function() {
+        ceng.hello({
+            title: '添加题目',
+            content: $('#addNewProject'),
+            contentType: 'dom',
+            area: [480, 'auto'],
+            yes: function(self, index) {
+                
+                // var type = valid.getVal($('#addNewForm #formCheckbox'));
+                // alert(type);
+                ceng.close(index);
+            }
+        })
+    });
+
+    $('#btn-import-subject').on('click', function() {
+        ceng.hello({
+            title: '导入题目',
+            content: 'assets/admin/v4.0.3/remotePage/import-subject.html',
+            contentType: 'url',
+            area: [480, 300],
+            yes: function() {},
+            no: function() {}
+        })
+    });
+
+    $('#btn-set-option').on('click', function() {
+        ceng.hello({
+            title: '选择题目类型（题型样例）',
+            content: 'assets/admin/v4.0.3/remotePage/subject-type.html',
+            contentType: 'url',
+            area: [860, 600],
+            yes: function(){},
+            no: function(){}
+        })
+        // ceng.hello({
+        //     title: '问答题',
+        //     content: 'assets/admin/v4.0.3/remotePage/subject-type-ask.html',
+        //     contentType: 'url',
+        //     area: [860, 540],
+        //     yes: function() {},
+        //     no: function() {}
+        // })
+    });
+
+
+})
+</script>
+
+</html>

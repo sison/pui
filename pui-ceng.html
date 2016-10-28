@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/pui.css" />
+    <link rel="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/page-common.css" />
+    <link rel="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/prism.css" />
+</head>
+
+<body>
+    <div class="pui-nav">
+        <div class="widthly clearfix">
+            <div class="pui-logo pdt10 fl">
+                <h1 class="pui-title c-blue fnormal ffm fs30">评鉴通 UI （PUI）</h1>
+                <h6 class="ffm fs fnormal c-gray3">Base on PJT4.0</h6>
+            </div>
+            <div class="fr">
+                <ul class="inline ffm fb">
+                    <li class="tc"><a href="pui-layout.html" class="c-gray5 ant">布局</a></li>
+                    <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a></li>
+                    <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                    <li class="tc cur"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a></li>
+                    <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                    <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                    <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="pui-body">
+        <div class="widthly">
+            <h2 class="pui-category c-red fnormal fs20 ffm">弹出层（ceng）</h2>
+            <!-- ---------------------------------------------------- -->
+            <div class="sp30"></div>
+            <a href="javascript:;" class="btn ffm bgc-blue" id="cengMsg">
+                <i class="icon icon-addr"></i>
+                <span>Music（放首歌）</span>
+            </a>
+            <a href="javascript:;" class="btn ffm bgc-yellow" id="cengAlert">
+                <i class="icon icon-addr"></i>
+                <span>Alert</span>
+            </a>
+            <a href="javascript:;" class="btn ffm bgc-red" id="cengConfirm1">
+                <i class="icon icon-addr"></i>
+                <span>Confirm 样式一</span>
+            </a>
+            <a href="javascript:;" class="btn ffm bgc-red" id="cengConfirm2">
+                <i class="icon icon-addr"></i>
+                <span>Confirm 样式二</span>
+            </a>
+            <a href="javascript:;" class="btn ffm bgc-green" id="cengHello">
+                <i class="icon icon-addr"></i>
+                <span>Hello</span>
+            </a>
+            <a href="javascript:;" class="btn ffm bgc-green" id="cengHelloRemote">
+                <i class="icon icon-addr"></i>
+                <span>HelloRemote</span>
+            </a>
+            <a href="javascript:;" class="btn ffm btn-common" id="cengiFrame">
+                <i class="icon icon-addr"></i>
+                <span>iFrame</span>
+            </a>
+<div class="sp10"></div>
+<pre><code class="language-javascript">
+$('#cengMsg').on('click', function() {
+    ceng.msg('国乒女团三连冠', {
+        state: 'notice', // resolve || notice
+        time: 3000,
+        end: function(obj){   // 层销毁后的回调，适用于各种类型弹出层，obj为当前弹出层
+            console.log(obj);
+        }
+    })
+});
+$('#cengAlert').on('click', function() {
+    ceng.alert('<p class="ffs c-gray3">中国女排3-1夺冠</p>', {
+        title: '提示层',
+        btn: ['确定'],
+        yes: function() {
+            ceng.msg('毫无悬念');
+        }
+    })
+});
+$('#cengConfirm1').on('click', function() {
+    ceng.comfirm('<p class="ffs c-gray3">国旗又错了！女排颁奖升起了错误国旗</p>', {
+        title: '询问层',
+        btn: ['确定', '取消'],   // 默认 ['确定', '取消']
+        yes: function(obj, index){
+            ceng.msg('弄死那个逗比！');
+            ceng.close(index);
+        }
+    })
+});
+$('#cengConfirm2').on('click', function() {
+    var _htm = '<p>问君能有几多愁？</p><p>恰似一群太监上春楼！</p>';
+    ceng.comfirm(_htm, {
+        style: 2,
+        complete: function(o, z) {
+            ceng.msg('complete');
+        },
+        yes: function(o, z) {
+            ceng.close(z);
+        }
+    })
+});
+$('#cengHello').on('click', function() {
+    ceng.hello({
+        style: 2,
+        content: $('#divHello'),
+        contentType: 'dom', // dom, url
+        area: [600, 'auto'],
+        btn: 0
+    })
+});
+$('#cengHelloRemote').on('click', function() {
+    ceng.hello({
+        title: '页面层',
+        content: 'assets/admin/v4.0.3/remotePage/demo.html',
+        contentType: 'url', // dom, url
+        contentData: 'a=1&b=2&c=3',
+        area: [800, 'auto'],
+        btn: ['按钮一', '按钮二', '按钮三'],
+        btn1: function() {},
+        btn2: function() {
+            ceng.alert('abc', {
+                yes: function() {
+                    ceng.closeAll();
+                }
+            })
+        },
+        btn3: function() {}
+    })
+});
+$('#cengiFrame').on('click', function() {
+    ceng.iframe({
+        title: '2016国际体验设计大会',
+        url: 'http://www.cepin.com',
+        area: [1200, 600],
+        yes: function() {}
+    })
+});
+</code></pre>
+
+
+            <div class="sp30"></div>
+            <div class="sp30"></div>
+            <h2 class="pui-category c-red fnormal fs20 ffm">气泡（popop）</h2>
+            <!-- ---------------------------------------------------- -->
+            <div class="sp30"></div>
+            <div>
+                <ul class="inline">
+                    <li class="mgr10 popop pop-top"><a href="" class="tu c-blue">向上</a>
+                        <div class="popsub ant">aaaaaa</div>
+                    </li>
+                    <li class="mgr10 popop pop-right"><a href="" class="tu c-blue">向右</a>
+                        <div class="popsub ant">aaaaaa</div>
+                    </li>
+                    <li class="mgr10 popop pop-bottom"><a href="" class="tu c-blue">向下</a>
+                        <div class="popsub ant">aaaaaa</div>
+                    </li>
+                    <li class="mgr10 popop pop-left">
+                        <a href="" class="tu c-blue">向左</a>
+                        <div class="popsub ant">
+                            <ul>
+                                <li>aaaaaa</li>
+                                <li>aaaaaa</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="sp30"></div>
+            <div class="sp30"></div>
+        </div>
+    </div>
+    <div class="ceng-ready" id="divHello">
+        <div class="pd30">
+            <p class="lh34">蔡英文回应“未承认92共识致两岸沟通机制停摆”</p>
+            <ul class="lh24">
+                <li>1<span>南海仲裁即将宣布</span></li>
+                <li>2<span>南海仲裁即将宣布</span></li>
+                <li>3<span>南海仲裁即将宣布</span></li>
+            </ul>            
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="assets/libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/libs/layer-v2.1/layer/layer.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/layout.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-select.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-switch.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-page.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-radio.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-checkbox.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-valid.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-table.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-ceng.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-popop.js"></script>
+    <script type="text/javascript" src="assets/libs/jeDate/jedate/jedate.js"></script>
+    <script type="text/javascript" src="assets/libs/jquery-tmpl/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="assets/libs/store/store.min.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/prism.js"></script>
+    
+    <script type="text/javascript">
+    $(function() {
+
+        // ceng.loading();
+
+        $('#cengMsg').on('click', function() {
+            ceng.msg('有心人（邓紫棋 G.E.M）', {
+                state: 'resolve',
+                time: 2000,
+                end: function(){
+                    ceng.msg('寂寞也挥发着余香',{
+                        end: function(){
+                            ceng.msg('原来情动正是这样',{
+                                end: function(){
+                                    ceng.msg('曾忘掉这种遐想',{
+                                        end: function(){
+                                            ceng.msg('这么超乎我想象',{
+                                                end: function(){
+                                                    ceng.msg('但愿我可以没成长',{
+                                                        end: function(){
+                                                            ceng.msg('完全 凭直觉觅对象',{
+                                                                end: function(){
+                                                                    ceng.msg('模糊地迷恋你一场',{
+                                                                        end: function(){
+                                                                            ceng.msg('就当风雨下潮涨',{
+                                                                                end: function(){
+                                                                                    ceng.msg('如果真的太好',{
+                                                                                        end: function(){
+                                                                                            ceng.msg('如错看了都好',{
+                                                                                                end: function(){
+                                                                                                    ceng.msg('不想证实有没有过倾慕',{
+                                                                                                        end: function(){
+                                                                                                            ceng.msg('是无力 或有心',{
+                                                                                                                end: function(){
+                                                                                                                    ceng.msg('像谜 像戏',{
+                                                                                                                        end: function(){
+                                                                                                                            ceng.msg('谁又会 似我演得更好',{
+                                                                                                                                end: function(){
+                                                                                                                                    ceng.msg('从眉梢中感觉到',{
+                                                                                                                                        end: function(){
+                                                                                                                                            ceng.msg('从眼角看不到', {
+                                                                                                                                                end: function(){
+                                                                                                                                                    ceng.msg('彷佛已是最直接的裸露', {
+                                                                                                                                                        end: function(){
+                                                                                                                                                            ceng.msg('是无力 但有心',{
+                                                                                                                                                                end: function(){
+                                                                                                                                                                    ceng.msg('暗来 明往', {
+                                                                                                                                                                        end: function(){
+                                                                                                                                                                            ceng.msg('谁说 这算是情愫',{
+                                                                                                                                                                                time: 3000
+                                                                                                                                                                            })
+                                                                                                                                                                        }
+                                                                                                                                                                    })
+                                                                                                                                                                }
+                                                                                                                                                            })
+                                                                                                                                                        }
+                                                                                                                                                    })
+                                                                                                                                                }
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    })
+                                                                                                                                }
+                                                                                                                            })
+                                                                                                                        }
+                                                                                                                    })
+                                                                                                                }
+                                                                                                            })
+                                                                                                        }
+                                                                                                    })
+                                                                                                }
+                                                                                            })
+                                                                                        }
+                                                                                    })
+                                                                                }
+                                                                            })
+                                                                        }
+                                                                    })
+                                                                }
+                                                            })
+                                                        }
+                                                    })
+                                                }
+                                            })
+                                        }
+                                    })
+                                }
+                            })
+                        }
+                    })
+                }
+            })
+        });
+
+        $('#cengAlert').on('click', function() {
+            ceng.alert('<p class="ffs c-gray3">没意见你想怎样我都随便</p>', {
+                title: '标题就要 long long long long long long long long long long long long long long long long long',
+                area: ['auto', 'auto'],
+                yes: function() {
+                    ceng.msg('点话点好啦');
+                }
+            })
+        });
+        $('#cengConfirm1').on('click', function() {
+            ceng.comfirm('<p class="ffs c-gray3">国旗又错了！女排颁奖升起了错误国旗</p>', {
+                title: '询问层',
+                btn: ['确定', '取消'],
+                yes: function(obj, index){
+                    ceng.msg('弄死那个逗比！');
+                    ceng.close(index);
+                }
+            })
+        });
+        $('#cengConfirm2').on('click', function() {
+            var _htm = '<p>问君能有几多愁？</p><p>恰似一群太监上春楼！</p>';
+            ceng.comfirm(_htm, {
+                style: 2,
+                complete: function(){
+                    ceng.msg('abc');
+                },
+                yes: function(o, z) {
+                    ceng.close(z);
+                }
+            })
+        });
+        $('#cengHello').on('click', function() {
+            ceng.hello({
+                title: '页面层',
+                content: $('#divHello'),
+                contentType: 'dom', // dom, url
+                area: [600, 'auto'],
+                btn: ['确定','取消'],
+                yes: function(obj ,index){
+                    ceng.msg('弄死那个逗比', {
+                        end: function(){
+                            ceng.close(index);
+                        }
+                    })
+                }
+            })
+        });
+        $('#cengHelloRemote').on('click', function() {
+            ceng.hello({
+                title: '页面层',
+                content: 'assets/admin/v4.0.3/remotePage/demo.html',
+                contentType: 'url', // dom, url
+                contentData: 'a=1&b=2&c=3',
+                area: [800, 'auto'],
+                btn: ['按钮一', '按钮二', '按钮三'],
+                btn1: function() {},
+                btn2: function() {
+                    ceng.alert('全部关闭咯', {
+                        yes: function() {
+                            ceng.closeAll();
+                        }
+                    })
+                },
+                btn3: function() {
+                    ceng.msg('按我干嘛？')
+                }
+            })
+        });
+        $('#cengiFrame').on('click', function() {
+            ceng.iframe({
+                title: '2016国际体验设计大会',
+                url: 'http://www.cepin.com',
+                area: [1200, 600],
+                yes: function() {}
+            })
+        });
+        // $('.popop').popopSmart();
+    });
+    </script>
+</body>
+</html>

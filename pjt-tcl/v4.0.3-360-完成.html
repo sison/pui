@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v4.0.3-项目-参评人统计</title>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/pui.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/layout.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/page-common.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/libs/jeDate/jedate/skin/jedate.css" />
+    <script type="text/javascript" src="assets/libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/libs/jeDate/jedate/jedate.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/layout.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-popop.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-page.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-ceng.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-radio.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-checkbox.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-table.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-query.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-valid.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-select.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-switch.js"></script>
+    <script type="text/javascript" src="assets/libs/jquery-tmpl/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="assets/libs/kindeditor/kindeditor-min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        importHeader();
+        importFooter();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="widthly">
+            <div class="page-crumb">
+                <p>
+                    <a href="/System/Home/Index">项目管理</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">项目列表</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">顺丰集团素质测评</a>
+                    <em>/</em>
+                    <span>进度统计</span>
+                </p>
+            </div>
+            <div class="bbthree">
+                <div class="pd20 pdb0 bgc-white">
+                    <div class="page-feature ffs">
+                        <ul class="inline clearfix">
+                            <li class="cur"><a href="#">产品信息<em></em></a></li>
+                            <li><a href="#">账号分配<em></em></a></li>
+                            <li><a href="#">通知日志<em></em></a></li>
+                            <li><a href="#">数据下载<em></em></a></li>
+                            <li><a href="#">报告下载<em></em></a></li>
+                            <li><a href="#">进度统计<em></em></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sp10"></div>
+                <div class="sp10"></div>
+                <div class="page-step fm ffs pd20 bgc-white">
+                    <ul>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">1 产品信息<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">2 模块结构<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">3 指标定义<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">4 指标权重<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">5 问卷<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">6 评价关系<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">7 完成<i></i></a></li>
+                    </ul>
+                </div>
+                <div class="pd50 tc clearfix">
+                    <p><i class="icon icon-praise fs60 c-gray5"></i></p>
+                    <div class="sp10"></div>
+                    <p class="ffm fb c-gray3">恭喜你，产品已设置完成。</p>
+                    <div class="sp10"></div>
+                    <div class="absolutecenter">
+                        <div class="acsub">
+                            <div class="check-group clearfix" id="">
+                                <div class="checkone inline">
+                                    <input type="checkbox" name="" value="abc" /><span class="c-gray3">是否刷新以前的报告（刷新后原有的报告将被覆盖）</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sp10"></div>
+                    <div class="sp10"></div>
+                    <div class="sp10"></div>
+                    <div class="absolutecenter">
+                        <div class="acsub">
+                            <button class="btn bb bgc-blue">上一步</button>
+                        </div>
+                        <div class="acsub">
+                            <button class="btn bb btn-common">完成</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+
+    $('input[type=checkbox]').checkboxSmart();
+
+
+})
+</script>
+
+</html>

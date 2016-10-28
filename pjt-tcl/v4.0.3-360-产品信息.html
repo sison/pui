@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v4.0.3-360-产品信息</title>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/pui.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/layout.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/page-common.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/libs/jeDate/jedate/skin/jedate.css" />
+    <script type="text/javascript" src="assets/libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/libs/jeDate/jedate/jedate.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/layout.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-popop.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-page.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-ceng.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-radio.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-checkbox.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-table.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-query.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-valid.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-select.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-switch.js"></script>
+    <script type="text/javascript" src="assets/libs/jquery-tmpl/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="assets/libs/kindeditor/kindeditor-min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        importHeader();
+        importFooter();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="widthly">
+            <div class="page-crumb">
+                <p>
+                    <a href="/System/Home/Index">项目管理</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">项目列表</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">顺丰集团素质测评</a>
+                    <em>/</em>
+                    <span>进度统计</span>
+                </p>
+            </div>
+            <div class="bbthree">
+                <div class="pd20 pdb0 bgc-white">
+                    <div class="page-feature ffs">
+                        <ul class="inline clearfix">
+                            <li class="cur"><a href="#">产品信息<em></em></a></li>
+                            <li><a href="#">账号分配<em></em></a></li>
+                            <li><a href="#">通知日志<em></em></a></li>
+                            <li><a href="#">数据下载<em></em></a></li>
+                            <li><a href="#">报告下载<em></em></a></li>
+                            <li><a href="#">进度统计<em></em></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sp10"></div>
+                <div class="sp10"></div>
+                <div class="page-step fm ffs pd20 bgc-white">
+                    <ul>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">1 产品信息<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">2 模块结构<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">3 指标定义<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">4 指标权重<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">5 问卷<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">6 评价关系<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">7 完成<i></i></a></li>
+                    </ul>
+                </div>
+                <div class="pd50 tc clearfix">
+                    <form action="" class="pui" id="createToolForm">
+                        <div class="create-tool ffs">
+                            <div class="row required">
+                                <div class="col-xs-2 col-key tr"><span class="pdr10">工具名称：</span></div>
+                                <div class="col-xs-5 col-val">
+                                    <input type="text" id="formName" class="txt wp100" name="name" data-req="true" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="sp10"></div>
+                            <div class="row required">
+                                <div class="col-xs-2 col-key tr"><span class="pdr10">人群：</span></div>
+                                <div class="col-xs-10 col-val">
+                                    <ul class="inline clearfix">
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-edu-hat"></i>
+                                                <p>应届生</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-tie"></i>
+                                                <p>职业人</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-people"></i>
+                                                <p>基层管理者</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-people-id"></i>
+                                                <p>中层管理者</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-people-dot"></i>
+                                                <p>高层管理者</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-menu2"></i>
+                                                <p>不限</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row required">
+                                <div class="col-xs-2 col-key tr"><span class="pdr10">用途：</span></div>
+                                <div class="col-xs-10 col-val">
+                                    <ul class="inline clearfix">
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-target"></i>
+                                                <p>高潜识别</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-ping"></i>
+                                                <p>内部竞聘</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-abacus"></i>
+                                                <p>人才盘点</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-index"></i>
+                                                <p>人才发展</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row required">
+                                <div class="col-xs-2 col-key tr"><span class="pdr10">行业：</span></div>
+                                <div class="col-xs-10 col-val">
+                                    <ul class="inline clearfix">
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-at"></i>
+                                                <p>互联网/游戏/软件</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-influence"></i>
+                                                <p>电子/通信/硬件</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-building"></i>
+                                                <p>房地产/建筑/物业</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-dollar"></i>
+                                                <p>金融</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-shopping-cart"></i>
+                                                <p>消费品</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-shoulder"></i>
+                                                <p>机械制造</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-car"></i>
+                                                <p>汽车</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-reading"></i>
+                                                <p>专业服务/教育/培训</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-waiter"></i>
+                                                <p>服务</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-first-aid-kit"></i>
+                                                <p>制药/医疗</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-vcr"></i>
+                                                <p>广告/媒体/文化</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-global-trip"></i>
+                                                <p>交通/物流</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-rmb"></i>
+                                                <p>贸易/进出口</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-bulb"></i>
+                                                <p>能源/化工/环保</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-gcd"></i>
+                                                <p>政府/事业单位</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="tool-one tc fs">
+                                                <i class="fs22 icon icon-ellipsis-round"></i>
+                                                <p>其他</p>
+                                                <input type="radio" name="crowd" value="1" />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row required">
+                                <div class="col-xs-2 col-key tr"><span class="pdr10">职能：</span></div>
+                                <div class="col-xs-9 col-val">
+                                    <ul class="inline fl add-tags fs">
+                                        <li><span class="c-blue">UI设计</span>
+                                            <input type="checkbox" class="hide" id='' /><i class="icon icon-close fs ant"></i></li>
+                                        <li><span class="c-blue">鉴黄师</span>
+                                            <input type="checkbox" class="hide" id='' /><i class="icon icon-close fs ant"></i></li>
+                                        <li><span class="c-blue">程序员鼓励师</span>
+                                            <input type="checkbox" class="hide" id='' /><i class="icon icon-close fs ant"></i></li>
+                                    </ul>
+                                    <button type="button" class="fl btn bgc-green" id="addFunction"><i class="icon icon-addr"></i>请选择 ...</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolutecenter clearfix">
+                            <div class="sp50"></div>
+                            <div class="acsub"><button type="submit" class="btn bb fm bgc-blue">下一步</button></div>
+                            <div class="acsub"><button type="button" class="btn bb fm btn-common">取消</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+
+    $('input[type=checkbox]').checkboxSmart();
+
+    valid.form($('#createToolForm'),{
+        isAsync: true,
+        async: function(){}
+    })
+
+    $('#addFunction').on('click', function() {
+        ceng.hello({
+            title: '职能',
+            content: 'assets/admin/v4.0.3/remotePage/add-function.html',
+            contentType: 'url', // dom, url, html
+            area: [720, 500],
+            yes: function() {},
+            no: function() {}
+        })
+    });
+
+})
+</script>
+
+</html>

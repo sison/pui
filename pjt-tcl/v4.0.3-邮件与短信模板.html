@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v4.0.3-邮件与短信模板</title>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/pui.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/layout.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/page-common.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/libs/jeDate/jedate/skin/jedate.css" />
+    <script type="text/javascript" src="assets/libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/libs/jeDate/jedate/jedate.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/layout.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-popop.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-page.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-ceng.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-radio.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-checkbox.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-table.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-query.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-valid.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-select.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-switch.js"></script>
+    <script type="text/javascript" src="assets/libs/jquery-tmpl/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="assets/libs/kindeditor/kindeditor-min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        importHeader();
+        importFooter();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="widthly">
+            <div class="page-crumb">
+                <p>
+                    <a href="/System/CustomerGroup/List">项目管理</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">使用统计</a>
+                    <em>/</em>
+                    <span>项目统计</span>
+                </p>
+            </div>
+
+            <script type="text/javascript">
+                var tabledata = {
+                    "Data": [
+                        [{
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "TmplName": "缝小肛",
+                            "TmplTheme": "面试模板",
+                            "Sex": "男",
+                            "EnglishName": null,
+                            "Password": "Ns76tu",
+                            "OrgTreeCode": null,
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "IdentityNum": null,
+                            "Phone": "",
+                            "Address": "",
+                            "PostalCode": "",
+                            "VocationalAbility": null,
+                            "Position": null,
+                            "Org": null,
+                            "Astop": 8,
+                            "Assame": 1,
+                            "Asbottom": 3,
+                            "Profession": null,
+                            "DomicilePlace": null,
+                            "Domicile": null,
+                            "CertificateNum": null,
+                            "Health": null,
+                            "Salary": null,
+                            "EducationName": null,
+                            "WorkYears": null,
+                            "Major": null,
+                            "SalaryExpectation": null,
+                            "SelfEvaluation": null,
+                            "School": null,
+                            "Jointime": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "IsOpenApi": null,
+                            "BatchInsertId": null,
+                            "ServeBatchImportrQueueId": null,
+                            "IsSuspend": null,
+                            "UserGuid": null,
+                            "SendEmailStatus": null,
+                            "SendSmsStatus": null,
+                            "UserExamId": 403616,
+                            "EvaluationPersonId": 234777,
+                            "EvaluationRelationshipId": 1,
+                            "CustomerEvaluationRelationshipId": null,
+                            "IsOwnEvaluation": true,
+                            "IsEmailSent": null,
+                            "IsSmsSent": null,
+                            "ExamStatus": 0,
+                            "OriginalStatus": null,
+                            "UserExtensionFieldId": 280144,
+                            "CustomField3": null,
+                            "CustomField4": null,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "Deletable": true,
+                            "Notifyable": true,
+                            "IsEvaluated": true,
+                            "Impersonatable": true,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "TotalSmsCount": null,
+                            "SentSmsCount": null,
+                            "LastSmsStatus": null,
+                            "LastSmsCreatedTime": null,
+                            "LastSentSmsCreatedTime": null,
+                            "TotalMailCount": null,
+                            "SentMailCount": null,
+                            "LastMailStatus": null,
+                            "LastMailCreatedTime": null,
+                            "LastSentMailCreatedTime": null,
+                            "CertificateType": null,
+                            "Education": null,
+                            "PoliticalStatus": null,
+                            "MaritalStatus": null,
+                            "Gender": null,
+                            "Birthday": null,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }, {
+                            "_rowid_": 1,
+                            "UserId": 503423,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "TmplName": "缝小肛",
+                            "TmplTheme": "面试模板",
+                            "Sex": "男",
+                            "EnglishName": null,
+                            "Password": "Ns76tu",
+                            "OrgTreeCode": null,
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "IdentityNum": null,
+                            "Phone": "",
+                            "Address": "",
+                            "PostalCode": "",
+                            "VocationalAbility": null,
+                            "Position": null,
+                            "Org": null,
+                            "Astop": 8,
+                            "Assame": 1,
+                            "Asbottom": 3,
+                            "Profession": null,
+                            "DomicilePlace": null,
+                            "Domicile": null,
+                            "CertificateNum": null,
+                            "Health": null,
+                            "Salary": null,
+                            "EducationName": null,
+                            "WorkYears": null,
+                            "Major": null,
+                            "SalaryExpectation": null,
+                            "SelfEvaluation": null,
+                            "School": null,
+                            "Jointime": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "IsOpenApi": null,
+                            "BatchInsertId": null,
+                            "ServeBatchImportrQueueId": null,
+                            "IsSuspend": null,
+                            "UserGuid": null,
+                            "SendEmailStatus": null,
+                            "SendSmsStatus": null,
+                            "UserExamId": 403616,
+                            "EvaluationPersonId": 234777,
+                            "EvaluationRelationshipId": 1,
+                            "CustomerEvaluationRelationshipId": null,
+                            "IsOwnEvaluation": true,
+                            "IsEmailSent": null,
+                            "IsSmsSent": null,
+                            "ExamStatus": 0,
+                            "OriginalStatus": null,
+                            "UserExtensionFieldId": 280144,
+                            "CustomField3": null,
+                            "CustomField4": null,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "Deletable": true,
+                            "Notifyable": true,
+                            "IsEvaluated": true,
+                            "Impersonatable": true,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "TotalSmsCount": null,
+                            "SentSmsCount": null,
+                            "LastSmsStatus": null,
+                            "LastSmsCreatedTime": null,
+                            "LastSentSmsCreatedTime": null,
+                            "TotalMailCount": null,
+                            "SentMailCount": null,
+                            "LastMailStatus": null,
+                            "LastMailCreatedTime": null,
+                            "LastSentMailCreatedTime": null,
+                            "CertificateType": null,
+                            "Education": null,
+                            "PoliticalStatus": null,
+                            "MaritalStatus": null,
+                            "Gender": null,
+                            "Birthday": null,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }, {
+                            "_rowid_": 1,
+                            "UserId": 503143,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "TmplName": "缝小肛",
+                            "TmplTheme": "面试模板",
+                            "Sex": "男",
+                            "EnglishName": null,
+                            "Password": "Ns76tu",
+                            "OrgTreeCode": null,
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "IdentityNum": null,
+                            "Phone": "",
+                            "Address": "",
+                            "PostalCode": "",
+                            "VocationalAbility": null,
+                            "Position": null,
+                            "Org": null,
+                            "Astop": 8,
+                            "Assame": 1,
+                            "Asbottom": 3,
+                            "Profession": null,
+                            "DomicilePlace": null,
+                            "Domicile": null,
+                            "CertificateNum": null,
+                            "Health": null,
+                            "Salary": null,
+                            "EducationName": null,
+                            "WorkYears": null,
+                            "Major": null,
+                            "SalaryExpectation": null,
+                            "SelfEvaluation": null,
+                            "School": null,
+                            "Jointime": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "IsOpenApi": null,
+                            "BatchInsertId": null,
+                            "ServeBatchImportrQueueId": null,
+                            "IsSuspend": null,
+                            "UserGuid": null,
+                            "SendEmailStatus": null,
+                            "SendSmsStatus": null,
+                            "UserExamId": 403616,
+                            "EvaluationPersonId": 234777,
+                            "EvaluationRelationshipId": 1,
+                            "CustomerEvaluationRelationshipId": null,
+                            "IsOwnEvaluation": true,
+                            "IsEmailSent": null,
+                            "IsSmsSent": null,
+                            "ExamStatus": 0,
+                            "OriginalStatus": null,
+                            "UserExtensionFieldId": 280144,
+                            "CustomField3": null,
+                            "CustomField4": null,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "Deletable": true,
+                            "Notifyable": true,
+                            "IsEvaluated": true,
+                            "Impersonatable": true,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "TotalSmsCount": null,
+                            "SentSmsCount": null,
+                            "LastSmsStatus": null,
+                            "LastSmsCreatedTime": null,
+                            "LastSentSmsCreatedTime": null,
+                            "TotalMailCount": null,
+                            "SentMailCount": null,
+                            "LastMailStatus": null,
+                            "LastMailCreatedTime": null,
+                            "LastSentMailCreatedTime": null,
+                            "CertificateType": null,
+                            "Education": null,
+                            "PoliticalStatus": null,
+                            "MaritalStatus": null,
+                            "Gender": null,
+                            "Birthday": null,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }]
+                    ],
+                    "PageIndex": 1,
+                    "PageSize": 20,
+                    "TotalPages": 1,
+                    "TotalRecords": 3
+                };
+                var togMode = function(bool) {
+                    return bool && bool===true ? '是' : '否';
+                }
+            </script>
+
+            <div class="query-form bgc-white pd20">
+                
+                <div class="page-feature">
+                    <ul class="inline clearfix">
+                        <li class="cur"><a href="#">邮件模板<em></em></a></li>
+                        <li><a href="#">短信模板<em></em></a></li>
+                    </ul>
+                </div>
+
+                <div class="sp20"></div>
+
+
+                <div class="send-message">
+                    <div class="sendiv" id="sendMailDiv">
+
+                    <div class="setFunction bgc-gray6 clearfix">
+                        <div class="funBtns fl">
+                            <ul class="inline">
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-new-mail">新建（邮件模板）</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-delete-mail">删除</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="page-table hasPagination">
+                        <div class="overflow-table">
+                            <table class="table table-center table-song table-relative" id="mailTable">
+                                <thead>
+                                    <tr class="header">
+                                        <th width="30" class="chkbox">
+                                            <div class="checkone">
+                                                <input type="checkbox" name="chktall" class="chktall" id="chktallSwitch" value="all" />
+                                            </div>
+                                        </th>
+                                        <th class="tl">模板名称</th>
+                                        <th>模板主题</th>
+                                        <th>默认模板</th>
+                                        <th>模板分类</th>
+                                        <th width="80">状态</th>
+                                        <th width="120">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <script type="text/x-jquery-tmpl" id="mailTmpl">
+                            <tr class="ant in">
+                                <td class="chkbox">
+                                    <div class="checkone">
+                                        <input type="checkbox" name="chktone" class="chktone" data-userId="${UserId}" value="all" />
+                                    </div>
+                                </td>
+                                <td class="tl">
+                                    <p>${TmplName}</p>
+                                </td>
+                                <td>
+                                    <p>${TmplTheme}</p>
+                                </td>
+                                <td>
+                                    <p>${TmplDefault}</p>
+                                </td>
+                                <td>
+                                    <p>${TmplClass}</p>
+                                </td>
+                                <td>
+                                    <input class="hide switch" type="hidden" id="switch${UserId}" value="${ExamMode}" />
+                                </td>
+                                <td>
+                                    <p>
+                                        <a href="javascript:void(0)" data-id="${UserId}" class="c-blue tu a-btn-update-mail">修改</a>
+                                        <a href="javascript:void(0)" data-id="${UserId}" class="c-blue tu a-btn-delete-mail">删除</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </script>
+                        <div class="makePGbottom">
+                            <div class="pagination-out">
+                                <div class="pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="sp50"></div>
+
+                    <div class="sendiv" id="sendMsgDiv">
+
+                    <div class="setFunction bgc-gray6 clearfix">
+                        <div class="funBtns fl">
+                            <ul class="inline">
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-new-msg">新建（短信模板）</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-gray3" id="btn-delete-msg">删除</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="page-table hasPagination">
+                        <div class="overflow-table">
+                            <table class="table table-center table-song table-relative" id="msgTable">
+                                <thead>
+                                    <tr class="header">
+                                        <th width="30" class="chkbox">
+                                            <div class="checkone">
+                                                <input type="checkbox" name="chktall" class="chktall" id="chktallSwitch" value="all" />
+                                            </div>
+                                        </th>
+                                        <th class="tl">模板名称</th>
+                                        <th>模板主题</th>
+                                        <th>默认模板</th>
+                                        <th>模板分类</th>
+                                        <th width="80">状态</th>
+                                        <th width="120">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <script type="text/x-jquery-tmpl" id="msgTmpl">
+                        {{each(i, item) Data}}
+                            <tr class="ant in">
+                                <td class="chkbox">
+                                    <div class="checkone">
+                                        <input type="checkbox" name="chktone" class="chktone" data-userId="${CustomerId}" value="all" />
+                                    </div>
+                                </td>
+                                <td class="tl">
+                                    <p>${TmplName}</p>
+                                </td>
+                                <td>
+                                    <p>${TmplTheme}</p>
+                                </td>
+                                <td>
+                                    <p>${TmplDefault}</p>
+                                </td>
+                                <td>
+                                    <p>${TmplClass}</p>
+                                </td>
+                                <td>
+                                    <input class="hide switch" type="hidden" id="switch${CustomerId}" value="${ExamMode}" />
+                                </td>
+                                <td>
+                                    <p>
+                                        <a href="javascript:void(0)" data-id="${CustomerId}" class="c-blue tu a-btn-update-msg">修改</a>
+                                        <a href="javascript:void(0)" data-id="${CustomerId}" class="c-blue tu a-btn-delete-msg">删除</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        {{/each}}
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+
+    var comObj = {
+        mail: {
+            table: $('#mailTable'),
+            tmpl: $('#mailTmpl')
+        },
+        msg: {
+            table: $('#msgTable'),
+            tmpl: $('#msgTmpl')
+        },
+        queryformurl : '/assets/admin/v4.0.3/json/pjrtj-roll.json',     // 查询条件接口
+        // rollpageurl : '/assets/admin/v4.0.3/json/pjrtj-roll.json',      // 翻页接口
+        switchurl : ''      // 切换状态接口
+    }
+
+
+    var tableMail = new TableSimple(comObj.mail.table, comObj.mail.tmpl, {
+        bgcCtrl: true,      // 是否控制表格行背景色
+        hoverColor: '#ffc',
+        oddColor: '#fff',
+        evenColor: '#fff',
+        datastyle: 'local',     // 数据来源，首屏本地
+        dataSource: tabledata,      // 首屏数据
+        isBase64: false,        // 数据是否 base64 加密
+        isquery: false,          // 是否带查询
+        pageCtrl: true,        // 是否有分页
+        headCtrl: true,
+        container: $('tbody', comObj.mail.table),    // 数据dom容器
+        queryUrl: comObj.queryformurl,     // 数据接口
+        afterLoadCallback: function () { }        // 数据渲染后回调事件
+    });
+
+
+    // var tableMsg = new TableSimple(comObj.msg.table, comObj.msg.tmpl, {
+    //     bgcCtrl: true,      // 是否控制表格行背景色
+    //     hoverColor: '#ffc',
+    //     oddColor: '#fff',
+    //     evenColor: '#fff',
+    //     datastyle: 'local',     // 数据来源，首屏本地
+    //     dataSource: tabledata,      // 首屏数据
+    //     isBase64: false,        // 数据是否 base64 加密
+    //     isquery: false,          // 是否带查询
+    //     pageCtrl: true,        // 是否有分页
+    //     headCtrl: true,
+    //     container: $('tbody', comObj.msg.table),    // 数据dom容器
+    //     queryUrl: queryformurl,     // 数据接口
+    //     dateFormat: 'YYYY-MM-DD',       // 查询时间格式
+    //     afterLoadCallback: function () { }        // 数据渲染后回调事件
+    // });
+
+
+
+
+    // // 切换
+    // $('.switch', tableObj).on('click', function(){
+    //    var sid = $(this).attr('id')
+    //    enable: function(self, bool){
+    //        handleSwitch(self, bool)
+    //    },
+    //    disable: function(){
+    //        handleSwitch(self, bool)
+    //    }
+    // });
+
+
+    var handleSwitch = function(o, bool) {
+        var sid = o.attr('id');
+        $.post(switchurl, {
+            id: sid,
+            bool: bool
+        }, function(data) {
+            debugger;
+        })
+    };
+
+
+    /**
+     * 邮件
+     */
+    // create
+    $('#btn-new-mail').on('click', function() {
+        ceng.hello({
+            title: '创建邮件模板',
+            content: 'assets/admin/v4.0.3/remotePage/mail-tmpl.html',
+            contentType: 'url',
+            area: [800, 600],
+            yes: function(o, index) {
+                $('#mailForm').submit();
+                // ceng.close(index);
+            },
+            no: function() {}
+        })
+    });
+    // bat delete
+    $('#btn-delete-mail').on('click', function() {
+        if(comObj.mail.table.find('.chkone input:checked').length>0){
+            ceng.comfirm('<p class="ffm">确认删除 ' + sid + ' ？</p>', {
+                style: 2,
+                title: '提示',
+                btn: ['确定', '取消'],
+                yes: function(o, z) {
+                    $.post('url', {
+                        id: sid
+                    }, function(data) {
+                        if (true) {
+                            $(this).closest('tr').remove();
+                        } else {
+                            ceng.msg(data.Message);
+                            window.location.reload();
+                        }
+                    })
+                }
+            });
+        }else{
+            ceng.alert('请选选择', {
+                title: '提示',
+                btn: ['确定']
+            })
+        }
+    });
+    // update
+    $('.a-btn-update-mail').on('click', function() {
+        ceng.hello({
+            title: '修改邮件模板',
+            content: 'assets/admin/v4.0.3/remotePage/mail-tmpl.html',
+            contentType: 'url',
+            area: [800, 600],
+            yes: function(o, index) {
+                $('#mailForm').submit();
+                // ceng.close(index);
+            },
+            no: function() {}
+        })
+    });
+    // delete
+    $('.a-btn-delete-mail').on('click', function() {
+        var sid = $(this).data('id');
+        ceng.comfirm('<p class="ffm">确认删除 ' + sid + ' ？</p>', {
+            style: 2,
+            title: '提示',
+            btn: ['确定', '取消'],
+            yes: function(o, z) {
+                $.post('url', {
+                    id: sid
+                }, function(data) {
+                    if (true) {
+                        $(this).closest('tr').remove();
+                    } else {
+                        ceng.msg(data.Message);
+                        window.location.reload();
+                    }
+                })
+            }
+        });
+    });
+
+
+    /**
+     * 短信
+     */
+    // create
+    $('#btn-new-msg').on('click', function() {
+        ceng.hello({
+            title: '创建短信模板',
+            content: 'assets/admin/v4.0.3/remotePage/msg-tmpl.html',
+            contentType: 'url',
+            area: [800, 600],
+            yes: function(o, index) {
+                $('#msgForm').submit();
+                // ceng.close(index);
+            },
+            no: function() {}
+        })
+    });
+    // bat delete
+    $('#btn-delete-msg').on('click', function() {
+        if(comObj.msg.table.find('.chkone input:checked').length>0){
+            ceng.comfirm('<p class="ffm">确认删除 ' + sid + ' ？</p>', {
+                style: 2,
+                title: '提示',
+                btn: ['确定', '取消'],
+                yes: function(o, z) {
+                    $.post('url', {
+                        id: sid
+                    }, function(data) {
+                        if (true) {
+                            $(this).closest('tr').remove();
+                        } else {
+                            ceng.msg(data.Message);
+                            window.location.reload();
+                        }
+                    })
+                }
+            });
+        }else{
+            ceng.alert('请选选择', {
+                title: '提示',
+                btn: ['确定']
+            })
+        }
+    });
+    // update
+    $('.a-btn-update').on('click', function() {
+        ceng.hello({
+            title: '创建模板',
+            content: 'assets/admin/v4.0.3/remotePage/msg-tmpl.html',
+            contentType: 'url',
+            area: [800, 600],
+            yes: function(o, index) {
+                $('#msgForm').submit();
+                // ceng.close(index);
+            },
+            no: function() {}
+        })
+    });
+    // delete
+    $('.a-btn-delete').on('click', function() {
+        var sid = $(this).data('id');
+        ceng.comfirm('<p class="ffm">确认删除 ' + sid + ' ？</p>', {
+            style: 2,
+            title: '询问层',
+            btn: ['确定', '取消'],
+            yes: function(o, z) {
+                $.post('url', {
+                    id: sid
+                }, function(data) {
+                    if (true) {
+                        $(this).closest('tr').remove();
+                    } else {
+                        ceng.msg(data.Message);
+                        window.location.reload();
+                    }
+                })
+            }
+        });
+    });
+
+
+
+
+
+
+    // var isSelected = function() {
+    //     var bool = false;
+    //     return bool;
+    // }
+
+
+
+})
+</script>
+
+</html>

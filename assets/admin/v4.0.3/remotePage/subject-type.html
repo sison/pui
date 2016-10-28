@@ -1,0 +1,102 @@
+<div id="selectSubjectType">
+    <div class="page-sider ffs">
+        <div class="sider-left fm">
+            <div class="radio-group clearfix">
+                <div class="radione cur">
+                    <input type="radio" name="subType" value="a" checked><span>量表题</span>
+                </div>
+                <div class="radione">
+                    <input type="radio" name="subType" value="b"><span>单选题</span>
+                </div>
+                <div class="radione">
+                    <input type="radio" name="subType" value="c"><span>问答题</span>
+                </div>
+                <div class="radione">
+                    <input type="radio" name="subType" value="d"><span>情景量表题</span>
+                </div>
+                <div class="radione">
+                    <input type="radio" name="subType" value="e"><span>情景题</span>
+                </div>
+            </div>
+        </div>
+        <div class="sider-right">
+            <div class="refs" data-ref="">
+                <div class="page-feature ffs">
+                    <ul class="inline clearfix">
+                        <li class="cur"><a href="javascript:void(0)">样例一<em></em></a></li>
+                        <li><a href="javascript:void(0)">样例二<em></em></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="refs" data-ref="">
+                <div class="subtype-title">
+                    王宝强微博宣布离婚，发声明称妻子马蓉出轨自己的经纪人宋喆，线索正是宋喆的妻子杨慧提供的。该爆料人还称王宝强对于妻子出轨经纪人一事事先并不知情。
+                </div>
+                <div class="subtype-content">
+                    <div class="radio-group clearfix">
+                        <div class="radione">
+                                    <input type="radio" name="radiobj" value="a"><span>完全有效</span>
+                        </div>
+                        <div class="radione">
+                                    <input type="radio" name="radiobj" value="b"><span>不太可行</span>
+                        </div>
+                        <div class="radione">
+                                    <input type="radio" name="radiobj" value="c"><span>可行，但不够理想</span>
+                        </div>
+                        <div class="radione">
+                                    <input type="radio" name="radiobj" value="d"><span>非常无效</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="refs" data-ref="">
+                <div class="subtype-title">
+                    澎湃新闻查询河北沧州纠风网发现，该网站页面存在大量赌博广告文字。
+                </div>
+                <div class="subtype-content">
+                    <textarea name="textarea" class="textarea wp100" cols="30" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="refs" data-ref="">
+                
+            </div>
+            <div class="refs" data-ref="">
+            	<div class="subtype-scene">
+            		梁振英：每一个香港人都有必要维护国家的主权和领土完整
+            	</div>
+                <div class="subtype-title">
+                    王宝强微博宣布离婚，发声明称妻子马蓉出轨自己的经纪人宋喆，线索正是宋喆的妻子杨慧提供的。该爆料人还称王宝强对于妻子出轨经纪人一事事先并不知情。
+                </div>
+                <div class="subtype-content">
+                    <div class="radio-group clearfix">
+                        <div class="radione">
+                                    <input type="radio" name="radiobj" value="a"><span>完全有效</span>
+                        </div>
+                        <div class="radione">
+                                    <input type="radio" name="radiobj" value="b"><span>不太可行</span>
+                        </div>
+                        <div class="radione">
+                                    <input type="radio" name="radiobj" value="c"><span>可行，但不够理想</span>
+                        </div>
+                        <div class="radione">
+                                    <input type="radio" name="radiobj" value="d"><span>非常无效</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('#selectSubjectType .sider-left input[name="subType"]').radioSmart({
+            callback: function(o, v){
+                var one = o.parent('.radione');
+                var index = one.index();
+                one.addClass('cur').siblings().removeClass('cur');
+            }
+        });
+    });
+</script>
+
+

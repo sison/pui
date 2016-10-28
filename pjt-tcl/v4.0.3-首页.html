@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页 - TAS人才测评系统</title>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/pui.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/layout.css" />
+    <script type="text/javascript" src="assets/libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/layout.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        importHeader();
+        importFooter();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="page-albums">
+        <div class="widthly relative">
+            <h2 class="fnormal c-white fs21">广东倍智测聘人才网络科技有限公司</h2>
+            <div class="fs albums-info ellipsis">
+                <p class="fl c-white">登录账户：<span>abcdefg@qq.com</span></p>
+                <!-- if 已过期 -->
+                <p class="fl c-white">系统有效期至：<span>2016/08/30</span></p>
+                <!-- else -->
+                <p class="fl c-white">上次登录时间：<span>2016/08/30 16:34:08</span></p>
+            </div>
+            <!-- if 已过期 -->
+            <div class="albums-overdate absolute fr c-white"><i class="icon icon-ellipsis-round fb fl"></i><span class="pdl05">系统已过期</span></div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="widthly">
+            <div class="home-main bgc-white relative">
+                <div class="main-info c-gray3">
+                    <div class="row">
+                        <div class="col-xs-6 tl">
+                            <p>余额：</p>
+                            <p><span class="c-blue fb pdr10 fbold ffm">1525</span>T币</p>
+                        </div>
+                        <div class="col-xs-6 tr">
+                            <div class="sp10"></div>
+                            <div class="sp10"></div>
+                            <button class="btn bs bgc-red" id="cengChongzhi">充值</button>
+                            <button class="btn bs btn-common">消费详情</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 tl">
+                            <p>短信剩余：</p>
+                            <p><span class="c-blue fb pdr10 fbold ffm">1000</span>条</p>
+                        </div>
+                        <div class="col-xs-6 tr">
+                            <div class="sp10"></div>
+                            <div class="sp10"></div>
+                            <button class="btn bs bgc-blue" id="cengGoumai">购买</button>
+                            <button class="btn bs btn-common">使用详情</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 tl">
+                            <p>包年产品数量：</p>
+                            <p><span class="c-blue fb pdr10 fbold ffm">125</span>个</p>
+                        </div>
+                        <div class="col-xs-6 tr">
+                            <div class="sp10"></div>
+                            <div class="sp10"></div>
+                            <button class="btn bs btn-common">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-create absolute tc">
+                    <i class="absolute ico ico-new"></i>
+                    <dl class="create-btn">
+                        <dt>
+                            <a href="#" class="ico ico-create"></a>
+                        </dt>
+                        <dd><b class="c-red">一键生成项目</b></dd>
+                    </dl>
+                    <p class="c-gray3">火爆新功能，顾问强烈推荐
+                        <br />专业、快捷，无需顾问，一样精准</p>
+                </div>
+                <div class="main-adver absolute">
+                    <div class="in-adver">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="home-used">
+                <h6 class="cate-title fs20 fnormal clearfix"><i class="icon icon-loop c-blue fl"></i><span class="pdl10 fb fl">使用统计</span></h6>
+                <div class="used-body bgc-white">
+                    <ul class="inline clearfix">
+                        <li class="tc ant relative">
+                            <div class="used-icon">
+                                <i class="c-blue fs36 icon icon-folder"></i>
+                                <div class="sp10"></div>
+                                <b>项目</b>
+                            </div>
+                            <p class="c-gray4">正在运行的项目：<b class="c-blue tu ffm">120</b></p>
+                            <p class="c-gray4">项目总数：140</p>
+                            <div class="sp10"></div>
+                            <a href="javascript:;" class="btn bgc-blue ant" id="accountAdd">
+                                <span>新建项目</span>
+                            </a>
+                        </li>
+                        <li class="tc ant relative">
+                            <div class="used-icon">
+                                <i class="c-blue fs36 icon icon-computer-input"></i>
+                                <div class="sp10"></div>
+                                <b>项目</b>
+                            </div>
+                            <p class="c-gray4">正在运行的项目：<b class="c-blue tu ffm">120</b></p>
+                            <p class="c-gray4">项目总数：140</p>
+                            <div class="sp10"></div>
+                            <a href="javascript:;" class="btn bgc-blue ant" id="accountAdd">
+                                <span>新建项目</span>
+                            </a>
+                        </li>
+                        <li class="tc ant relative">
+                            <div class="used-icon">
+                                <i class="c-blue fs36 icon icon-folder"></i>
+                                <div class="sp10"></div>
+                                <b>项目</b>
+                            </div>
+                            <p class="c-gray4">正在运行的项目：<b class="c-blue tu ffm">120</b></p>
+                            <p class="c-gray4">项目总数：140</p>
+                            <div class="sp10"></div>
+                            <a href="javascript:;" class="btn bgc-blue ant" id="accountAdd">
+                                <span>新建项目</span>
+                            </a>
+                        </li>
+                        <li class="tc ant relative">
+                            <div class="used-icon">
+                                <i class="c-blue fs36 icon icon-folder"></i>
+                                <div class="sp10"></div>
+                                <b>项目</b>
+                            </div>
+                            <p class="c-gray4">正在运行的项目：<b class="c-blue tu ffm">120</b></p>
+                            <p class="c-gray4">项目总数：140</p>
+                            <div class="sp10"></div>
+                            <a href="javascript:;" class="btn bgc-blue ant" id="accountAdd">
+                                <span>新建项目</span>
+                            </a>
+                        </li>
+                        <li class="tc ant relative">
+                            <div class="used-icon">
+                                <i class="c-blue fs36 icon icon-folder"></i>
+                                <div class="sp10"></div>
+                                <b>项目</b>
+                            </div>
+                            <p class="c-gray4">正在运行的项目：<b class="c-blue tu ffm">120</b></p>
+                            <p class="c-gray4">项目总数：140</p>
+                            <div class="sp10"></div>
+                            <a href="javascript:;" class="btn bgc-blue ant" id="accountAdd">
+                                <span>新建项目</span>
+                            </a>
+                        </li>
+                        <li class="tc ant relative ing">
+                            <i class="ico ico-ing absolute"></i>
+                            <div class="used-icon">
+                                <i class="c-gray4 fs36 icon icon-website-full"></i>
+                                <div class="sp10"></div>
+                                <b class="c-gray4 ">调研（敬请期待）</b>
+                            </div>
+                            <p class="c-gray4">用于某某行业的专业调用产品系统</p>
+                        </li>
+                        <li class="tc ant relative">
+                        </li>
+                        <li class="tc ant relative">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="home-model-biaogan">
+                <h6 class="cate-title fs22 fnormal clearfix"><i class="icon icon-flag-full c-green fl"></i><span class="pdl10 fb c-gray3 fl">标杆企业</span><a class="fr ffm fm c-blue" href="#">更多 &gt;&gt;</a></h6>
+                <div class="model-body bbthree bgc-white clearfix">
+                    <ul class="inline clearfix fm">
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="home-model-500qiang">
+                <h6 class="cate-title fs22 fnormal clearfix"><i class="icon icon-praise-full c-yellow fl"></i><span class="pdl10 fb c-gray3 fl">500强企业模型</span><a class="fr ffm fm c-blue" href="#">更多 &gt;&gt;</a></h6>
+                <div class="model-body bbthree bgc-white clearfix">
+                    <ul class="inline clearfix fm">
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="home-model-biaozhun">
+                <h6 class="cate-title fs22 fnormal clearfix"><i class="icon icon-tag-full c-red fl"></i><span class="pdl10 fb c-gray3 fl">标准模型</span><a class="fr ffm fm c-blue" href="#">更多 &gt;&gt;</a></h6>
+                <div class="model-body bbthree bgc-white clearfix">
+                    <ul class="inline clearfix fm">
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="ant nowrap">
+                                <span class="model-logo mgr10"><img src="" /></span>
+                                <p>华为应届生能力模型</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--弹层-->
+    <div class="ceng-ready" id="chongzhi">
+        <div class="row ffm">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10">
+                <div class="sp10"></div>
+                <p class="fm"><span>方式一：</span></p>
+                <p>联系专属助理： 李肿 13800138000</p>
+                <div class="sp10"></div>
+                <div class="sp10"></div>
+                <div class="sp10"></div>
+                <p class="fm"><span>方式二：</span></p>
+                <p>联系倍智客服： 400-123-4567</p>
+                <div class="sp10"></div>
+                <ul class="inline">
+                    <li class="pdr10">
+                        <a href="javascript:;" class="btn bgc-blue" id="accountAdd">
+                            <i class="icon icon-addr"></i>
+                            <span class="fs">客服一</span>
+                        </a>
+                    </li>
+                    <li class="pdr10">
+                        <a href="javascript:;" class="btn bgc-blue" id="accountAdd">
+                            <i class="icon icon-addr"></i>
+                            <span class="fs">客服二</span>
+                        </a>
+                    </li>
+                    <li class="pdr10">
+                        <a href="javascript:;" class="btn bgc-blue" id="accountAdd">
+                            <i class="icon icon-addr"></i>
+                            <span class="fs">客服三</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-1"></div>
+            <div class="sp10"></div>
+            <div class="sp10"></div>
+        </div>
+    </div>
+    <!--弹层-->
+    <div class="ceng-ready" id="goumai">
+        <form action="">
+            <div class="sp10"></div>
+            <div class="row">
+                <div class="col-xs-2 tr ffs c-gray3">余额：</div>
+                <div class="col-xs-9"><b class="c-green txtsp ffm">3389</b>T币</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 tr ffs c-gray3">单价：</div>
+                <div class="col-xs-9"><b class="c-green txtsp ffm">0.1</b>T币 / 条</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 tr ffs c-gray3">购买条数：</div>
+                <div class="col-xs-9">
+                    <ul class="inline clearfix">
+                        <li class="pdr10 pdb10"><button type="button" class="btn btn-common">10</button></li>
+                        <li class="pdr10 pdb10"><button type="button" class="btn btn-common">50</button></li>
+                        <li class="pdr10 pdb10"><button type="button" class="btn btn-common">100</button></li>
+                        <li class="pdr10 pdb10"><button type="button" class="btn btn-common">100</button></li>
+                        <li class="pdr10 pdb10"><button type="button" class="btn btn-common">1000</button></li>
+                        <li class="pdr10 pdb10"><button type="button" class="btn btn-common">10000</button></li>
+                    </ul>
+                    <div class="input-group pdb10">
+                        <label>
+                            <input class="txt" type="text" placeholder="请输入数量，必须是10的倍数" />
+                            <span>全额购买</span>
+                        </label>
+                    </div>
+                    <p class="c-gray4 fs lhem">最多可购买： 888880条</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 tr ffs c-gray3">花费总额：</div>
+                <div class="col-xs-9"><b class="c-green txtsp ffm">0</b>T币</div>
+            </div>
+            <div class="sp10"></div>
+            <div class="sp10"></div>
+            <div class="sp10"></div>
+            <div class="sp10"></div>
+        </form>
+    </div>
+</body>
+<script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-valid.js"></script>
+<script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-ceng.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#cengChongzhi').on('click', function() {
+        ceng.hello({
+            'title': '充值',
+            'contentType': 'dom',
+            'content': $('#chongzhi'),
+            'area': [640, 'auto'],
+            yes: function() {},
+            no: function() {}
+        })
+    });
+    $('#cengGoumai').on('click', function() {
+        ceng.hello({
+            'title': '购买短信',
+            'contentType': 'dom',
+            'content': $('#goumai'),
+            'area': [640, 'auto'],
+            'btn': ['购买','取消'],
+            yes: function() {},
+            no: function() {}
+        })
+    });
+})
+</script>
+
+</html>

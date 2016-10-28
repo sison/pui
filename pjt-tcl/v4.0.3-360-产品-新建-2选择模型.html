@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v4.0.3-360-选择模型</title>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/pui.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/layout.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/page-common.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/libs/jeDate/jedate/skin/jedate.css" />
+    <script type="text/javascript" src="assets/libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/libs/jeDate/jedate/jedate.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/layout.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-popop.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-page.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-ceng.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-radio.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-checkbox.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-table.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-query.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-valid.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-select.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-switch.js"></script>
+    <script type="text/javascript" src="assets/libs/jquery-tmpl/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="assets/libs/kindeditor/kindeditor-min.js"></script>
+    <script type="text/javascript" src="assets/libs/base64.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        importHeader();
+        importFooter();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="widthly">
+            <div class="page-crumb">
+                <p>
+                    <a href="/System/CustomerGroup/List">模型库</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">我的模型</a>
+                    <em>/</em>
+                    <span>模型列表</span>
+                </p>
+            </div>
+            <div class="bbthree">
+                <div class="page-step fm ffs">
+                    <ul>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">1 产品信息<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">2 选择模型<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">3 模型结构<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">4 评价问卷<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">5 评价关系<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">6 指标权重<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">7 完成<i></i></a></li>
+                    </ul>
+                </div>
+                <div class="query-form bgc-white pd20">
+                    <form id="queryForm" class="pui-form">
+                        <div class="clearfix">
+                            <div class="sp20"></div>
+                            <div class="attach-filter fr">
+                                <div class="input-group search-group button inline">
+                                    <label>
+                                        <input class="txt" name="key" type="text" id="keyword" placeholder="模型名称" />
+                                        <span><button class="icon icon-search" id="keybutton" type="submit"></button></span>
+                                    </label>
+                                </div>
+                                <div class="sp20"></div>
+                            </div>
+                        </div>
+                    </form>
+                    <script type="text/javascript">
+                    var tabledata = {
+                        "Data": [{
+                            "customerProductId": 10002044,
+                            "productName": "测试360",
+                            "productAlias": "测试360",
+                            "parentId": 0,
+                            "customerId": 1000071,
+                            "ExamMethod": 1,
+                            "pCount": 0,
+                            "qtCount": 0,
+                            "exCount": 0,
+                            "openedCount": 0,
+                            "name": "测试360",
+                            "IsCheck": false,
+                            "CreateDate": "0001-01-01T00:00:00",
+                            "Creater": "admin",
+                            "CustomerModelLibraryId": 2,
+                            "ModelLibraryName": null,
+                            "SortNumber": 0
+                        }, {
+                            "customerProductId": 10002038,
+                            "productName": "test1805",
+                            "productAlias": "test1805",
+                            "parentId": 0,
+                            "customerId": 1000071,
+                            "ExamMethod": 1,
+                            "pCount": 0,
+                            "qtCount": 1,
+                            "exCount": 0,
+                            "openedCount": 0,
+                            "name": "test1805",
+                            "IsCheck": false,
+                            "CreateDate": "0001-01-01T00:00:00",
+                            "Creater": "admin",
+                            "CustomerModelLibraryId": 3,
+                            "ModelLibraryName": "模型库啊",
+                            "SortNumber": 0
+                        }, {
+                            "customerProductId": 10002027,
+                            "productName": "蝉翼中英文测试部",
+                            "productAlias": "蝉翼中英文测试部",
+                            "parentId": 0,
+                            "customerId": 1000071,
+                            "ExamMethod": 1,
+                            "pCount": 0,
+                            "qtCount": 1,
+                            "exCount": 0,
+                            "openedCount": 0,
+                            "name": "蝉翼中英文测试部",
+                            "IsCheck": false,
+                            "CreateDate": "0001-01-01T00:00:00",
+                            "Creater": "admin",
+                            "CustomerModelLibraryId": 6,
+                            "ModelLibraryName": null,
+                            "SortNumber": 0
+                        }, {
+                            "customerProductId": 10002022,
+                            "productName": "呵呵呵呵呵",
+                            "productAlias": "呵呵呵呵呵",
+                            "parentId": 0,
+                            "customerId": 1000071,
+                            "ExamMethod": 1,
+                            "pCount": 0,
+                            "qtCount": 3,
+                            "exCount": 0,
+                            "openedCount": 0,
+                            "name": "呵呵呵呵呵",
+                            "IsCheck": false,
+                            "CreateDate": "0001-01-01T00:00:00",
+                            "Creater": "admin",
+                            "CustomerModelLibraryId": 0,
+                            "ModelLibraryName": null,
+                            "SortNumber": 0
+                        }, {
+                            "customerProductId": 10002014,
+                            "productName": "奥丝蓝黛福建阿隆索大家",
+                            "productAlias": "奥丝蓝黛福建阿隆索大家",
+                            "parentId": 0,
+                            "customerId": 1000071,
+                            "ExamMethod": 1,
+                            "pCount": 0,
+                            "qtCount": 1,
+                            "exCount": 0,
+                            "openedCount": 0,
+                            "name": "奥丝蓝黛福建阿隆索大家",
+                            "IsCheck": false,
+                            "CreateDate": "0001-01-01T00:00:00",
+                            "Creater": "admin",
+                            "CustomerModelLibraryId": 0,
+                            "ModelLibraryName": null,
+                            "SortNumber": 0
+                        }, {
+                            "customerProductId": 10002012,
+                            "productName": "123",
+                            "productAlias": "123",
+                            "parentId": 0,
+                            "customerId": 1000071,
+                            "ExamMethod": 1,
+                            "pCount": 0,
+                            "qtCount": 0,
+                            "exCount": 0,
+                            "openedCount": 0,
+                            "name": "123",
+                            "IsCheck": false,
+                            "CreateDate": "0001-01-01T00:00:00",
+                            "Creater": "admin",
+                            "CustomerModelLibraryId": 0,
+                            "ModelLibraryName": null,
+                            "SortNumber": 0
+                        }, {
+                            "customerProductId": 10002009,
+                            "productName": "aaron-360-01",
+                            "productAlias": "aaron-360-01",
+                            "parentId": 0,
+                            "customerId": 1000071,
+                            "ExamMethod": 1,
+                            "pCount": 0,
+                            "qtCount": 1,
+                            "exCount": 0,
+                            "openedCount": 0,
+                            "name": "aaron-360-01",
+                            "IsCheck": false,
+                            "CreateDate": "0001-01-01T00:00:00",
+                            "Creater": "admin",
+                            "CustomerModelLibraryId": 0,
+                            "ModelLibraryName": null,
+                            "SortNumber": 0
+                        }, {
+                            "customerProductId": 10002007,
+                            "productName": "44864568g44656[2016/8/19 18:33:20:01]",
+                            "productAlias": "44864568g44656",
+                            "parentId": 0,
+                            "customerId": 1000071,
+                            "ExamMethod": 1,
+                            "pCount": 0,
+                            "qtCount": 0,
+                            "exCount": 0,
+                            "openedCount": 0,
+                            "name": "44864568g44656[2016/8/19 18:33:20:01]",
+                            "IsCheck": false,
+                            "CreateDate": "0001-01-01T00:00:00",
+                            "Creater": "admin",
+                            "CustomerModelLibraryId": 0,
+                            "ModelLibraryName": null,
+                            "SortNumber": 0
+                        }, {
+                            "customerProductId": 10002001,
+                            "productName": "撒大声地[2016/8/18 15:32:33:98]",
+                            "productAlias": "撒大声地",
+                            "parentId": 0,
+                            "customerId": 1000071,
+                            "ExamMethod": 1,
+                            "pCount": 0,
+                            "qtCount": 0,
+                            "exCount": 0,
+                            "openedCount": 0,
+                            "name": "撒大声地[2016/8/18 15:32:33:98]",
+                            "IsCheck": false,
+                            "CreateDate": "0001-01-01T00:00:00",
+                            "Creater": "admin",
+                            "CustomerModelLibraryId": 0,
+                            "ModelLibraryName": null,
+                            "SortNumber": 0
+                        }, {
+                            "customerProductId": 10001999,
+                            "productName": "et160518[2016/8/18 15:31:24:08]",
+                            "productAlias": "et160518",
+                            "parentId": 0,
+                            "customerId": 1000071,
+                            "ExamMethod": 1,
+                            "pCount": 0,
+                            "qtCount": 0,
+                            "exCount": 0,
+                            "openedCount": 0,
+                            "name": "et160518[2016/8/18 15:31:24:08]",
+                            "IsCheck": false,
+                            "CreateDate": "0001-01-01T00:00:00",
+                            "Creater": "admin",
+                            "CustomerModelLibraryId": 0,
+                            "ModelLibraryName": null,
+                            "SortNumber": 0
+                        }],
+                        "PageIndex": 0,
+                        "PageSize": 10,
+                        "TotalPages": 12,
+                        "TotalRecords": 115
+                    };
+                    </script>
+                    <div class="pol50 ffs lh34 clearfix">
+                        <div class="abs fs pdl10">已选：</div>
+                        <div id="proSelection">
+                            <ul class="inline fl add-tags r fs">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sp10"></div>
+                    <div class="page-table hasPagination">
+                        <div class="likeTable" id="likeTableObj">
+                            <div class="likeThead fs">
+                                <ul class="clearfix">
+                                    <li class="odd">
+                                        <div class="row">
+                                            <div class="col-xs-10">
+                                                <p>模型名称</p>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <p class="tr">操作</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="even">
+                                        <div class="row">
+                                            <div class="col-xs-10">
+                                                <p>模型名称</p>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <p class="tr">操作</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="likeTbody fs">
+                                <ul class="radio-group clearfix" id="moduleSelection">
+                                    <script type="text/x-jquery-tmpl" id="likeTableTmpl">
+                                        {{each(i, item) Data}} {{if i%2==0}}
+                                        <li class="odd">
+                                            {{else}}
+                                            <li class="even">
+                                                {{/if}}
+                                                <div class="row">
+                                                    <div class="col-xs-9">
+                                                        <div class="radione vt mgl10">
+                                                            <input type="radio" name="radiobj" id="radio${item.customerProductId}" data-id="${item.customerProductId}" value="a" />
+                                                            <span>${item.productName}</span>
+                                                            <p class="c-gray3">
+                                                                <span>${item.Creater}</span>
+                                                                <span>${item.CreateDate}</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-1"></div>
+                                                    <div class="col-xs-2">
+                                                        <p class="tr mgr10">
+                                                            <a href="http://www.benbenla.com/?talebaseID=${item.customerProductId}" class="c-blue tu a-btn-lookup">查看</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            {{if i%2==1}}
+                                            <div class="sp00"></div>
+                                            {{/if}} {{/each}}
+                                    </script>
+                                </ul>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!--page-table-->
+                    <div class="page-btns clearfix">
+                        <div class="absolutecenter">
+                            <div class="sp50"></div>
+                            <div class="sp20"></div>
+                            <div class="acsub">
+                                <button class="btn bb bgc-blue" id="btn-opt-prev" type="submit">上一步</button>
+                            </div>
+                            <div class="acsub">
+                                <button class="btn bb bgc-blue" id="btn-opt-next" type="button">下一步</button>
+                            </div>
+                            <div class="acsub">
+                                <button class="btn bb btn-common btn-cancel" id="btn-opt-cancel" type="button">取消</button>
+                            </div>
+                            <div class="sp20"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+
+
+    var tableobj = $('#likeTableObj');
+    var tabletmpl = $('#likeTableTmpl');
+    var queryform = $('#queryForm');
+    var proselection = $('#proSelection');
+    var queryformurl = 'assets/admin/v4.0.3/json/pjrtj-query.json'; // 查询条件接口
+    var rollpageurl = '/assets/admin/v4.0.3/json/pjrtj-roll.json'; // 翻页接口
+
+
+    var tablesimple = new TableSimple(tableobj, tabletmpl, {
+        bgcCtrl: false,
+        datastyle: 'local',
+        dataSource: tabledata,
+        container: $('.likeTbody ul', tableobj),
+        isBase64: false,
+        isquery: true,
+        pageCtrl: true,
+        headCtrl: true,
+        queryObj: queryform,
+        queryUrl: queryformurl,
+        dateFormat: 'YYYY-MM-DD',
+        afterLoadCallback: function() {
+            $('input[type=radio]', tableobj).radioSmart({
+                callback: function(self, v) {
+                    var name = self.next('span').text() || '';
+                    var id = self.attr('id') || '1';
+                    var li = '<li><span>' + name + '</span><i class="icon icon-close tc" data-id="' + id + '"></i></li>';
+                    $('ul', proSelection).empty().append(li);
+                    li = null;
+                    delSelected.call($('li:last', proselection));
+                }
+            })
+        }
+    });
+
+
+    // $('input[type=radio]', tableobj).radioSmart({
+    //     callback: function(self, v) {
+    //         var name = self.next('span').text() || '';
+    //         var id = self.attr('id') || '1';
+    //         var li = '<li><span>'+name+'</span><i class="icon icon-close tc" data-id="'+id+'"></i></li>';
+    //         $('ul', proSelection).empty().append(li);
+    //         li = null;
+    //         delSelected.call($('li:last', proselection));
+    //     }
+    // });
+
+    var delSelected = function() {
+        this.find('.icon-close').on('click', function() {
+            $(this).parent().remove();
+            var removeId = '#' + $(this).attr('data-id') || '1';
+            Pui.setRadioVal($(removeId), false);
+        })
+    }
+
+
+    var handleSwitch = function(o, bool) {
+        var sid = o.attr('id');
+        $.post(switchurl, {
+            id: sid,
+            enable: bool
+        }, function(data) {
+            if (data.Status) {
+                Pui.toggleSwitchState(o);
+            } else {
+                ceng.msg(data.Message);
+            }
+        })
+    }
+
+
+    $(document).on('click', '.a-btn-delete', function() {
+        var sid = $(this).data('id');
+        var text = '<p>确认删除 ' + sid + '</p>';
+        ceng.comfirm(text, {
+            style: 2,
+            yes: function(o, z) {
+                // $.ajax({});
+            },
+            no: function() {}
+        })
+    });
+
+
+})
+</script>
+
+</html>

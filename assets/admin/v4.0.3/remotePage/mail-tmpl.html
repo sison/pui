@@ -1,0 +1,133 @@
+<form class="pui-form" id="mailForm">
+    <div class="ffs c-gray2 bgc-gray7">
+        <div class="row-merge">
+            <div class="sp20"></div>
+            <div class="row required">
+                <div class="col-xs-2 col-key tr"><span>模板名称：</span></div>
+                <div class="col-xs-8 col-val">
+                    <div class="pdl10">
+                        <input class="txt wp100" type="text" id="tmplName" data-req="true" />
+                    </div>
+                </div>
+            </div>
+            <div class="row required">
+                <div class="col-xs-2 col-key tr"><span>邮件主题：</span></div>
+                <div class="col-xs-8 col-val">
+                    <div class="pdl10">
+                        <input class="txt wp100" type="text" id="emailTheme" data-req="true" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-merge">
+            <div class="row required">
+                <div class="col-xs-2 col-key tr"><span>邮件内容：</span></div>
+                <div class="col-xs-8 col-val">
+                    <div class="pdl10">
+                        <textarea name="textarea" class="textarea wp100" id="EmailBody"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 col-key tr">
+                    <div class="checkone">
+                        <input type="checkbox" name="isEmailSignReq" />
+                        <span>邮件签名：</span>
+                    </div>
+                </div>
+                <div class="col-xs-8 col-val">
+                    <div class="pdl10">
+                        <textarea name="textarea" class="textarea wp100" id="EmailSign"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+            <!-- 不做了
+            <div class="row">
+                <div class="col-xs-2 col-key tr"><span>信纸：</span></div>
+                <div class="col-xs-8 col-val">
+                    <div class="letter-paper clearfix pdl10 tc">
+                        <a href="javascript:void(0)" class="default cur">
+                            <span>无</span>
+                            <input type="radio" name="paperStyle" value="0" checked />
+                            <i class="icon icon-resolve absolute tc bgc-green c-white fm"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="">
+                            <img src="assets/admin/v4.0.3/images/letterpaper1.jpg" height="60" width="110" />
+                            <input type="radio" name="paperStyle" value="1" />
+                            <i class="icon icon-resolve absolute tc bgc-green c-white fm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+        <div class="row-merge">
+            <div class="sp20"></div>
+            <div class="row">
+                <div class="col-xs-2 col-key tr"><span>是否默认：</span></div>
+                <div class="col-xs-8 col-val">
+                    <div class="pdl10">
+                        <input class="hide switch" type="hidden" id="switchDefault" value="0" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- <script type="text/javascript" src="../js/components/pui-valid.js"></script> -->
+<script type="text/javascript">
+$(function() {
+
+    var mailForm = $('#mailForm');
+
+    $('#switchDefault', mailForm).switchSmart({
+        leftName: "是的",
+        rightName: "不是",
+        enable: function(o, bool) {},
+        disable: function(o, bool) {}
+    });
+
+    // 不做了
+    // $('.letter-paper a', msgEmailForm).on('click', function() {
+    //     var self = $(this);
+    //     var other = self.siblings('a');
+    //     self.addClass('cur').find('input[type="radio"]').prop('checked', true);
+    //     other.removeClass('cur').find('input[type="radio"]').prop('checked', false);
+    // });
+
+    var editEmailBody = KindEditor.create("#EmailBody", {
+        resizeType: 0,
+        autoHeightMode: false,
+        width: "100%",
+        height: "80px",
+        items: ["fontname", "fontsize", "forecolor", "hilitecolor", "bold", "italic", "underline", "justifyleft", "justifycenter", "justifyright", "insertorderedlist", "insertunorderedlist", "link", "tbiph"],
+        afterChange: function() {
+            this.sync();
+        }
+    });
+    var editEmailSign = KindEditor.create("#EmailSign", {
+        resizeType: 0,
+        autoHeightMode: false,
+        width: "100%",
+        height: "80px",
+        items: ["fontname", "fontsize", "forecolor", "hilitecolor", "bold", "italic", "underline", "justifyleft", "justifycenter", "justifyright", "insertorderedlist", "insertunorderedlist", "link", "tbiph"],
+        afterChange: function() {
+            this.sync();
+        }
+    });
+
+    valid.form($('#mailForm'), {
+        isAsync: true,
+        isRenderCheckbox: true,
+        isRenderRadio: true,
+        isRenderSelect: true,
+        asyncFun: function() {
+            ceng.msg('abc', {
+                time: 1000
+            })
+        }
+    });
+})
+</script>

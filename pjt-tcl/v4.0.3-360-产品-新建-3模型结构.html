@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v4.0.3-360-指标权重</title>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/pui.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/layout.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/page-common.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/libs/jeDate/jedate/skin/jedate.css" />
+    <script type="text/javascript" src="assets/libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/libs/jeDate/jedate/jedate.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/layout.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-popop.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-page.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-ceng.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-radio.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-checkbox.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-table.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-query.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-valid.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-select.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-switch.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-loop.js"></script>
+    <script type="text/javascript" src="assets/libs/jquery-tmpl/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="assets/libs/kindeditor/kindeditor-min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        importHeader();
+        importFooter();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="widthly">
+            <div class="page-crumb">
+                <p>
+                    <a href="/System/Home/Index">项目管理</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">项目列表</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">顺丰集团素质测评</a>
+                    <em>/</em>
+                    <span>进度统计</span>
+                </p>
+            </div>
+            <div class="bbthree">
+                <div class="page-step fm ffs">
+                    <ul>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">1 产品信息<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">2 选择模型<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">3 模型结构<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">4 评价问卷<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">5 评价关系<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">6 指标权重<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">7 完成<i></i></a></li>
+                    </ul>
+                </div>
+                <div class="pd20 tc clearfix">
+                    <form class="pui-form" id="moduleConstruction">
+                        <div class="sp20"></div>
+                        <div class="ext-table-to-div" id="weightTree"></div>
+                        <div class="absolutecenter clearfix">
+                            <div class="sp50"></div>
+                            <div class="acsub">
+                                <button class="btn bb bgc-blue fm" id="btn-opt-prev">上一步</button>
+                            </div>
+                            <div class="acsub">
+                                <button class="btn bb bgc-blue fm" id="btn-opt-next" type="submit">下一步</button>
+                            </div>
+                            <div class="acsub">
+                                <button class="btn bb btn-common btn-cancel fm" id="btn-opt-cancel">取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+
+    var valid = new Valid();
+    valid.form($('#moduleConstruction'), {
+        isAsync: true,
+        asyncFun: function() {
+            var _html = '';
+            _html += '<div class="lh24 tl">';
+            _html += '<p>当前模型指标修改将影响</p>';
+            _html += '<p>1、模型库中该模型被修改</p>';
+            _html += '<p>2、影响该模型生成的其他评估内容库中的评估内容对应的模型指标被修改</p>';
+            _html += '<div class="sp20"></div>';
+            _html += '<p>确认保存吗？</p>';
+            _html += '</div>';
+            ceng.comfirm(_html, {
+                title: '提示',
+                btn: ['确定', '取消'],
+                area: [400, 'auto'],
+                yes: function(obj, index) {
+                    ceng.msg('弄死那个逗比！');
+                    ceng.close(index);j
+                }
+            })
+        }
+    });
+
+
+    var startData = {
+        zid: '0001',
+        value: '认真的雪',
+        themeStyle: 2,
+        theme1: {
+            zid: '00031',
+            value: '一级指标1111111111',
+            defined: '指标定义指标定义指标定义指标定义',
+            children: []
+        },
+        theme2: {
+            zid: '00031',
+            value: '一级指标222222222',
+            defined: '指标定义指标定义指标定义指标定义',
+            children: [{
+                zid: '00031',
+                value: '二级指标222222222',
+                defined: '指标定义指标定义指标定义指标定义',
+                children: []
+            }]
+        },
+        theme3: [{
+            zid: '00031',
+            value: '一级指标1',
+            defined: '指标定义指标定义指标定义指标定义',
+            children: [{
+                zid: '000211',
+                value: '二级指标',
+                defined: '指标定义指标定义指标定义指标定义',
+                children: [{
+                    zid: '000211',
+                    value: '三级指标',
+                    defined: '指标定义指标定义指标定义指标定义',
+                    children: []
+                }]
+            }, {
+                zid: '000211',
+                value: '二级指标',
+                defined: '指标定义指标定义指标定义指标定义',
+                children: [{
+                    zid: '000211',
+                    value: '三级指标',
+                    defined: '指标定义指标定义指标定义指标定义',
+                    children: []
+                }, {
+                    zid: '000211',
+                    value: '三级指标',
+                    defined: '指标定义指标定义指标定义指标定义',
+                    children: []
+                }]
+            }]
+        }, {
+            zid: '00031',
+            value: '一级指标2',
+            defined: '指标定义指标定义指标定义指标定义',
+            children: [{
+                zid: '000211',
+                value: '二级指标',
+                defined: '指标定义指标定义指标定义指标定义',
+                children: []
+            }, {
+                zid: '000211',
+                value: '二级指标',
+                defined: '指标定义指标定义指标定义指标定义',
+                children: [{
+                    zid: '000211',
+                    value: '三级指标',
+                    defined: '指标定义指标定义指标定义指标定义',
+                    children: []
+                }]
+            }]
+        }]
+    }
+
+
+
+
+    var loop = new Loop({
+        tree: $('#weightTree'),
+        data: startData.theme3,
+        main: [true, false],
+        width: ['40%', '60%'],
+        // 头部
+        header: [{
+            title: '',
+            alias: 'th1',
+            formatter: function() {
+                return '<div class="tl"><span class="pdl10 pdr10 fl">指标展开</span><div class="select-group fl"><select id="changeLevel" class="select" data-width="75px"><option value="1">一级</option><option value="2">二级</option><option value="3">三级</option></select></div></div>';
+            }
+        }, {
+            title: '',
+            alias: 'th2',
+            formatter: function() {
+                return '<span>指标定义</span>';
+            }
+        }],
+        // 副头部
+        headersub: [{
+            title: '',
+            alias: 'th1',
+            formatter: function() {
+                return '<p class="tl fs fbold pdl10 c-gray4"><span>模块名称</span></p>';
+            }
+        }, {
+            title: '',
+            alias: 'th2',
+            formatter: function() {
+                return '';
+            }
+        }],
+        // 列表树
+        collapse: [{
+            title: 'value',
+            alias: 'th1',
+            formatter: function(val) {
+                return '<input type="text" class="txt wp100 disabled" data-req="true" value="' + val + '" /> ';
+            }
+        }, {
+            title: 'defined',
+            alias: 'th2 ',
+            formatter: function(val) {
+                return ' <input type="text" class ="txt wp100" data-req="true" value ="' + val + '" /> ';
+            }
+        }],
+        
+        callback: function(self) {
+            $('#changeLevel').selectSmart({
+                callback: function(i, k, v) {
+                    switch (v) {
+                        case '1':
+                            var togger1 = self.find('.ext-body > ul > li > .mainkey i.icon-toggle');
+                            Pui.togExpand(togger1);
+                            break;
+                        case '2':
+                            var togger1 = self.find('.ext-body > ul > li > .mainkey i.icon-toggle');
+                            Pui.togCollapse(togger1);
+                            var togger2 = self.find('.ext-body > ul > li > ul > li > .mainkey i.icon-toggle');
+                            Pui.togExpand(togger2);
+                            break;
+                        case '3':
+                            var togger1 = self.find('.ext-body > ul > li > .mainkey i.icon-toggle');
+                            Pui.togCollapse(togger1);
+                            var togger2 = self.find('.ext-body > ul > li > ul > li > .mainkey i.icon-toggle');
+                            Pui.togCollapse(togger2);
+                            break;
+                    }
+                }
+            });
+        }
+    });
+    loop.init();
+
+})
+</script>
+
+</html>

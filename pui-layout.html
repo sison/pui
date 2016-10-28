@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/pui.css" />
+    <link rel="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/page-common.css" />
+    <link rel="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/prism.css" />
+    <link rel="stylesheet" type="text/css" href="assets/libs/jeDate/jedate/skin/jedate.css" />
+</head>
+
+<body>
+    <div class="pui-nav">
+        <div class="widthly clearfix">
+            <div class="pui-logo pdt10 fl">
+                <h1 class="pui-title c-blue fnormal ffm fs30">评鉴通 UI （PUI）</h1>
+                <h6 class="ffm fs fnormal c-gray3">Base on PJT4.0</h6>
+            </div>
+            <div class="fr">
+                <ul class="inline ffm fb">
+                    <li class="tc cur"><a href="pui-layout.html" class="c-gray5 ant">布局</a></li>
+                    <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a></li>
+                    <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                    <li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a></li>
+                    <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                    <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                    <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="pui-body">
+        <div class="widthly">
+            <h2 class="pui-category c-red fnormal fs20 ffm">布局</h2>
+            <!-- ---------------------------------------------------- -->
+            <h3 class="pui-subname c-gray ffm">1.1 栅格系统</h3>
+            <div class="row mgt10 bgc-gray5 c-gray4 tc ffm fm">
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+            </div>
+            <div class="row mgt10 bgc-gray5 c-gray4 tc ffm fm">
+                <div class="col-xs-3">3</div>
+                <div class="col-xs-3">3</div>
+                <div class="col-xs-3">3</div>
+                <div class="col-xs-3">3</div>
+            </div>
+            <div class="row pdt10">
+                <div class="col-xs-4 bgc-gray5 c-gray4 tc ffm fm">4</div>
+                <div class="col-xs-4 bgc-gray5 c-gray4 tc ffm fm">4</div>
+                <div class="col-xs-4 bgc-gray5 c-gray4 tc ffm fm">4</div>
+            </div>
+            <div class="row pdt10">
+                <div class="col-xs-6 bgc-gray5 c-gray4 tc ffm fm">6</div>
+                <div class="col-xs-6 bgc-gray5 c-gray4 tc ffm fm">6</div>
+            </div>
+            <div class="row pdt10">
+                <div class="col-xs-12 bgc-gray5 c-gray4 tc ffm fm">12</div>
+            </div>
+
+<div class="sp10"></div>
+<pre><code class="language-markup">
+&lt;div class="row"&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-xs-3"&gt;3&lt;/div&gt;
+    &lt;div class="col-xs-3"&gt;3&lt;/div&gt;
+    &lt;div class="col-xs-3"&gt;3&lt;/div&gt;
+    &lt;div class="col-xs-3"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-xs-4"&gt;4&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;4&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;4&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-xs-6"&gt;6&lt;/div&gt;
+    &lt;div class="col-xs-6"&gt;6&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-xs-12"&gt;12&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+            <h2 class="pui-category c-red fnormal fs20 ffm">模块</h2>
+            <!-- ---------------------------------------------------- -->
+            <h3 class="pui-subname c-gray ffm">2.1 面包屑</h3>
+            <div class="page-crumb">
+                <p>
+                    <b>当前位置：</b>
+                    <a href="">首页</a>
+                    <em>></em>
+                    <a href="">项目列表</a>
+                    <em>></em>
+                    <span class="t-blue">分组管理</span>
+                </p>
+            </div>
+
+<div class="sp10"></div>
+<pre><code class="language-markup">
+&lt;div class="page-crumb"&gt;
+    &lt;p&gt;
+        &lt;b&gt;当前位置：&lt;/b&gt;
+        &lt;a href=""&gt;首页&lt;/a&gt;
+        &lt;em&gt;&gt;&lt;/em&gt;
+        &lt;a href=""&gt;项目列表&lt;/a&gt;
+        &lt;em&gt;&gt;&lt;/em&gt;
+        &lt;span class="t-blue"&gt;分组管理&lt;/span&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+            <h3 class="pui-subname c-gray ffm">2.2 普通导航栏</h3>
+            <div class="sp10"></div>
+            <div class="page-feature ffv">
+                <ul class="inline clearfix">
+                    <li class="cur"><a href="#">分组管理<em></em></a></li>
+                    <li><a href="#">管理员列表<em></em></a></li>
+                    <li><a href="#">角色管理<em></em></a></li>
+                </ul>
+            </div>
+
+<div class="sp10"></div>
+<pre><code class="language-markup">
+&lt;div class="page-feature"&gt;
+    &lt;ul class="inline clearfix"&gt;
+        &lt;li class="cur"&gt;&lt;a href="#"&gt;分组管理&lt;em&gt;&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;管理员列表&lt;em&gt;&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;角色管理&lt;em&gt;&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+<div class="sp10"></div>
+            <div class="sp30"></div>
+            <div class="page-linear fm ffv">
+                <ul class="inline clearfix">
+                    <li class="cur"><a href="javascript:void(0);">邮件信息</a></li>
+                    <li><a href="javascript:void(0);">短彩信信息</a></li>
+                    <li><a href="javascript:void(0);">微博信息</a></li>
+                </ul>
+            </div>
+
+<div class="sp10"></div>
+<pre><code class="language-markup">
+&lt;div class="page-linear"&gt;
+    &lt;ul class="inline clearfix"&gt;
+        &lt;li class="cur"&gt;&lt;a href="javascript:void(0);"&gt;邮件信息&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="javascript:void(0);"&gt;短彩信信息&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="javascript:void(0);"&gt;微博信息&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+            <div class="sp30"></div>
+            <h3 class="pui-subname c-gray ffm">2.3 黄底橙字</h3>
+            <div class="page-notice ffs">
+                <p class="c-brown title">温馨提示：</p>
+                <p class="c-brown">今天在开幕现场下起了小雨，汪洋致词时开玩笑说：“华特迪士尼总裁艾格先生关系不错，开园时下雨。</p>
+                <ul class="c-brown">
+                    <li><p>TCP建模： 中国成为撒气的对象。有媒体称，这是中国希望维护在亚洲“老大”地位打的算盘。</p></li>
+                    <li><p>全新建模：印度将继续向中国表明，两国相互适应彼此的利益、关切和优先选项是推动双边关系所必需的。印度将继续向中国表明。</p></li>
+                </ul>
+            </div>
+
+<div class="sp10"></div>
+<pre><code class="language-markup">
+&lt;div class="page-notice"&gt;
+    &lt;p class="c-brown title"&gt;温馨提示：&lt;/p&gt;
+    &lt;p class="c-brown"&gt;今天在开幕现场下起了小雨，汪洋致词时开玩笑说：“华特迪士尼总裁艾格先生关系不错，开园时下雨。&lt;/p&gt;
+    &lt;ul class="c-brown"&gt;
+        &lt;li&gt;&lt;p&gt;TCP建模： 中国成为撒气的对象。有媒体称，这是中国希望维护在亚洲“老大”地位打的算盘。&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p&gt;全新建模：印度将继续向中国表明，两国相互适应彼此的利益、关切和优先选项是推动双边关系所必需的。印度将继续向中国表明。&lt;/p&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+            <div class="sp30"></div>
+            <h3 class="pui-subname c-gray ffm">2.4 步骤图</h3>
+            <div class="page-step fm">
+                <ul>
+                    <li class="cur"><a href="javascript:void(0);" class="ant">1 产品信息<i></i></a></li>
+                    <li class="cur"><a href="javascript:void(0);" class="ant">2 模块结构<i></i></a></li>
+                    <li><a href="javascript:void(0);" class="ant">3 指标定义<i></i></a></li>
+                    <li><a href="javascript:void(0);" class="ant">4 问卷信息<i></i></a></li>
+                    <li><a href="javascript:void(0);" class="ant">5 完成<i></i></a></li>
+                </ul>
+            </div>
+
+<div class="sp10"></div>
+<pre><code class="language-markup">
+&lt;div class="page-step"&gt;
+    &lt;ul&gt;
+        &lt;li class="cur"&gt;&lt;a href="javascript:void(0);"&gt;1 产品信息&lt;i&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="cur"&gt;&lt;a href="javascript:void(0);"&gt;2 模块结构&lt;i&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="javascript:void(0);"&gt;3 指标定义&lt;i&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="javascript:void(0);"&gt;4 问卷信息&lt;i&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="javascript:void(0);"&gt;5 完成&lt;i&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+            <div class="sp50"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/prism.js"></script>
+</body>
+</html>

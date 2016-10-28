@@ -1,0 +1,139 @@
+<div id="selectWenJuan">
+    <div class="pd20">
+        <form action="" class="pui-form" id="queryForm">
+            <div class="row hide">
+                <div class="col-xs-8"></div>
+                <div class="col-xs-4">
+                    <div class="input-group fr button">
+                        <label>
+                            <input class="txt" name="keyword" type="text" autocomplete="off" />
+                            <span><button class="icon icon-search" type="submit"></button></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <script type="text/javascript">
+        var tabledata = {
+            "Data": [{
+                "id": 1001,
+                "name": "指标1001",
+                "value": "dnsh1001"
+            }, {
+                "id": 1002,
+                "name": "指标1002",
+                "value": "dnsh1002"
+            }, {
+                "id": 1003,
+                "name": "指标1003",
+                "value": "dnsh1003"
+            }, {
+                "id": 1004,
+                "name": "指标1004",
+                "value": "dnsh1004"
+            }, {
+                "id": 1005,
+                "name": "指标1005",
+                "value": "dnsh1005"
+            }, {
+                "id": 1006,
+                "name": "指标1006",
+                "value": "dnsh1006"
+            }, {
+                "id": 1007,
+                "name": "指标1007",
+                "value": "dnsh1007"
+            }, {
+                "id": 1008,
+                "name": "指标1008",
+                "value": "dnsh1008"
+            }, {
+                "id": 1009,
+                "name": "指标1009",
+                "value": "dnsh1009"
+            }, {
+                "id": 1010,
+                "name": "指标1010",
+                "value": "dnsh1010"
+            }],
+            "PageIndex": 1,
+            "PageSize": 10,
+            "TotalPages": 2,
+            "id": 1001,
+            "TotalRecords": 15
+        };
+        </script>
+        <form action="" class="pui-form">
+            <div class="page-table hasPagination">
+                <table class="table table-center table-song table-relative" id="tableObj">
+                    <tbody></tbody>
+                </table>
+                <script type="text/javascript">
+                var selectItemInzb = ['1001', '2003'];
+                var giveChecked = function(id) {
+                    var chkbool = false;
+                    for (var x = 0, y = selectItemInzb.length; x < y; x++) {
+                        if (selectItemInzb[x].toString() === id.id.toString()) {
+                            chkbool = true;
+                        }
+                    }
+                    return chkbool;
+                }
+                </script>
+                <script type="text/x-jquery-tmpl" id="tableTmpl">
+                    {{each(i, item) Data}}
+                    <tr>
+                        <td class="tl">
+                            <div class="radione">
+                                {{if giveChecked({id})}}
+                                <input type="radio" name="radiobj" id="${id}" value="${value}" checked /> {{else}}
+                                <input type="radio" name="radiobj" id="${id}" value="${value}" /> {{/if}}
+                                <span>${name}</span>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </script>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+$(function() {
+
+    selectItemInzb = [];
+    var zbDOM = {
+        tableObj: $('#selectWenJuan #tableObj'),
+        tableTmpl: $('#selectWenJuan #tableTmpl'),
+        queryform: $('#selectWenJuan #queryForm'),
+        queryformurl: 'assets/admin/v4.0.3/json/glysytj.json'
+    }
+
+    var tableZhibiao = new TableSimple(zbDOM.tableObj, zbDOM.tableTmpl, {
+        bgcCtrl: true,
+        hoverColor: '#ffc',
+        oddColor: '#fff',
+        evenColor: '#fff',
+        datastyle: 'local',
+        dataSource: tabledata,
+        container: $('tbody', zbDOM.tableObj),
+        isBase64: false,
+        isquery: true,
+        pageCtrl: true,
+        headCtrl: true,
+        queryObj: zbDOM.queryform,
+        queryUrl: zbDOM.queryformurl,
+        afterLoadCallback: function() {
+            $('input[name="radiobj"]', tableObj).radioSmart({
+                callback: function(self, v) {}
+            });            
+        }
+    });
+
+
+
+
+
+
+});
+</script>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v4.0.3-360-产品信息</title>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/pui.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/layout.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/page-common.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/libs/jeDate/jedate/skin/jedate.css" />
+    <script type="text/javascript" src="assets/libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/libs/jeDate/jedate/jedate.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/layout.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-popop.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-page.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-ceng.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-radio.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-checkbox.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-table.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-query.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-valid.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-select.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-switch.js"></script>
+    <script type="text/javascript" src="assets/libs/jquery-tmpl/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="assets/libs/kindeditor/kindeditor-min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        importHeader();
+        importFooter();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="widthly">
+            <div class="page-crumb">
+                <p>
+                    <a href="/System/Home/Index">项目管理</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">项目列表</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">顺丰集团素质测评</a>
+                    <em>/</em>
+                    <span>进度统计</span>
+                </p>
+            </div>
+            <div class="bbthree">
+                <div class="page-step fm ffs">
+                    <ul>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">1 产品信息<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">2 选择模型<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">3 模型结构<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">4 评价问卷<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">5 评价关系<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">6 指标权重<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">7 完成<i></i></a></li>
+                    </ul>
+                </div>
+                <div class="pd50 tc clearfix">
+                    <form action="" class="pui" id="createToolForm">
+                        <div class="create-tool ffs fm c-gray3">
+                            <div class="row required">
+                                <div class="col-xs-2 col-key tr"><span class="pdr10">评估内容名称：</span></div>
+                                <div class="col-xs-5 col-val">
+                                    <input type="text" id="formName" class="txt wp100" name="name" data-req="true" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="sp20"></div>
+                            <div class="row">
+                                <div class="col-xs-2 col-key tr"><span class="pdr10">评估内容英文名称：</span></div>
+                                <div class="col-xs-5 col-val">
+                                    <input type="text" id="formName" class="txt wp100" name="name" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="sp50"></div>
+                            <div class="sp50"></div>
+                            <div class="sp30"></div>
+                        </div>
+                        <div class="absolutecenter clearfix">
+                            <div class="sp50"></div>
+                            <div class="acsub">
+                                <button type="submit" class="btn bb fm bgc-blue">下一步</button>
+                            </div>
+                            <div class="acsub">
+                                <button type="button" class="btn bb fm btn-common">取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+
+    $('input[type=checkbox]').checkboxSmart();
+
+    valid.form($('#createToolForm'), {
+        isAsync: true,
+        async: function() {}
+    })
+
+    $('#addFunction').on('click', function() {
+        ceng.hello({
+            title: '职能',
+            content: 'assets/admin/v4.0.3/remotePage/add-function.html',
+            contentType: 'url', // dom, url, html
+            area: [720, 500],
+            yes: function() {},
+            no: function() {}
+        })
+    });
+
+})
+</script>
+
+</html>

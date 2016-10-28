@@ -1,0 +1,57 @@
+/*  ÐÞÕý EasyUI  */
+/*.datagrid-view2{ left:0; right:auto;}
+.datagrid-view2 table{ width:100%; border-collapse:collapse;}
+.datagrid-view2 .datagrid-header{}
+.datagrid-view2 .datagrid-header-inner{ width:100%;}
+.datagrid-view2 .datagrid-header table td{ text-align:center; vertical-align:middle;}
+.datagrid-view2 .datagrid-header .datagrid-cell span{ font-size:14px;}
+
+#fixedDivInner .datagrid-htable{ background-color:#eee; height:40px; margin:0 auto; border-collapse:collapse;}
+#fixedDivInner .datagrid-htable td{ border:1px solid #ccc; text-align:center; vertical-align:middle;}
+
+.datagrid-htable .datagrid-cell-c2-ProductmeasureName select{ padding:4px 50px 4px 4px; margin:0 0 0 10px; border:1px solid #ccc; outline:none; font:normal 14px/24px verdana;}
+.datagrid-htable .datagrid-cell-c2-ProductmeasureName select option{ padding:4px 30px 4px 4px; outline:none;}
+.datagrid-header td:last-child,
+.datagrid-body td:last-child,
+.datagrid-footer td:last-child{ border-right:0;}
+.datagrid-view .datagrid-header,
+.datagrid-view .datagrid-td-rownumber{ background:linear-gradient(top,#eee 0,#eee 100%); background:-webkit-linear-gradient(top,#eee 0,#eee 100%);}
+.datagrid-view .datagrid-header td,
+.datagrid-view .datagrid-body td, .datagrid-footer td{ border-style:solid;}
+.datagrid-view .datagrid-row-over,
+.datagrid-view .datagrid-header td.datagrid-header-over{ background-color:#eee;}
+.datagrid-view .datagrid-btable tr td div a{ color:#000; text-decoration:underline;}
+.datagrid-view .datagrid-btable tr td div a:hover{ color:#027DD0; }
+
+.datagrid-view tr.datagrid-row > td{ padding:6px 0;}
+.datagrid-view .datagrid-row-selected,
+.datagrid-view .datagrid-row-selected.datagrid-row-over{ background:#f2f2f2; color:#333;}
+.datagrid-view .datagrid-btable tr td div.datagrid-cell-c2-Measureweight,
+.datagrid-view .datagrid-btable tr td div.datagrid-cell-c2-IsMeasureAttrbute,
+.datagrid-view .datagrid-btable tr td div.datagrid-cell-c2-sortNumber,
+.datagrid-view .datagrid-btable tr td div.datagrid-cell-c2-IsSetMatching,
+.datagrid-view .datagrid-btable tr td div.datagrid-cell-c2-MatchWeight,
+.datagrid-view .datagrid-btable tr td div.datagrid-cell-c2-IsSetMeasureData,
+.datagrid-view .datagrid-btable tr td div.datagrid-cell-c2-IsShowMeasure{ text-align:center;}
+.datagrid-view .datagrid-btable tr td div.datagrid-cell-c2-IsMeasureAttrbute a:before{ font-size:12px; left:-4px; top:1px;}
+.datagrid-view .datagrid-btable tr td div.datagrid-cell-c2-Level{ text-align:right;}
+.datagrid-view .datagrid-row .tree-title{ padding:0 2px 0 4px;}
+.datagrid-view .datagrid-row-over span.tree-title,
+.datagrid-view .datagrid-header td.datagrid-header-over span.tree-title{ color:#027DD0; text-decoration:underline;}
+.datagrid-view .datagrid-btable tr td input[type="text"]{ text-align:center; width:80%; border:1px solid #ccc; box-shadow:0 0 5px #eee inset; font:normal 12px/26px verdana; padding:0 5px}
+.datagrid-view .datagrid-btable tr td input[type="text"]:disabled{ text-align:left;}
+.panel-header{ display:none;}
+.datagrid-view .datagrid-btable tr td input[type="text"].setTxt{ margin:0 0 0 10px; width:50%; text-align:left;}
+
+
+.datagrid-header-row .datagrid-cell{ padding:3px 10px; text-align:center; background-color:#E5E5E5; font-weight:bold;}
+
+.datagrid-header-inner{background-color:#E5E5E5;}
+.datagrid-htable{height:36px;  text-align:center; background-color:#E5E5E5; font-weight:bold;}
+
+
+.datagrid-row-selected{background-color:#fff;}*/
+
+
+.datagrid-header td, .datagrid-body td, .datagrid-footer td {border:none;}
+.datagrid-view .datagrid-header td, .datagrid-view .datagrid-body td, .datagrid-footer td {border-style:none;}

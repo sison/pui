@@ -1,0 +1,74 @@
+<form class="pui-form" id="msgForm">
+    <div class="ffs c-gray2 bgc-gray7">
+        <div class="row-merge">
+            <div class="sp20"></div>
+            <div class="row required">
+                <div class="col-xs-2 col-key tr"><span>模板名称：</span></div>
+                <div class="col-xs-8 col-val">
+                    <div class="pdl10">
+                        <input class="txt wp100" type="text" id="tmplName" data-req="true" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-merge">
+            <div class="row">
+                <div class="col-xs-2 col-key tr"><span>短信内容：</span></div>
+                <div class="col-xs-8 col-val">
+                    <div class="pdl10">
+                        <textarea name="textarea" class="textarea wp100" id="SMSContent"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+        </div>
+        <div class="row-merge">
+            <div class="sp20"></div>
+            <div class="row">
+                <div class="col-xs-2 col-key tr"><span>是否默认：</span></div>
+                <div class="col-xs-8 col-val">
+                    <div class="pdl10">
+                        <input class="hide switch" type="hidden" id="switchDefault" value="0" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- <script type="text/javascript" src="../js/components/pui-valid.js"></script> -->
+<script type="text/javascript">
+$(function() {
+
+    var msgForm = $('#msgForm');
+
+    $('#switchDefault', msgForm).switchSmart({
+        leftName: "是的",
+        rightName: "不是",
+        enable: function(o, bool) {},
+        disable: function(o, bool) {}
+    });
+
+    var editSMSContent = KindEditor.create("#SMSContent", {
+        resizeType: 0,
+        autoHeightMode: false,
+        width: "100%",
+        height: "80px",
+        items: ["fontname", "fontsize", "forecolor", "hilitecolor", "bold", "italic", "underline", "justifyleft", "justifycenter", "justifyright", "insertorderedlist", "insertunorderedlist", "link", "tbiph"],
+        afterChange: function() {
+            this.sync();
+        }
+    });
+
+    valid.form($('#msgForm'), {
+        isAsync: true,
+        isRenderCheckbox: true,
+        isRenderRadio: true,
+        isRenderSelect: true,
+        asyncFun: function() {
+            ceng.msg('abc', {
+                time: 1000
+            })
+        }
+    });
+})
+</script>

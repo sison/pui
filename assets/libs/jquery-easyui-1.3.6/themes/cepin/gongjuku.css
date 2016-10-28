@@ -1,0 +1,135 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+/*  图标  */
+
+.tree-expanded,
+.tree-collapsed,
+.tree-folder,
+.tree-file,
+.tree-checkbox,
+.tree-indent{ display:inline-block; width:25px; height:25px; vertical-align:top; margin-top:5px; overflow:hidden;}
+.tree-expanded-hover{ background:url('images/fold.gif') no-repeat 0 0;}
+
+
+.tree-expanded{ background:url('images/fold.gif') no-repeat 0 -40px;}
+.tree-expanded-hover{ background:url('images/fold.gif') no-repeat 0 -40px;}
+.tree-collapsed{ background:url('images/fold.gif') no-repeat 0 0;}
+
+
+
+/*********  树形结构   ********/
+
+.datagrid-view .datagrid-header{ background:#ddd;}
+
+.panel-header, 
+.panel-body{ border:none; background:none;}
+.datagrid-view .datagrid-view1,
+.datagrid-view .datagrid-view1 .datagrid-header,
+.datagrid-view .datagrid-view1 .datagrid-body,
+.datagrid-view .datagrid-view1 .datagrid-footer{ display:none; width:0;}
+
+.datagrid-view .datagrid-header{ margin-bottom:10px;}
+
+.datagrid-view .datagrid-view2 .datagrid-header,
+.datagrid-view .datagrid-view2 .datagrid-body,
+.datagrid-view .datagrid-view2 .datagrid-footer,
+.datagrid-view .datagrid-view2 .datagrid-header-inner,
+.datagrid-view .datagrid-view2 .datagrid-header-inner table.datagrid-htable{ width:100%;}
+
+
+
+.datagrid-cell, 
+.datagrid-cell-group, 
+.datagrid-header-rownumber, 
+.datagrid-cell-rownumber{ padding:0; margin:0;}
+
+/*图标*/
+.datagrid-view .tree-folder,
+.datagrid-view .tree-folder-open,
+.datagrid-view .tree-file{ background:none; width:10px;}
+
+
+
+.datagrid-view .datagrid-row .tree-title{ padding:0;}
+.datagrid-view .tree-title{ height:auto; line-height:normal;}
+
+
+.datagrid-body input{ border:1px solid #ccc; height:18px; line-height:18px; padding:5px 10px; font-size:14px;}
+.datagrid-body input[type="checkbox"]{ width:auto; position:relative; padding:0 3px 0 0; top:5px; border:none;}
+.datagrid-body label{ text-decoration:none; padding:0 10px; vertical-align:middle; line-height:30px; cursor:pointer;}
+.datagrid-body .datagrid-cell-c3-SortNumber input{ width:60px; text-align:center; font-size:12px; border:1px solid #ccc;}
+.datagrid-body input.upandown{ border:none; height:auto; background:none; color:#454545; cursor:pointer; font-size:12px;}
+
+
+.datagrid-row-over,
+.datagrid-header td.datagrid-header-over{ background:none;}
+.datagrid-view .datagrid-row-selected,
+.datagrid-view .datagrid-row-selected.datagrid-row-over{ background:none;}
+
+
+.datagrid-view .datagrid-btable tr td input[type="text"]{ height:24px; line-height:24px;}
+
+.datagrid-header td, 
+.datagrid-body td, 
+.datagrid-footer td{ border:none;}
+
+
+.datagrid-header-row, 
+.datagrid-row{ height:40px;}
+.datagrid-view .datagrid-header .datagrid-htable{ border:none;}
+.datagrid-view .datagrid-view2 .datagrid-btable{ width:100%;}
+
+.datagrid-view .datagrid-header .datagrid-cell span,
+.datagrid-view .datagrid-header .datagrid-htable td{ background:#ddd; text-align:center; font-size:15px; line-height:20px; height:20px;}
+.datagrid-view .datagrid-header td, 
+.datagrid-view .datagrid-body td, 
+.datagrid-footer td{ border:none;}
+
+/*
+.datagrid-view .datagrid-body .datagrid-cell-c2-sortNumber input,
+.datagrid-view .datagrid-body .datagrid-cell-c2-SortNumber input{ width:80px;}
+.datagrid-view .datagrid-body .datagrid-cell-c2-Alias input,
+.datagrid-view .datagrid-body .datagrid-cell-c2-MeasureDefinition input{ width:90%;}
+*/
+.datagrid-view .datagrid-body .datagrid-cell-c2-Measureweight input,
+.datagrid-view .datagrid-body .datagrid-cell-c3-Measureweight input{ width:98px;}
+
+
+
+.datagrid-htable .datagrid-cell-c2-ProductmeasureName select{ border:1px solid #ccc; outline:none;}
+.datagrid-htable .datagrid-cell-c2-ProductmeasureName select option{ outline:none;}
+.datagrid-header td:last-child,
+.datagrid-body td:last-child,
+.datagrid-footer td:last-child{ border-right:0;}
+
+.datagrid-view .datagrid-btable tr td div a{ color:#000; text-decoration:underline;}
+.datagrid-view .datagrid-btable tr td div a:hover{ color:#027DD0; }
+
+.datagrid-view tr.datagrid-row > td{ padding:6px 0;}
+
+.datagrid-view .datagrid-btable tr td div.datagrid-cell-c2-IsMeasureAttrbute a:before{ font-size:12px; left:-4px; top:1px;}
+.datagrid-view .datagrid-btable tr td div.datagrid-cell-c2-Level,
+.datagrid-view .datagrid-btable tr td div.datagrid-cell-c3-Level{ text-align:right;}
+.datagrid-view .datagrid-row-over span.tree-title, 
+.datagrid-view .datagrid-header td.datagrid-header-over span.tree-title{ color:#027DD0; text-decoration:underline;}
+.datagrid-view .datagrid-btable tr td input[type="text"]:disabled{ text-align:left;}
+.panel-header{ display:none;}
+.datagrid-view .datagrid-btable tr td input[type="text"].setTxt{ margin:0 0 0 10px; width:50%; text-align:left;}
+
+
+.datagrid-htable .zb-name{ line-height:30px; padding:0 10px 0 0; float:left;}
+.datagrid-view .datagrid-btable td input.foldIpt{ width:225px;}
+.datagrid-view .datagrid-btable td td input.foldIpt{ width:200px;}
+.datagrid-view .datagrid-btable td td td input.foldIpt{ width:175px;}
+.datagrid-view .datagrid-btable td td td td input.foldIpt{ width:150px;}
+
+.datagrid-view .datagrid-btable input.w420{ width:398px;}
+.datagrid-view .datagrid-btable input.definition{ width:90%;}
+
+.datagrid-body .datagrid-cell-c2-MeasureCheck,
+.datagrid-body .datagrid-cell-c3-MeasureCheck{ text-align:right;}
+.datagrid-header .datagrid-cell-c2-MeasureCheck,
+.datagrid-header .datagrid-cell-c3-MeasureCheck{ text-align:center;}
+

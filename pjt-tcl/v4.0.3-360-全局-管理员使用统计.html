@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v4.0.3-项目-参评人统计</title>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/pui.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/layout.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/page-common.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/libs/jeDate/jedate/skin/jedate.css" />
+    <script type="text/javascript" src="assets/libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/libs/jeDate/jedate/jedate.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/layout.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-popop.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-page.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-ceng.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-radio.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-checkbox.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-table.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-query.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-valid.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-select.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-switch.js"></script>
+    <script type="text/javascript" src="assets/libs/jquery-tmpl/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="assets/libs/kindeditor/kindeditor-min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        importHeader();
+        importFooter();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="widthly">
+            <div class="page-crumb">
+                <p>
+                    <a href="/System/Home/Index">项目管理</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">使用统计</a>
+                    <em>/</em>
+                    <span>管理员统计</span>
+                </p>
+            </div>
+            <div class="bbthree">
+                <div class="pd20">
+                    <div class="sp20"></div>
+                    <form class="pui-form" id="queryForm">
+                        <div class="pol100 fm lh34 clearfix">
+                            <div class="abs tr c-gray3">
+                                <p>管理员账号：</p>
+                            </div>
+                            <div class="w500">
+                                <input type="text" id="formName" class="txt wp100" name="keyword" data-req="true" data-reqs="six" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="sp10"></div>
+                        <div class="pol100 fm lh34 clearfix">
+                            <div class="abs tr c-gray3">
+                                <p>选择时间：</p>
+                            </div>
+                            <div class="fl">
+                                <div class="selectDate clearfix">
+                                    <div class="fl nbsp relative">
+                                        <input class="txt ffm wpdate" id="sjt" name="sjt" type="text" readonly>
+                                        <i class="icon icon-date2"></i>
+                                    </div>
+                                    <div class="fl nbsp c-gray3 pdl10 pdr10">--- </div>
+                                    <div class="fl nbsp relative">
+                                        <input class="txt ffm wpdate" id="ejt" name="ejt" type="text" readonly>
+                                        <i class="icon icon-date2"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl mgl10">
+                                <button class="btn btn-common c-gray4" type="submit">确定</button>
+                            </div>
+                        </div>
+                        <div class="sp20"></div>
+                        <div class="sp20"></div>
+                    </form>
+                    <div class="page-table hasPagination">
+                        <div class="overflow-table">
+                            <table class="table table-center table-song table-relative table-big" id="tableObj">
+                                <thead>
+                                    <tr class="header">
+                                        <th class="tl">管理员帐号</th>
+                                        <th>总人次</th>
+                                        <th>完成人次</th>
+                                        <th>外完成人次</th>
+                                        <th>剩余必填人次</th>
+                                        <th>完成比例</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--overflow-table-->
+                        <script type="text/javascript">
+                        var tabledata = {
+                            "Data": [{
+                                "_rowid_": 1,
+                                "UserId": 503443,
+                                "CustomerId": 1000071,
+                                "Account": "123456",
+                                "Name": "缝小肛",
+                                "Sex": "男",
+                                "Password": "Ns76tu",
+                                "Email": "123@123.com",
+                                "Mobile": "13690875421",
+                                "School": null,
+                                "CreatedDate": "2016-04-22T17:48:01.07",
+                                "Creater": "jianfeng.zou",
+                                "ModifiedDate": "2016-05-25T10:52:02.29",
+                                "Modifier": "admin",
+                                "ExamStatus": 0,
+                                "UserExtensionFieldId": 280144,
+                                "ExamStatusDesc": "未开始",
+                                "EvaluationCount": 0,
+                                "EvaluationRelationshipName": "自评",
+                                "ExamMode": 1,
+                                "JoinTime": "2016-05-25 10:52:02",
+                                "Status": "正常"
+                            }, {
+                                "_rowid_": 1,
+                                "UserId": 503443,
+                                "CustomerId": 1000071,
+                                "Account": "123456",
+                                "Name": "缝小肛",
+                                "Sex": "男",
+                                "Password": "Ns76tu",
+                                "Email": "123@123.com",
+                                "Mobile": "13690875421",
+                                "School": null,
+                                "CreatedDate": "2016-04-22T17:48:01.07",
+                                "Creater": "jianfeng.zou",
+                                "ModifiedDate": "2016-05-25T10:52:02.29",
+                                "Modifier": "admin",
+                                "ExamStatus": 0,
+                                "UserExtensionFieldId": 280144,
+                                "ExamStatusDesc": "未开始",
+                                "EvaluationCount": 0,
+                                "EvaluationRelationshipName": "自评",
+                                "ExamMode": 1,
+                                "JoinTime": "2016-05-25 10:52:02",
+                                "Status": "正常"
+                            }, {
+                                "_rowid_": 1,
+                                "UserId": 503443,
+                                "CustomerId": 1000071,
+                                "Account": "123456",
+                                "Name": "缝小肛",
+                                "Sex": "男",
+                                "Password": "Ns76tu",
+                                "Email": "123@123.com",
+                                "Mobile": "13690875421",
+                                "School": null,
+                                "CreatedDate": "2016-04-22T17:48:01.07",
+                                "Creater": "jianfeng.zou",
+                                "ModifiedDate": "2016-05-25T10:52:02.29",
+                                "Modifier": "admin",
+                                "ExamStatus": 0,
+                                "UserExtensionFieldId": 280144,
+                                "ExamStatusDesc": "未开始",
+                                "EvaluationCount": 0,
+                                "EvaluationRelationshipName": "自评",
+                                "ExamMode": 1,
+                                "JoinTime": "2016-05-25 10:52:02",
+                                "Status": "正常"
+                            }],
+                            "PageIndex": 1,
+                            "PageSize": 10,
+                            "TotalPages": 1,
+                            "TotalRecords": 33
+                        };
+                        </script>
+                        <script type="text/x-jquery-tmpl" id="tableTmpl">
+                                {{each(i, item) Data}}
+                                <tr>
+                                    <td class="tl">
+                                        <p>${item.Account}</p>
+                                    </td>
+                                    <td>
+                                        <p>${item.Name}</p>
+                                    </td>
+                                    <td>
+                                        <p>${item.Email}</p>
+                                    </td>
+                                    <td>
+                                        <p>${item.Department}</p>
+                                    </td>
+                                    <td>
+                                        <p>${item.Sex}</p>
+                                    </td>
+                                    <td>
+                                        <p>${item.Mobile}</p>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+
+    var tableObj = $('#tableObj');
+    var tableTmpl = $('#tableTmpl');
+    var queryform = $('#queryForm');
+    var queryformurl = 'assets/admin/v4.0.3/json/glysytj.json';  // 查询接口
+
+    var tablesimple = new TableSimple(tableObj, tableTmpl, {
+        bgcCtrl: true,
+        hoverColor: '#ffc',
+        oddColor: '#fff',
+        evenColor: '#fff',
+        isBase64: false,
+        queryObj: queryform,
+        queryUrl: queryformurl,
+        dataSource: tabledata,
+        dateFormat: 'YYYY-MM-DD'
+    });
+
+
+})
+</script>
+
+</html>

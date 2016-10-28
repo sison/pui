@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v4.0.3-360-问卷</title>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/pui.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/layout.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/admin/v4.0.3/css/page-common.css" />
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="assets/libs/jeDate/jedate/skin/jedate.css" />
+    <script type="text/javascript" src="assets/libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/libs/jeDate/jedate/jedate.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/layout.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-popop.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-page.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-ceng.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-radio.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-checkbox.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-table.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-query.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-valid.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-select.js"></script>
+    <script type="text/javascript" src="assets/admin/v4.0.3/js/components/pui-switch.js"></script>
+    <script type="text/javascript" src="assets/libs/jquery-tmpl/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="assets/libs/kindeditor/kindeditor-min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        importHeader();
+        importFooter();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="widthly">
+            <div class="page-crumb">
+                <p>
+                    <a href="/System/Home/Index">项目管理</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">项目列表</a>
+                    <em>/</em>
+                    <a href="/System/CustomerGroup/List">顺丰集团素质测评</a>
+                    <em>/</em>
+                    <span>进度统计</span>
+                </p>
+            </div>
+            <div class="bbthree">
+                <div class="pd20 pdb0 bgc-white">
+                    <div class="page-feature ffs">
+                        <ul class="inline clearfix">
+                            <li class="cur"><a href="#">产品信息<em></em></a></li>
+                            <li><a href="#">账号分配<em></em></a></li>
+                            <li><a href="#">通知日志<em></em></a></li>
+                            <li><a href="#">数据下载<em></em></a></li>
+                            <li><a href="#">报告下载<em></em></a></li>
+                            <li><a href="#">进度统计<em></em></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sp10"></div>
+                <div class="sp10"></div>
+                <div class="page-step fm ffs pd20 bgc-white">
+                    <ul>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">1 产品信息<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">2 模块结构<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">3 指标定义<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">4 指标权重<i></i></a></li>
+                        <li class="cur"><a href="javascript:void(0);" class="ant">5 问卷<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">6 评价关系<i></i></a></li>
+                        <li><a href="javascript:void(0);" class="ant">7 完成<i></i></a></li>
+                    </ul>
+                </div>
+                <div class="pd20 clearfix">
+                    <form class="cui-form">
+                        <div class="setFunction bgc-gray6 clearfix">
+                            <div class="funBtns fl">
+                                <ul class="clearfix">
+                                    <li class="fl">
+                                        <a href="v4.0.3-360-新建问卷.html" class="btn btn-common mgr10 ffv ant c-gray3">添加问卷</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fr">
+                                <div class="txt-group ffs fl c-gray4 pdr10">报告输出结果分值： </div>
+                                <div class="select-group fl ffs">
+                                    <select name="selectAttachGroup" class="select" id="selectTransform" data-width="180px">
+                                        <option value="0">等比例转为10分制度</option>
+                                        <option value="1">姓名</option>
+                                        <option value="2">邮箱</option>
+                                        <option value="3">角色</option>
+                                        <option value="4">姓名</option>
+                                    </select>
+                                </div>
+                                <div class="txt-group fr pdl10">
+                                    <div class="popop pop-bottom" data-lean="right" data-width="200px">
+                                        <a href="javascript:void(0)" class="c-blue"><i class="icon icon-question-full fm"></i></a>
+                                        <div class="popsub ffs c-brown">
+                                            <p class="pdb10">按问卷设置的分值输出：使用问卷设置的分数，不做转换，报告中也是呈现测评者的原始得分；</p>
+                                            <p>等比转为10分制：将测评者的得分转为10分制得分，报告中呈现转为10分制之后的测评者得分；</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-table">
+                            <div class="overflow-table">
+                                <table class="table table-center table-song table-relative view-container" id="setPaper">
+                                    <thead>
+                                        <tr class="header">
+                                            <th width="30" class="chkbox">
+                                                <div class="checkone">
+                                                    <input type="checkbox" name="chktall" class="chktall" id="chktallSwitch" value="all" />
+                                                </div>
+                                            </th>
+                                            <th class="tl">问卷名称</th>
+                                            <th>题型</th>
+                                            <th>题目数</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="chkbox">
+                                                <div class="checkone">
+                                                    <input type="checkbox" name="checkone" class="chktone" id="" value="a" />
+                                                </div>
+                                            </td>
+                                            <td class="tl">问卷1</td>
+                                            <td>量表题</td>
+                                            <td>119</td>
+                                            <td>
+                                                <span class="txtsp"><a href="javascript:void(0)" class="c-blue tu a-opt-update">修改</a></span>
+                                                <span class="txtsp"><a href="javascript:void(0)" class="c-blue tu a-opt-preview">预览</a></span>
+                                                <span class="txtsp"><a href="javascript:void(0)" class="c-blue tu a-opt-delete">删除</a></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="chkbox">
+                                                <div class="checkone">
+                                                    <input type="checkbox" name="checkone" class="chktone" id="" value="a" />
+                                                </div>
+                                            </td>
+                                            <td class="tl">问卷1</td>
+                                            <td>量表题</td>
+                                            <td>119</td>
+                                            <td>
+                                                <span class="txtsp"><a href="javascript:void(0)" class="c-blue tu a-opt-update">修改</a></span>
+                                                <span class="txtsp"><a href="javascript:void(0)" class="c-blue tu a-opt-preview">预览</a></span>
+                                                <span class="txtsp"><a href="javascript:void(0)" class="c-blue tu a-opt-delete">删除</a></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="chkbox">
+                                                <div class="checkone">
+                                                    <input type="checkbox" name="checkone" class="chktone" id="" value="a" />
+                                                </div>
+                                            </td>
+                                            <td class="tl">问卷1</td>
+                                            <td>量表题</td>
+                                            <td>119</td>
+                                            <td>
+                                                <span class="txtsp"><a href="javascript:void(0)" class="c-blue tu a-opt-update">修改</a></span>
+                                                <span class="txtsp"><a href="javascript:void(0)" class="c-blue tu a-opt-preview">预览</a></span>
+                                                <span class="txtsp"><a href="javascript:void(0)" class="c-blue tu a-opt-delete">删除</a></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="absolutecenter clearfix">
+                            <div class="sp50"></div>
+                            <div class="acsub">
+                                <button class="btn bb bgc-blue fm">上一步</button>
+                            </div>
+                            <div class="acsub">
+                                <button class="btn bb bgc-blue fm" type="submit">下一步</button>
+                            </div>
+                            <div class="acsub">
+                                <button class="btn bb btn-common btn-cancel fm">取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+
+
+
+    $('#selectTransform').selectSmart({
+        callback: function(i, k, v) {
+            ceng.msg('SelectIndex：' + i + ' ，Key：' + k + ' ，Value：' + v, {}, 'resolve');
+        }
+    });
+    $('.popop').popopSmart();
+
+    $('#setPaper input.chktall').checkboxSmart({
+
+    });
+    $('#setPaper input.chktone').checkboxSmart();
+
+
+
+    $('.a-opt-preview').on('click', function() {
+        ceng.hello({
+            title: '页面层',
+            content: 'assets/admin/v4.0.3/remotePage/demo.html',
+            contentType: 'url',
+            contentData: '',
+            area: [800, 'auto'],
+            yes: function() {},
+            no: function() {}
+        })
+    });
+
+    $('.a-opt-update').on('click', function() {
+        ceng.hello({
+            title: '页面层',
+            style: 2,
+            content: $('#divHello'),
+            contentType: 'dom', // dom, url, html
+            area: [600, 'auto']
+        })
+    });
+
+    $('.a-opt-delete').on('click', function() {
+        ceng.comfirm('删除吗？', {
+            area: [200, 'auto'],
+            yes: function() {},
+            no: function() {}
+        })
+    });
+
+    $('.a-opt-update').on('click', function() {
+        ceng.hello({
+            title: '页面层',
+            style: 2,
+            content: $('#divHello'),
+            contentType: 'dom', // dom, url, html
+            area: [600, 'auto']
+        })
+    });    
+
+
+})
+</script>
+
+</html>
