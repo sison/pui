@@ -1,4 +1,35 @@
-<!DOCTYPE html><html lang="en"><head><title>评鉴通 - UI</title><meta charset="utf-8"><link href="./css/style.css?908bd9db53f75c799cbd" rel="stylesheet"><script type="text/javascript" src="./js/vendors.js?908bd9db53f75c799cbd"></script><script type="text/javascript" src="./js/css.bundle.js?908bd9db53f75c799cbd"></script></head><body><div class="pui-nav"><div class="widthly clearfix"><div class="pui-logo pdt10 fl"><h1 class="pui-title c-blue fnormal ffm fs30">评鉴通 UI （PUI）</h1><h6 class="ffm fs fnormal c-gray3">Base on PJT4.0</h6></div><div class="fr"><ul class="inline ffm fb"><li class="tc"><a href="pui-layout.html" class="c-gray5 ant">布局</a></li><li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a></li><li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li><li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a></li><li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li><li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li><li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li><li class="tc cur"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li></ul></div></div></div><div class="pui-body"><div class="widthly"><pre class="language-css"><code class="language-*">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+<link href="./css/style.css?908bd9db53f75c799cbd" rel="stylesheet"><script type="text/javascript" src="./js/vendors.js?908bd9db53f75c799cbd"></script><script type="text/javascript" src="./js/css.bundle.js?908bd9db53f75c799cbd"></script></head>
+
+<body>
+    <div class="pui-nav">
+        <div class="widthly clearfix">
+            <div class="pui-logo pdt10 fl">
+                <h1 class="pui-title c-blue fnormal ffm fs30">评鉴通 UI （PUI）</h1>
+                <h6 class="ffm fs fnormal c-gray3">Base on PJT4.0</h6>
+            </div>
+            <div class="fr">
+                <ul class="inline ffm fb">
+                    <li class="tc"><a href="pui-layout.html" class="c-gray5 ant">布局</a></li>
+                    <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a></li>
+                    <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                    <li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a></li>
+                    <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                    <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                    <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li>
+                    <li class="tc cur"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="pui-body">
+        <div class="widthly">
+<pre class="language-css"><code class="language-*">
 
 /*
 * @Author: sison.luo
@@ -29,7 +60,8 @@ a,button,input{ outline:none}
 .spline.bottom{ border-width: 0 0 1px;}
 .widthly{ width:auto; margin:0 160px;}
 
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*空白行*/
 .sp00{clear:both; height:0px; display: block; overflow: hidden;}
 .sp05{clear:both; height:5px; display: block; overflow: hidden;}
@@ -59,7 +91,8 @@ a,button,input{ outline:none}
 .mgb10{margin-bottom:10px}
 .mgl10{margin-left:10px}
 
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*清除浮动*/
 .clearfix:after{content:"."; display:block; height:0; clear:both; visibility:hidden}
 .clearfix{clear:both}
@@ -69,7 +102,8 @@ dl.inline dt,
 dl.inline dd,
 .inline li{float:left}
 .block li{float: none; clear: both}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*文本框*/
 .txt{line-height:34px; height: 34px; padding:0 10px; position: relative; border: 1px solid #dddddd; transition: all .2s ease-in-out; outline:none;}
 .txt:focus,
@@ -86,7 +120,8 @@ input[readonly="readonly"],
 textarea[readonly="readonly"]{background-color:#f6f6f6;border:1px solid #bbb;color:#bbb}
 input[disabled],
 textarea[disabled]{ border: 1px solid #e1e1e1; background-color: #eee; color: #7d7d7d}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*常用*/
 .hide{display:none}
 .ellipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:**px;}
@@ -101,7 +136,8 @@ textarea[disabled]{ border: 1px solid #e1e1e1; background-color: #eee; color: #7
 .radiuslist li:first-child>a{ border-radius: 3px 0 0 3px;}
 .radiuslist li:last-child,
 .radiuslist li:last-child>a{ border-radius: 0 3px 3px 0;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /* 栅格系统 */
 .row{clear:both;line-height:32px}
 .row:after{content:".";display:block;height:0;clear:both;visibility:hidden}
@@ -121,7 +157,8 @@ textarea[disabled]{ border: 1px solid #e1e1e1; background-color: #eee; color: #7
 .row .col-xs-12{width:100%}
 .row .col-xs-w100{width: 100px}
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-w100{float:left;position:relative;padding-top:1px}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*绝对定位左侧空50px*/
 .pol50{ position: relative; padding: 0 0 0 50px;}
 .pol50 .abs{ position: absolute; left: 0; top: 0; width: 50px;}
@@ -142,7 +179,8 @@ textarea[disabled]{ border: 1px solid #e1e1e1; background-color: #eee; color: #7
 .absolutecenter{position:relative;float:left;left:50%}
 .absolutecenter .acsub{position:relative;float:left;right:50%;display:block}
 .absolutecenter .acsub + .acsub{ margin: 0 0 0 15px;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*按钮*/
 .btn{ display: inline-block; height: 34px; line-height: 34px; padding: 0 15px; text-decoration: none; border-radius: 2px; outline: none; cursor: pointer; vertical-align: top;}
 .btn i{ padding: 0 5px 0 0;}
@@ -162,7 +200,8 @@ button{ border: none; color: #fff;}
 .btn-common:hover i:before,
 .btn-common:hover span{ color: #fff;}
 a.btn-common{ height: 33px; line-height: 33px;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*字体图标*/
 @font-face {
     font-family: 'icomoon';
@@ -264,7 +303,8 @@ a.btn-common{ height: 33px; line-height: 33px;}
 .icon-date2:after{ content: '\e94f'}
 .icon-tie:after{ content: '\e950'}
 .icon-gcd:after{ content: '\e951'}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*圆角*/
 .round{ border-radius: 50%; display: inline-block;}
 .round50{ border-radius: 50px; width: 50px; height: 50px; line-height: 50px; display: inline-block;}
@@ -280,7 +320,8 @@ a.btn-common{ height: 33px; line-height: 33px;}
 
 /*上传*/
 .upload-group .upfile{ height:32px; overflow:hidden; position:absolute; right:0; top:0; opacity:0; filter:alpha(opacity=0); cursor:pointer; z-index:2; font-size: 30px;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*置底加权重*/
 /*颜色*/
 .c-blue{color:#2296D7}
@@ -313,7 +354,8 @@ a.btn-common{ height: 33px; line-height: 33px;}
 /*边框色*/
 .bc-blue{border-color: #278ADD;}
 .bc-red{border-color: #FF5253;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*宽度*/
 .wp100{ width: 100%; box-sizing: border-box;}
 .w100{ width: 100px;}
@@ -321,7 +363,8 @@ a.btn-common{ height: 33px; line-height: 33px;}
 .w300{ width: 300px;}
 .w400{ width: 400px;}
 .w500{ width: 500px;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*字体大小，字体，行高，居左居右*/
 .fb{font-size:16px}
 .fm{font-size:14px}
@@ -353,7 +396,9 @@ a.btn-common{ height: 33px; line-height: 33px;}
 .tl{ text-align: left;}
 .tc{ text-align: center;}
 .tr{ text-align: right;}
-</code></pre><pre class="language-css"><code class="language-*">/*以下为插件UI*/</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">/*以下为插件UI*/</code></pre>
+<pre class="language-css"><code class="language-*">
 /*SWITCH*/
 .switch-actor{ width: 71px; position: relative; background-color: #fff; height: 24px; padding: 2px; overflow: hidden; font-size: 12px; border-radius: 24px; cursor: pointer;}
 .switch-actor .switch-mover{ position: absolute; left: 0; top: 2px; width: 1000px; height: 24px;}
@@ -365,7 +410,8 @@ a.btn-common{ height: 33px; line-height: 33px;}
 .switch-actor .switch-mover span.switch-left{ padding: 0 10px 0 15px;}
 .switch-actor .switch-mover span.switch-right{ padding: 0 15px 0 10px;}
 .switch-actor .switch-mover span.switch-dot{ width: 24px; background-color: #fff; border-radius: 50%; overflow: hidden; padding: 0;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*原生SELECT*/
 .se-border{border:1px solid #ddd;padding:5px;float:left;background:#fff;position:relative;top:0px;top:-2px\9;line-height:22px}
 .se-border .se-hidden{width:50px;*width:58px;height:20px;overflow:hidden}
@@ -377,7 +423,8 @@ a.btn-common{ height: 33px; line-height: 33px;}
 .se-border-width100percent .se-hidden{width:60px;*width:58px;height:20px;overflow:hidden}
 .se-border-width100percent .se-hidden select{width:60px;*margin:-2px;border:none;padding:1px;background:transparent;outline:none;font-size:12px}
 .select-group.full .se-border .se-hidden{ width:100%;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*插件SELECT*/
 .select{ position: absolute; left: -100px; right: 0; display: none;}
 .selector{ position:relative; width:auto; display: inline-block;}
@@ -400,7 +447,8 @@ a.btn-common{ height: 33px; line-height: 33px;}
 .selector .selist ul li:last-child{ border-bottom:none;}
 .selector .selist ul li.curli{ background-color: #ddd; color: #000;}
 .selector .selist ul li:hover{ background-color:#2689DC; color: #fff}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*分页*/
 .pagination-out{height:62px;}
 .pagination{font-size:12px; text-align:center; height:32px; padding:15px 0; font-family: verdana,simsun; color: #666; overflow: hidden; background-color: #eee;}
@@ -426,7 +474,8 @@ a.btn-common{ height: 33px; line-height: 33px;}
 .pagination .btn-group #btnJump[disabled]{background-color:#fff;color:#bbb;border-color:#ddd;cursor:not-allowed}
 .pagination select{line-height:28px;padding:0;border:1px solid #ccc;outline:none;width:52px; color: #666}
 .pagination .se-border{ border-radius: 2px;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /* 文本框 */
 .input-group{ line-height: 30px;}
 .input-group label{ display: table; border-collapse: separate; width: 100%;}
@@ -444,7 +493,8 @@ a.btn-common{ height: 33px; line-height: 33px;}
 .input-group.inline label{ width: 180px;}
 .input-group.inline .txt{ width: 180px;}
 .txt-group{ line-height: 34px; display: inline-block;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*RADIO-GROUP*/
 .radio-group{ line-height: 20px; padding: 7px 0;}
 .radione{ cursor: pointer; display: block; padding: 0 20px; position: relative;}
@@ -458,7 +508,8 @@ a.btn-common{ height: 33px; line-height: 33px;}
 .radione span{ display: inline-block;}
 .radione.checked i{ border-color: #278ADD;}
 .radione.checked i:after{ background-color: #278ADD;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*CHECKBOX-GROUP*/
 .check-group{ line-height: 20px; padding: 7px 0;}
 .checkone{ cursor: pointer; display: block; padding: 0 20px; position: relative;} 
@@ -470,7 +521,8 @@ a.btn-common{ height: 33px; line-height: 33px;}
 .checkone i:after{ content: ''; position: absolute; left: 0px; top: 0px; display: block; color: #ccc; font-weight: bold;}
 .checkone.checked i{ border-color: #0669bb; background-color: #278ADD;}
 .checkone.checked i:after{ content:'\e90c'; color: #fff; transform: scale(0.8); text-shadow: 0 2px 0px #18578c;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*气泡*/
 .popop{ position: relative;}
 .popop .popsub{ position: absolute; background-color: #FAF8E3; border: 1px solid #d8d4a8; box-shadow: 0 1px 5px rgba(145, 104, 25, 0.22); padding: 10px; line-height: 24px; opacity: 0; visibility: hidden; max-width: 450px; z-index: 99; width: 200px; left: -106px;}
@@ -485,14 +537,16 @@ a.btn-common{ height: 33px; line-height: 33px;}
 .pop-bottom .popsub:after{ top: -6px; left: 50%; margin-left: -3px; border-width: 0 6px 6px; border-color: transparent transparent #d8d4a8; border-style: solid dashed dashed;}
 .pop-left .popsub{}
 .pop-left .popsub:after{ border-width: 6px 6px 6px 0; border-color: transparent #d8d4a8 transparent #d8d4a8; border-style: dashed solid dashed dashed;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*表单*/
 .errtip{ position: absolute; bottom: -20px; background-color: #D9544F; z-index: 1; color: #fff; font-size: 12px; line-height: 25px; padding: 0 10px; border-radius: 3px; box-shadow: 1px 1px 3px rgba(217, 84, 79, 0.5)}
 .errtip:after{ content: ''; position: absolute; border-left: 5px dashed transparent; border-right: 5px dashed transparent; border-bottom: 5px solid #D9544F; left: 20px; top: -5px;}
 .txt + .errtip{ bottom: -30px;}
 .col-val{ position: relative;}
 .required .col-key span:before{ content: '*'; color: #f00; padding: 0 8px 0 0;}
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /*弹出层*/
 .ceng-ready{ display: none;}
 .ceng-black, .ceng{ display: none;}
@@ -590,7 +644,8 @@ a.btn-common{ height: 33px; line-height: 33px;}
   .ceng-loader > div:nth-child(5) {
     -webkit-animation-delay: 0.5s !important;
             animation-delay: 0.5s !important; }
-</code></pre><pre class="language-css"><code class="language-*">
+</code></pre>
+<pre class="language-css"><code class="language-*">
 /**
 * 忽略下面
 */
@@ -613,4 +668,8 @@ h3.pui-subname{ font-size: 15px; line-height: 50px;}
 .font-icon li i{ font-size: 24px;}
 .font-icon li:hover i{ color: #fff;}
 .font-icon li p{ line-height: 30px; white-space: nowrap; overflow:hidden; text-overflow: ellipsis; padding: 0 5px;}
-</code></pre></div></div></body></html>
+</code></pre>
+        </div>
+    </div>
+</body>
+</html>

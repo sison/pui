@@ -1,6 +1,56 @@
-<!DOCTYPE html><html lang="en"><head><title>评鉴通 - UI</title><meta charset="utf-8"><link href="./css/style.css?908bd9db53f75c799cbd" rel="stylesheet"><script type="text/javascript" src="./js/vendors.js?908bd9db53f75c799cbd"></script><script type="text/javascript" src="./js/tree.bundle.js?908bd9db53f75c799cbd"></script></head><body><div class="pui-nav"><div class="widthly clearfix"><div class="pui-logo pdt10 fl"><h1 class="pui-title c-blue fnormal ffm fs30">评鉴通 UI （PUI）</h1><h6 class="ffm fs fnormal c-gray3">Base on PJT4.0</h6></div><div class="fr"><ul class="inline ffm fb"><li class="tc"><a href="pui-layout.html" class="c-gray5 ant">布局</a></li><li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a></li><li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li><li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a></li><li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li><li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li><li class="tc cur"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li><li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li></ul></div></div></div><div class="pui-body"><div class="widthly"><h2 class="pui-category c-red fnormal fs20 ffm">我是一棵树（Tree）</h2><div class="sp10"></div><div class="sp10"></div><div class="pd20 bgc-white bbthree"><div class="row fm"><div class="col-xs-12"><div class="ext-table-to-div ffs fs tc" id="weightTree"></div></div></div></div><div class="sp10"></div><div class="sp30"></div><div class="sp30"></div><pre><code class="language-markUp">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+<link href="./css/style.css?908bd9db53f75c799cbd" rel="stylesheet"><script type="text/javascript" src="./js/vendors.js?908bd9db53f75c799cbd"></script><script type="text/javascript" src="./js/tree.bundle.js?908bd9db53f75c799cbd"></script></head>
+
+<body>
+    <div class="pui-nav">
+        <div class="widthly clearfix">
+            <div class="pui-logo pdt10 fl">
+                <h1 class="pui-title c-blue fnormal ffm fs30">评鉴通 UI （PUI）</h1>
+                <h6 class="ffm fs fnormal c-gray3">Base on PJT4.0</h6>
+            </div>
+            <div class="fr">
+                <ul class="inline ffm fb">
+                    <li class="tc"><a href="pui-layout.html" class="c-gray5 ant">布局</a></li>
+                    <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a></li>
+                    <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                    <li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a></li>
+                    <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                    <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                    <li class="tc cur"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li>
+                    <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="pui-body">
+        <div class="widthly">
+            <h2 class="pui-category c-red fnormal fs20 ffm">我是一棵树（Tree）</h2>
+            
+            <div class="sp10"></div>
+            
+            <div class="sp10"></div>
+            
+            <div class="pd20 bgc-white bbthree">
+                <div class="row fm">
+                    <div class="col-xs-12">
+                        <div class="ext-table-to-div ffs fs tc" id="weightTree"></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="sp10"></div>
+            <div class="sp30"></div>
+            <div class="sp30"></div>
+
+<pre><code class="language-markUp">
     &lt;div id="weightTree"&gt;&lt;/div&gt; &lt;!--定义容器--&gt;
-</code></pre><pre><code class="language-javascript">
+</code></pre>
+<pre><code class="language-javascript">
     var tree1 = new Tree({
         tree: tree.dom,     // 容器id
         data: startData.theme3,
@@ -156,4 +206,10 @@
         }
 
 
-</code></pre><div class="sp50"></div><div class="sp50"></div></div></div></body></html>
+</code></pre>
+            <div class="sp50"></div>
+            <div class="sp50"></div>
+        </div>
+    </div>
+</body>
+</html>

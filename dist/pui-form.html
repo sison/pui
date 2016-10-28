@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+<link href="./css/style.css?908bd9db53f75c799cbd" rel="stylesheet"><script type="text/javascript" src="./js/vendors.js?908bd9db53f75c799cbd"></script><script type="text/javascript" src="./js/form.bundle.js?908bd9db53f75c799cbd"></script></head>
+
+<body>
+    <div class="pui-nav">
+        <div class="widthly clearfix">
+            <div class="pui-logo pdt10 fl">
+                <h1 class="pui-title c-blue fnormal ffm fs30">评鉴通 UI （PUI）</h1>
+                <h6 class="ffm fs fnormal c-gray3">Base on PJT4.0</h6>
+            </div>
+            <div class="fr">
+                <ul class="inline ffm fb">
+                    <li class="tc"><a href="pui-layout.html" class="c-gray5 ant">布局</a></li>
+                    <li class="tc cur"><a href="pui-form.html" class="c-gray5 ant">表单</a></li>
+                    <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                    <li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a></li>
+                    <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                    <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                    <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li>
+                    <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="pui-body">
+        <div class="widthly">
+            <h2 class="pui-category c-red fnormal fs20 ffm">表单控件</h2>
+            
+            <h3 class="pui-subname c-gray ffm">3.1 下拉菜单</h3>
+            <div class="select-group">
+                <select name="selectAttachGroup" class="select" id="selectAttachGroupDisabled" data-width="300px" disabled="disabled">
+                    <option value="0">全部</option>
+                    <option value="1">姓名</option>
+                    <option value="2">邮箱</option>
+                    <option value="3">角色</option>
+                </select>
+            </div>
+            <div class="sp10"></div>
+            <div class="select-group">
+                <select name="selectAttachGroup" class="select" id="selectAttachGroup" data-width="300px">
+                    <option value="0">全部</option>
+                    <option value="1">姓名</option>
+                    <option value="2">邮箱</option>
+                    <option value="3">角色</option>
+                </select>
+            </div>
+            <div class="sp10"></div>
+<pre><code class="language-markup">
+&lt;div class="select-group"&gt;
+    &lt;select name="selectAttachGroup" class="select" id="selectAttachGroupDisabled" disabled&gt;
+        &lt;option value="0"&gt;全部&lt;/option&gt;
+        &lt;option value="1"&gt;姓名&lt;/option&gt;
+        &lt;option value="2"&gt;邮箱&lt;/option&gt;
+        &lt;option value="3"&gt;角色&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class="select-group"&gt;
+    &lt;select name="selectAttachGroup" class="select" id="selectAttachGroup" data-width="300px"&gt;
+        &lt;option value="0"&gt;全部&lt;/option&gt;
+        &lt;option value="1"&gt;姓名&lt;/option&gt;
+        &lt;option value="2"&gt;邮箱&lt;/option&gt;
+        &lt;option value="3"&gt;角色&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">
+$('#selectAttachGroupDisabled').selectSmart();
+$('#selectAttachGroup').selectSmart({
+    isvalid: true,
+    validCallback: function(i, t, v, o, ro, cb){
+        ceng.comfirm('是否要 change？', {
+            yes: function(obj, index){
+                Pui.selectChange(i, t, v, o, ro, cb);
+                ceng.close(index);
+            }
+        });
+    },
+    callback: function(i, t, v) {
+        ceng.msg('SelectIndex：' + i + ' ，Txt：' + t + ' ，Value：' + v);
+    }
+});
+</code></pre>
+            <h3 class="pui-subname c-gray ffm">3.2 输入框</h3>
+            <div class="sp10"></div>
+            <div class="input-group">
+                <label>
+                    <input class="txt" type="text">
+                </label>
+            </div>
+            <div class="sp10"></div>
+            <div class="input-group">
+                <label>
+                    <span>前缀</span>
+                    <input class="txt" type="text">
+                </label>
+            </div>
+            <div class="sp10"></div>
+            <div class="input-group">
+                <label>
+                    <input class="txt" type="text">
+                    <span>后缀</span>
+                </label>
+            </div>
+            <div class="sp10"></div>
+            <div class="input-group button inline">
+                <label>
+                    <input class="txt" type="text">
+                    <span>
+                        <button class="icon icon-search" type="submit"></button>
+                    </span>
+                </label>
+            </div>
+            <div class="sp10"></div>
+<pre><code class="language-markup">
+&lt;div class="input-group"&gt;
+    &lt;label&gt;
+        &lt;input class="txt" type="text"&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="input-group"&gt;
+    &lt;label&gt;
+        &lt;span&gt;前缀&lt;/span&gt;
+        &lt;input class="txt" type="text"&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="input-group"&gt;
+    &lt;label&gt;
+        &lt;input class="txt" type="text"&gt;
+        &lt;span&gt;后缀&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="input-group button inline"&gt;
+    &lt;label&gt;
+        &lt;input class="txt" type="text"&gt;
+        &lt;span&gt;
+            &lt;button class="icon icon-search" type="submit"&gt;&lt;/button&gt;
+        &lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;       
+</code></pre>
+            <div class="sp10"></div>
+            <h3 class="pui-subname c-gray ffm">3.3 切换</h3>
+            <div class="sp10"></div>
+            <input class="hide switch" type="hidden" id="switch2" value="0">
+            <div class="sp10"></div>
+            <input class="btn bgc-red" type="button" id="switchanger" value="切换上面的状态">
+            <div class="sp10"></div>
+            <input class="hide switch" type="hidden" id="switchDisabled" value="1" disabled="disabled">
+            <div class="sp10"></div>
+            <input class="hide switch" type="hidden" id="switch3" value="0">
+            <div class="sp10"></div>
+<pre><code class="language-markup">
+&lt;input class="hide switch" type="hidden" id="switch2" value="0" /&gt;
+&lt;input class="btn bgc-red" type="button" id="switchanger" value="切换上面的状态"&gt;
+&lt;input class="hide switch" type="hidden" id="switchDisabled" value="1" disabled /&gt;
+&lt;input class="hide switch" type="hidden" id="switch3" value="0" /&gt;
+</code></pre>
+<pre><code class="language-javascript">
+$('.switch').switchSmart({
+    enable: function() {
+        ceng.msg('启用',{
+            state: 'resolve'
+        });
+    },
+    disable: function() {
+        ceng.msg('禁用',{
+            state: 'notice'                    
+        });
+    }
+});
+
+$('#switchanger').on('click', function() {
+    toggleSwitchState($('#switch2'));
+});
+
+$('#switchDisabled').switchSmart();
+
+$('#switch3').switchSmart({
+    isvalid: true,
+    validCallback: function() {
+        ceng.comfirm('最后问一次，是否切换', {
+            title: '提示',
+            btn: ['切换吧', '不换'],
+            yes: function(obj, index) {
+                toggleSwitchState($('#switch3'));
+                ceng.close(index);
+            }
+        })
+    }
+});
+</code></pre>
+            <div class="sp10"></div>
+            <h3 class="pui-subname c-gray ffm">3.4 单选框</h3>
+            <div class="radio-group clearfix" id="demoRadio">
+                <div class="radione inline">
+                    <input type="radio" name="radiobj" value="a">
+                    <span>帝都</span>
+                </div>
+                <div class="radione inline">
+                    <input type="radio" name="radiobj" value="b">
+                    <span>魔都</span>
+                </div>
+                <div class="radione inline">
+                    <input type="radio" name="radiobj" value="c">
+                    <span>成都</span>
+                </div>
+            </div>
+            <div class="sp10"></div>
+<pre><code class="language-markup">
+&lt;div class="radio-group clearfix" id="demoRadio"&gt;
+    &lt;div class="radione inline"&gt;
+        &lt;input type="radio" name="radiobj" value="a" /&gt;
+        &lt;span&gt;帝都&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="radione inline"&gt;
+        &lt;input type="radio" name="radiobj" value="b" /&gt;
+        &lt;span&gt;魔都&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="radione inline"&gt;
+        &lt;input type="radio" name="radiobj" value="c" /&gt;
+        &lt;span&gt;成都&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">
+$('#demoRadio input[type=radio]').radioSmart({
+    callback: function(self, v){}
+    // self 为当前radio
+    // v 为选中的值
+});
+</code></pre>
+            <div class="sp10"></div>
+            <div class="sp10"></div>
+            <div class="check-group clearfix" id="demoCheckbox">
+                <div class="checkone inline">
+                    <input type="checkbox" name="chkboxbj" checked="checked" value="x">
+                    <span>惊天魔盗团</span>
+                </div>
+                <div class="checkone inline">
+                    <input type="checkbox" name="chkboxbj" checked="checked" disabled="disabled" value="y">
+                    <span>论文叙老点柳先开</span>
+                </div>
+                <div class="checkone inline">
+                    <input type="checkbox" name="chkboxbj" disabled="disabled" value="z">
+                    <span>青春梦工厂</span>
+                </div>
+            </div>
+            <div class="sp10"></div>
+            <input class="btn bgc-red" type="button" id="getDemoCheckboxVal" value="取选中值">
+            <div class="sp10"></div>
+<pre><code class="language-markup">
+&lt;div class="check-group clearfix" id="demoCheckbox"&gt;
+    &lt;div class="checkone inline"&gt;
+        &lt;input type="checkbox" name="chkboxbj" checked value="x" /&gt;
+        &lt;span&gt;惊天魔盗团&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="checkone inline"&gt;
+        &lt;input type="checkbox" name="chkboxbj" checked disabled value="y" /&gt;
+        &lt;span&gt;论文叙老点柳先开&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="checkone inline"&gt;
+        &lt;input type="checkbox" name="chkboxbj" disabled value="z" /&gt;
+        &lt;span&gt;青春梦工厂&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">
+$('#demoCheckbox input[type=checkbox]').checkboxSmart({
+    callback: function(self, bool) {},  // 点击后回调事件
+    checkCallback: function(self, bool) {},   // 选中回调事件
+    uncheckCallback: function(self, bool) {}  // 反选回调事件
+});
+// 取（checkbox组）值
+Pui.getCheckVal()      // checkboxgroup : checkbox 同name组
+
+// 设置值
+Pui.setCheckVal = function(chkobj, bool)
+</code></pre>
+            <h3 class="pui-subname c-gray ffm">3.4 按钮</h3>
+            <a href="javascript:;" class="btn bgc-green" id="accountAdd">
+                <i class="icon icon-addr"></i>
+                <span>创建账号</span>
+            </a>
+            <a href="javascript:;" class="btn bgc-blue" id="accountAdd">
+                <span>创建账号</span>
+            </a>
+            <input class="btn bgc-red" type="button" value="按钮1">
+            <button class="btn bgc-red">按钮2</button>
+            <button class="btn btn-common">按钮2</button>
+            <button class="btn bb bgc-red"><i class="icon icon-addr"></i>按钮2</button>
+            <button class="btn bb btn-common">按钮2</button>
+            <div class="sp10"></div>
+<pre><code class="language-markup">
+&lt;a href="javascript:;" class="btn bgc-green" id="accountAdd"&gt;
+    &lt;i class="icon icon-addr"&gt;&lt;/i&gt;
+    &lt;span&gt;创建账号&lt;/span&gt;
+&lt;/a&gt;
+&lt;a href="javascript:;" class="btn bgc-blue" id="accountAdd"&gt;
+    &lt;span&gt;创建账号&lt;/span&gt;
+&lt;/a&gt;
+&lt;input class="btn bgc-red" type="button" value="按钮1" /&gt;
+&lt;button class="btn bgc-red"&gt;按钮2&lt;/button&gt;
+&lt;button class="btn btn-common"&gt;按钮2&lt;/button&gt;
+&lt;button class="btn bb bgc-red"&gt;&lt;i class="icon icon-addr"&gt;&lt;/i&gt;按钮2&lt;/button&gt;
+&lt;button class="btn bb btn-common"&gt;按钮2&lt;/button&gt;
+</code></pre>
+            <h3 class="pui-subname c-gray ffm">3.5 分页</h3>
+            <div class="pagination" id="pageDemo"></div>
+            <div class="sp10"></div>
+<pre><code class="language-javascript">
+$('#pageDemo').pager({
+    totalItem: 111,
+    pageSize: 10,
+    pageIndex: 1,
+    singlePage: false,  // 此属性仅作用在单页翻页切换场景
+    action: function(pi, ps) {
+        ceng.msg('pageIndex： ' + pi + '，pageSize： ' + ps);
+    }
+});
+</code></pre>
+            <div class="sp30"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,4 +1,72 @@
-<!DOCTYPE html><html lang="en"><head><title>评鉴通 - UI</title><meta charset="utf-8"><link href="./css/style.css?908bd9db53f75c799cbd" rel="stylesheet"><script type="text/javascript" src="./js/vendors.js?908bd9db53f75c799cbd"></script><script type="text/javascript" src="./js/table.bundle.js?908bd9db53f75c799cbd"></script></head><body><div class="pui-nav"><div class="widthly clearfix"><div class="pui-logo pdt10 fl"><h1 class="pui-title c-blue fnormal ffm fs30">评鉴通 UI （PUI）</h1><h6 class="ffm fs fnormal c-gray3">Base on PJT4.0</h6></div><div class="fr"><ul class="inline ffm fb"><li class="tc"><a href="pui-layout.html" class="c-gray5 ant">布局</a></li><li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a></li><li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li><li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a></li><li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li><li class="tc cur"><a href="pui-table.html" class="c-gray5 ant">表格</a></li><li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li><li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li></ul></div></div></div><div class="pui-body"><div class="widthly"><h2 class="pui-category c-red fnormal fs20 ffm">表格及相关组件（table）</h2><div class="bgc-white pd20"><div class="query-form"><form class="pui-form" id="queryForm"><div class="attach-filter clearfix"><div class="fr"><div class="input-group button inline"><label><input class="txt" name="keyword" type="text"> <span><button class="icon icon-search gosubmit" type="button"></button></span></label></div></div><div class="sp20"></div></div></form></div><div class="page-table hasPagination"><div class="overflow-table"><table class="table table-center table-song table-relative table-big" id="tableObj"><thead><tr class="header"><th class="tl">管理员帐号</th><th>总人次</th><th>完成人次</th><th>外完成人次</th><th>剩余必填人次</th><th>完成比例</th></tr></thead><tbody></tbody></table></div><script type="text/javascript">var tabledata = {
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+<link href="./css/style.css?908bd9db53f75c799cbd" rel="stylesheet"><script type="text/javascript" src="./js/vendors.js?908bd9db53f75c799cbd"></script><script type="text/javascript" src="./js/table.bundle.js?908bd9db53f75c799cbd"></script></head>
+
+<body>
+    <div class="pui-nav">
+        <div class="widthly clearfix">
+            <div class="pui-logo pdt10 fl">
+                <h1 class="pui-title c-blue fnormal ffm fs30">评鉴通 UI （PUI）</h1>
+                <h6 class="ffm fs fnormal c-gray3">Base on PJT4.0</h6>
+            </div>
+            <div class="fr">
+                <ul class="inline ffm fb">
+                    <li class="tc"><a href="pui-layout.html" class="c-gray5 ant">布局</a></li>
+                    <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a></li>
+                    <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                    <li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a></li>
+                    <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                    <li class="tc cur"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                    <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li>
+                    <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="pui-body">
+        <div class="widthly">
+            <h2 class="pui-category c-red fnormal fs20 ffm">表格及相关组件（table）</h2>
+            <div class="bgc-white pd20">
+                <div class="query-form">
+                    <form class="pui-form" id="queryForm">
+                        <div class="attach-filter clearfix">
+                            <div class="fr">
+                                <div class="input-group button inline">
+                                    <label>
+                                        <input class="txt" name="keyword" type="text">
+                                        <span><button class="icon icon-search gosubmit" type="button"></button></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="sp20"></div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="page-table hasPagination">
+                    <div class="overflow-table">
+                        <table class="table table-center table-song table-relative table-big" id="tableObj">
+                            <thead>
+                                <tr class="header">
+                                    <th class="tl">管理员帐号</th>
+                                    <th>总人次</th>
+                                    <th>完成人次</th>
+                                    <th>外完成人次</th>
+                                    <th>剩余必填人次</th>
+                                    <th>完成比例</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <script type="text/javascript">
+                    var tabledata = {
                         "Data": [{
                             "_rowid_": 1,
                             "UserId": 503443,
@@ -73,7 +141,10 @@
                         "PageSize": 10,
                         "TotalPages": 1,
                         "TotalRecords": 33
-                    };</script><script type="text/x-jquery-tmpl" id="tableTmpl">{{each(i, item) Data}}
+                    };
+                    </script>
+                    <script type="text/x-jquery-tmpl" id="tableTmpl">
+                        {{each(i, item) Data}}
                         <tr>
                             <td class="tl">
                                 <p>${item.Account}</p>
@@ -94,7 +165,18 @@
                                 <p>${item.Mobile}</p>
                             </td>
                         </tr>
-                        {{/each}}</script></div><div class="sp10"></div><div class="sp10"></div><div class="sp10"></div><pre><code class="language-markUp">
+                        {{/each}}
+                    </script>
+                </div>
+                <div class="sp10"></div>
+                
+                <div class="sp10"></div>
+                
+                <div class="sp10"></div>
+                
+
+
+<pre><code class="language-markUp">
     &lt;!-- 只说说大概结构 --&gt;
     &lt;div class="query-form"&gt;
         &lt;form class="pui-form" id="queryForm"&gt;
@@ -121,7 +203,11 @@
             &lt;/table&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-</code></pre><div class="sp10"></div><pre><code class="language-javascript">
+</code></pre>
+
+<div class="sp10"></div>
+
+<pre><code class="language-javascript">
     var tableObj = $('#tableObj');
     var tableTmpl = $('#tableTmpl');
     var queryform = $('#queryForm');
@@ -144,4 +230,21 @@
         dateFormat: 'YYYY-MM-DD',       // 查询时间格式
         afterLoadCallback: function () { }        // 数据渲染后回调事件
     });
-</code></pre><div class="sp10"></div><div class="sp10"></div><div class="sp10"></div><div class="sp10"></div><div class="sp10"></div></div></div></div></body></html>
+</code></pre>
+
+
+                <div class="sp10"></div>
+                
+                <div class="sp10"></div>
+                
+                <div class="sp10"></div>
+                
+                <div class="sp10"></div>
+                
+                <div class="sp10"></div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

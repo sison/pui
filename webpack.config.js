@@ -2,7 +2,7 @@
  * @Author: sison.luo
  * @Date:   2016-06-12 14:33:10
  * @Last Modified by:   sison
- * @Last Modified time: 2016-10-27 15:18:29
+ * @Last Modified time: 2016-10-28 10:48:17
  */
 
 'use strict';
@@ -22,25 +22,15 @@ var assetsJson = new assetsPlugin({
 
 
 var webpackConfig = {
-    // entry: {},
-    entry: {
-    //     layout: './assets/admin/v4.0.3/entry/layout',
-    //     form: './assets/admin/v4.0.3/entry/form',
-    //     ceng: './assets/admin/v4.0.3/entry/ceng',
-    //     fonts: './assets/admin/v4.0.3/entry/fonts',
-    //     valid: './assets/admin/v4.0.3/entry/valid',
-    //     table: './assets/admin/v4.0.3/entry/table',
-    //     css: './assets/admin/v4.0.3/entry/css'
-    },
+    entry: {},
     output: {
-        path: path.resolve(__dirname, 'assets/admin/v4.0.3/dist/'),
+        path: path.resolve(__dirname, 'dist/'),
         filename: 'js/[name].bundle.js?[hash]',
         // publicPath: path.resolve(__dirname, 'assets/admin/v4.0.3/dist/')
         publicPath: './'
     },
     module: {
         loaders: [
-            // { test: /\.css$/, loader: 'style!css'},
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style", "css-loader") },
             { test: /\.js$/, loader: 'jsx-loader?harmony' },
             { test: /\.scss$/, loader: 'style!css!sass?sourceMap' },
@@ -50,7 +40,7 @@ var webpackConfig = {
                 loader: 'url?name=/fonts/[name].[ext]'
             },
             {
-                test: /(\/|\\)htmpl(\/|\\).*(\.html)$/,
+                test: /(\/|\\)assets(\/|\\)htmpl(\/|\\).*(\.html)$/,
                 loader: 'html?config=htmlLoaderConfig'
             }
         ]
@@ -75,9 +65,6 @@ var webpackConfig = {
             Pui: "Pui",
             prism: 'prism'
         }),
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     name: 'vendor'
-        // }),
         new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.js?[hash]'),
         assetsJson
     ]
@@ -101,8 +88,8 @@ Object.keys(allentry).forEach(function(name) {
     webpackConfig.entry[name] = allentry[name];
     var plugin = new htmlwebpackplugin({
         filename: 'pui-' + name + '.html',
-        template: './htmpl/pui-' + name + '.html',
-        title: name + ' - 评鉴通UI - pack by webpack',
+        template: './assets/htmpl/pui-' + name + '.html',
+        // title: name + ' - 评鉴通UI - pack by webpack',  // 因使用了 html-loader，故此方法无效
         inject: 'head',
         chunks: [name, 'vendors'],
         minify: {
