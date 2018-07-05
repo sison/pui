@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../../../libs/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../components/pui.loop.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/pui.css">
+	<link rel="stylesheet" type="text/css" href="../../../../fonts/style.css" />
+	<style type="text/css">
+		li { list-style: none; line-height: 24px; font-size: 12px;}
+		#loop { width: 500px; }
+		.iamrow:hover { background-color: #eee; }
+	</style>
+</head>
+<body>
+
+	<div id="loop"></div>
+
+	<script type="text/javascript">
+
+		var data = [{"zid":20099,"title":"广东省倍智测评网络科技股份有限公司","children":[{"zid":20100,"title":"懂事局","children":[{"zid":201011,"title":"广州总部","children":[{"zid":2010111,"title":"挨踢部","children":[{"zid":20101111,"title":"点叻组","children":[]},{"zid":20101111,"title":"前端组","children":[]}]}]},{"zid":201011,"title":"华南区","children":[{"zid":2010111,"title":"深圳分公司","children":[{"zid":20101111,"title":"财务部","children":[]},{"zid":20101111,"title":"农业部","children":[]},{"zid":20101111,"title":"好吃部","children":[]},{"zid":20101111,"title":"工商部","children":[]}]}]}]}]}];
+
+		var loop = new Loop({
+	        tree: $('#loop'),
+	        data: data,
+	        main: [true, false],
+	        width: ['calc(100% - 50px)', '50px'],
+	        alias: ['group', 'chkbox'],
+	        collapse: [
+	        	{
+	        		title: 'title',
+	        		formatter: function(v){
+	        			return '<span class="ellipsis">' + v + '</span>'
+	        		}
+	        	},
+	        	{
+	        		title: 'zid',
+	        		formatter: function(v){
+	        			return '<input type="checkbox" name="group' + v + '" />'
+	        		}	        		
+	        	}
+	        ],
+	        callback: function(self) {
+	        }
+	    });
+	    // loop.init();
+	</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="pui-menu">
+        <div class="inner bgc-white" id="innerMenu">
+            <div class="pui-logo">
+                <h1 class="pui-title c-blue ffm ant">评鉴通 UI （PUI）</h1>
+                <h6 class="pui-subtitle ffm fs fnormal ant c-gray3">Base on PJT4.0</h6>
+                <div class="sp10"></div>
+                <div class="sp10"></div>
+            </div>
+            <ul class="ffm fb">
+                <li class="tc cur"><a href="pui-layout.html" class="c-gray5 ant">布局</a>
+                    <ul>
+                        <li><a href="">栅格系统</a></li>
+                        <li><a href="">面包屑</a></li>
+                        <li><a href="">导航栏</a></li>
+                        <li><a href="">标签</a></li>
+                        <li><a href="">黄底橙字</a></li>
+                        <li><a href="">步骤图</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a>
+                    <ul>
+                        <li><a href="">下拉菜单</a></li>
+                        <li><a href="">输入框</a></li>
+                        <li><a href="">切换</a></li>
+                        <li><a href="">单选框</a></li>
+                        <li><a href="">复选框</a></li>
+                        <li><a href="">按钮</a></li>
+                        <li><a href="">按钮组</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                <li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a>
+                    <ul>
+                        <li><a href="">loading</a></li>
+                        <li><a href="">提示</a></li>
+                        <li><a href="">警示框</a></li>
+                        <li><a href="">询问框</a></li>
+                        <li><a href="">弹出框</a></li>
+                        <li><a href="">iframe框</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                <li class="tc"><a href="pui-page.html" class="c-gray5 ant">分页</a></li>
+                <li class="tc"><a href="pui-tab.html" class="c-gray5 ant">标签页</a></li>
+                <li class="tc">
+                    <a href="pui-popop.html" class="c-gray5 ant">气泡</a>
+                    <ul>
+                        <li><a href="">文字提示</a></li>
+                        <li><a href="">浮动框</a></li>
+                        <li><a href="">确认框</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-calendar.html" class="c-gray5 ant">日历</a></li>
+                <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li>
+                <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="pui-body">
+        <div class="content">
+            <h2 class="pui-category c-red fnormal fs20 ffm">树型（Tree）</h2>
+            <div class="sp10"></div>
+            <!--10像素间隔-->
+            <div class="sp10"></div>
+            <!--10像素间隔-->
+
+            <h3 class="pui-subname c-gray ffm">1.1 三层 Grid</h3>
+            <div class="sp10"></div>
+            <div class="row fm">
+                <div class="col-xs-12">
+                    <div class="ext-table-to-div fs tc" id="weightTree"></div>
+                </div>
+            </div>
+            <div class="sp30"></div>
+            <div class="sp30"></div>
+            <pre><code class="language-markUp">
+    &lt;div id="weightTree"&gt;&lt;/div&gt; &lt;!--定义容器--&gt;
+
+</code></pre>
+<pre><code class="language-javascript">
+    new Tree({
+        tree: $('#weightTree'),     // 容器id
+        data: startData.theme3,     // 切换 startData.theme1, startData.theme2 试试
+        main: tree.main,        //  需要缩进的列
+        width: tree.width,      //  列宽度
+        alias: tree.alias,      //  列类名
+        header: tree.header,        //  头部
+        headersub: tree.headersub,      //  副头部
+        collapse: tree.collapse,        //  列表树
+        callback: function(self) {      // 渲染后回调
+            toggleLevel(self);
+            changePrecent(self);
+            changeWeight(self);
+        }
+    });
+
+    // 语法与 jquery-ui的 tree-grid 有点类似，但是功能没那么强大
+    // 列内容格式说明
+    // title 匹配 json 字段的 key 名
+    // formatter 可带 html 格式内容
+
+    {
+        title: 'value',
+        formatter: function(val) {
+            return '<input type="text" class="txt wp100 disabled" disabled data-req="true" value="' + val + '" /> ';
+        }
+    }
+
+    
+    // Data 格式
+
+        var startData = {
+            zid: '0001',
+            value: '都城的饭好难吃',
+            themeStyle: 2,
+            theme1: [{
+                zid: '00031',
+                value: '一级指标1111111111',
+                defined: 1,
+                grade1: 1,
+                grade2: 1,
+                grade3: 1,
+                children: []
+            }],
+            theme2: [{
+                zid: '00031',
+                value: '一级指标99999999',
+                defined: 1,
+                grade1: 1,
+                grade2: 1,
+                grade3: 1,
+                children: [{
+                    zid: '00031',
+                    value: '二级指标222222222',
+                    defined: 1,
+                    grade1: 1,
+                    grade2: 1,
+                    grade3: 1,
+                    children: []
+                }]
+            }],
+            theme3: [{
+                zid: '00031',
+                value: '一级指标1',
+                defined: 1,
+                grade1: 1,
+                grade2: 1,
+                grade3: 1,
+                children: [{
+                    zid: '000211',
+                    value: '二级指标',
+                    defined: 1,
+                    grade1: 1,
+                    grade2: 1,
+                    grade3: 1,
+                    children: [{
+                        zid: '000211',
+                        value: '三级指标',
+                        defined: 1,
+                        grade1: 999,
+                        grade2: 999,
+                        grade3: 999,
+                        children: []
+                    }]
+                }, {
+                    zid: '000211',
+                    value: '二级指标',
+                    defined: 1,
+                    grade1: 1,
+                    grade2: 1,
+                    grade3: 1,
+                    children: [{
+                        zid: '000211',
+                        value: '三级指标',
+                        defined: 1,
+                        grade1: 1,
+                        grade2: 1,
+                        grade3: 1,
+                        children: []
+                    }, {
+                        zid: '000211',
+                        value: '三级指标',
+                        defined: 1,
+                        grade1: 1,
+                        grade2: 1,
+                        grade3: 1,
+                        children: []
+                    }, {
+                        zid: '000211',
+                        value: '三级指标',
+                        defined: 1,
+                        grade1: 1,
+                        grade2: 1,
+                        grade3: 1,
+                        children: []
+                    }]
+                }]
+            }, {
+                zid: '00031',
+                value: '一级指标2',
+                defined: 1,
+                grade1: 1,
+                grade2: 1,
+                grade3: 1,
+                children: [{
+                    zid: '000211',
+                    value: '二级指标',
+                    defined: 1,
+                    grade1: 1,
+                    grade2: 1,
+                    grade3: 1,
+                    children: []
+                }, {
+                    zid: '000211',
+                    value: '二级指标',
+                    defined: 1,
+                    grade1: 1,
+                    grade2: 1,
+                    grade3: 1,
+                    children: [{
+                        zid: '000211',
+                        value: '三级指标',
+                        defined: 1,
+                        grade1: 1,
+                        grade2: 1,
+                        grade3: 1,
+                        children: []
+                    }]
+                }]
+            }]
+        }
+
+
+
+</code></pre>
+
+
+<h3 class="pui-subname c-gray ffm">1.2 树结构</h3>
+<div class="sp10"></div>
+<div class="row fm">
+    <div class="col-xs-12">
+        <div class="company loop" id="weightLoop"></div>
+    </div>
+</div>
+
+<pre><code class="language-markUp">
+    &lt;div id="weightLoop"&gt;&lt;/div&gt; &lt;!--定义容器（支持无限级）--&gt;
+
+</code></pre>
+<pre><code class="language-javascript">
+    new Tree({
+        tree: $(&#x27;#weightLoop&#x27;),
+        data: JSON.parse(loopdata),
+        dw: 20,
+        main: [true],
+        width: [&#x27;100%&#x27;],
+        alias: [&#x27;name&#x27;],
+        header: [],     // 不显示头部
+        headersub: [],  // 不显示副头部
+        collapse: [
+            {
+                title: &#x27;title&#x27;,
+                formatter: function (v) {
+                    return &#x27;&lt;em class=&quot;icon icon-folder&quot;&gt;&lt;/em&gt;&lt;a class=&quot;ellipsis block c-gray2 pdr10&quot; href=&quot;javascript:void(0)&quot; title=&quot;&#x27; + v.Name + &#x27;&quot;&gt;&#x27; + v.Name + &#x27;&lt;/a&gt;&lt;input type=&quot;hidden&quot; orgid=&quot;&#x27; + v.OrgStructureDepartmentId + &#x27;&quot; /&gt;&#x27;
+                }
+            }
+        ],
+        callback: function (self) {}
+    });
+
+</code></pre>
+            <div class="sp50"></div>
+            <div class="sp50"></div>
+        </div>
+    </div>
+</body>
+
+</html>

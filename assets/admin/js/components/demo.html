@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../../../../fonts/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/pui.css">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .examplePopop {
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sp30"></div>
+    <div class="sp30"></div>
+    <div class="examplePopop">
+        <div class="row">
+            <div class="col-xs-12 tc">
+                <button class="btn btn-common pone" dir="top-left" refcont="上左">上左</button>
+                <button class="btn btn-common pone" dir="top" refcont="上中">上中</button>
+                <button class="btn btn-common pone" dir="top-right" refcont="上右">上右</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="fl">
+                    <li>
+                        <button class="btn btn-common pone" dir="left-top" refcont="666">左上</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-common pone" dir="left" refcont="666">左中</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-common pone" dir="left-bottom" refcont="666">左下</button>
+                    </li>
+                </div>
+                <div class="fr">
+                    <li>
+                        <button class="btn btn-common pone" dir="right-top" refcont="666">右上</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-common pone" dir="right" refcont="666">右中</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-common pone" dir="right-bottom" refcont="666">右下</button>
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 tc">
+                <button class="btn btn-common pone" dir="bottom-left" refcont="下左">下左</button>
+                <button class="btn btn-common pone" dir="bottom" refcont="下中">下中</button>
+                <button class="btn btn-common pone" dir="bottom-right" refcont="下右">下右</button>
+            </div>
+        </div>
+    </div>
+    <div class="sp80"></div>
+    <div class="row mgb10 selectDate">
+        <div class="col-xs-2 col-key tr">
+            <span class="pdr10">限制时间：</span>
+        </div>
+        <div class="col-xs-10">
+            <div class="selectDate clearfix">
+                <div class="fl nbsp daterbox w300">
+                    <i class="icon icon-date2"></i>
+                    <input id="d4311" class="txt txtdater" type="text" value="2018/04/12 12:53:17" data-status="true">
+                </div>
+                <div class="fl nbsp pdlr10 c-gray4">—</div>
+                <div class="fl nbsp daterbox w300">
+                    <i class="icon icon-date2"></i>
+                    <input id="d4312" class="txt txtdater" type="text" value="2018/04/18 12:53:17" data-status="true">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="sp80"></div>
+    <div class="sp80"></div>
+    <div class="sp80"></div>
+    <div class="sp80"></div>
+
+
+    <div class="ceng-ready" id="cengTest">
+        <div class="pd20 lh30 tc">
+            <h6>虞美人</h6>
+            <p>春花秋月何时了，往事知多少</p>
+            <p>小楼昨夜又东风，故国不堪回首月明中</p>
+            <p>雕栏玉砌应犹在，只是朱颜改</p>
+            <p>问君能有几多愁，恰似一江春水向东流</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../../../libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="pui.js"></script>
+    <script type="text/javascript" src="pui.popop.js"></script>
+    <script type="text/javascript" src="pui.base.js"></script>
+    <script type="text/javascript" src="pui.ceng.js"></script>
+    <script type="text/javascript" src="pui.calendar.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $('.examplePopop button').popSmart();
+
+            $('#d4311').daterSmart({
+                format: 'YYYY-MM-DD hh:mm:ss',
+                minDate: '1996/11/22 12:53:17',
+                maxDate: $("#d4312"),
+                onselect: function () {
+                    $('#d4312').click();
+                }
+            });
+            $('#d4312').daterSmart({
+                format: 'YYYY-MM-DD hh:mm:ss',
+                minDate: $("#d4311"),
+                maxDate: '2038/12/08 12:53:17'
+            });
+
+
+
+
+            // ceng.hello({
+            //     title: '李熠 666',
+            //     contentType: 'dom',
+            //     content: $('#cengTest'),
+            //     zoom: true,
+            //     yes: function(o, i){
+            //         ceng.close(i)
+            //     }
+            // })
+        })
+
+    </script>
+</body>
+
+</html>

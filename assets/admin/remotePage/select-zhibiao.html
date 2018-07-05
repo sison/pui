@@ -1,0 +1,153 @@
+<div id="selectZhiBiao">
+    <div class="pd20">
+        <form action="assets/admin/v4.0.3/json/admin-pro-page2.json" class="pui-form" id="searchDataForm">
+            <div class="row">
+                <div class="col-xs-8"></div>
+                <div class="col-xs-4">
+                    <div class="input-group fr button">
+                        <label>
+                            <input class="txt" name="keyword" type="text">
+                            <span><button class="icon icon-search" type="submit"></button></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <script type="text/javascript">
+        var tabledata = {
+            "Data": [{
+                "id": 1001,
+                "name": "指标1001",
+                "value": "dnsh1001"
+            }, {
+                "id": 1002,
+                "name": "指标1002",
+                "value": "dnsh1002"
+            }, {
+                "id": 1003,
+                "name": "指标1003",
+                "value": "dnsh1003"
+            }, {
+                "id": 1004,
+                "name": "指标1004",
+                "value": "dnsh1004"
+            }, {
+                "id": 1005,
+                "name": "指标1005",
+                "value": "dnsh1005"
+            }, {
+                "id": 1006,
+                "name": "指标1006",
+                "value": "dnsh1006"
+            }, {
+                "id": 1007,
+                "name": "指标1007",
+                "value": "dnsh1007"
+            }, {
+                "id": 1008,
+                "name": "指标1008",
+                "value": "dnsh1008"
+            }, {
+                "id": 1009,
+                "name": "指标1009",
+                "value": "dnsh1009"
+            }, {
+                "id": 1010,
+                "name": "指标1010",
+                "value": "dnsh1010"
+            }],
+            "PageIndex": 1,
+            "PageSize": 10,
+            "TotalPages": 2,
+            "id": 1001,
+            "TotalRecords": 15
+        };
+        </script>
+        <form action="" class="pui-form">
+            <div class="page-table hasPagination">
+                <table class="table table-center table-song table-relative" id="tableObj">
+                    <tbody></tbody>
+                </table>
+                <script type="text/javascript">
+                var selectItemInzb = ['1001', '2003'];
+                var giveChecked = function(id) {
+                    var chkbool = false;
+                    for (var x = 0, y = selectItemInzb.length; x < y; x++) {
+                        if (selectItemInzb[x].toString() === id.id.toString()) {
+                            chkbool = true;
+                        }
+                    }
+                    return chkbool;
+                }
+                </script>
+                <script type="text/x-jquery-tmpl" id="tableTmpl">
+                    {{each(i, item) Data}}
+                    <tr>
+                        <td class="tl">
+                            <div class="checkone inline">
+                                {{if giveChecked({id}) }}
+                                <input type="checkbox" name="chkobj" id="${id}" value="${value}" checked /> 
+                                {{else}}
+                                <input type="checkbox" name="chkobj" id="${id}" value="${value}" /> 
+                                {{/if}}
+                                <span>${name}</span>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </script>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+$(function() {
+
+    var selectItemInzb = [];
+    var zbDOM = {
+        tableObj: $('#selectZhiBiao #tableObj'),
+        tableTmpl: $('#selectZhiBiao #tableTmpl'),
+        queryform: $('#selectZhiBiao #queryForm'),
+        queryformurl : 'assets/admin/v4.0.3/json/glysytj.json'
+    }
+
+    var tableZhibiao = new TableSimple(zbDOM.tableObj, zbDOM.tableTmpl, {
+        bgcCtrl: true,
+        hoverColor: '#ffc',
+        oddColor: '#fff',
+        evenColor: '#fff',
+        datastyle: 'local',
+        dataSource: tabledata,
+        container: $('tbody', zbDOM.tableObj),
+        isBase64: false,
+        isquery: true,
+        pageCtrl: true,
+        headCtrl: true,
+        queryObj: zbDOM.queryform,
+        queryUrl: zbDOM.queryformurl,
+        afterLoadCallback: function() {
+
+            $('input[name="chkobj"]', tableObj).checkboxSmart({
+                checkCallback: function(me) {
+                    // var tempobj = {};
+                    // tempobj.id = me.attr('id');
+                    // tempobj.name = me.next('span').text();
+                    selectItemInzb.push(me.attr('id'));
+                },
+                uncheckCallback: function(me) {
+                    // var delid = me.attr('id');
+                    // delzbArr(arr, id);
+                    selectItemInzb.remove(me.attr('id'));
+                },
+                callback: function() {
+                    console.log(selectItemInzb);
+                }
+            });
+        }
+    });
+
+
+
+
+});
+</script>

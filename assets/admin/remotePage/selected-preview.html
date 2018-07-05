@@ -1,0 +1,57 @@
+<input type="hidden" name="" id="" value="" />
+<div class="pd20 ffs">
+    <div class="row lh20 fs">
+        <div class="col-xs-1"><span class="c-gray3">产品名称：</span></div>
+        <div class="col-xs-9"><span class="pdl10">互联网产品综合测评</span></div>
+    </div>
+    <div class="row lh20 fs">
+        <div class="col-xs-1"><span class="c-gray3">产品介绍：</span></div>
+        <div class="col-xs-9"><span class="pdl10">如果骄傲没被现实大海冷冷拍下，又怎会晓得执着的人</span></div>
+    </div>
+    <div class="row lh20 fs">
+        <div class="col-xs-1"><span class="c-gray3">报告版本：</span></div>
+        <div class="col-xs-9"><span class="pdl10">就像好好睡了一夜直到天亮</span></div>
+    </div>
+    <div class="sp20"></div>
+    <div class="ext-table-to-div" id="modelTree">
+        <div class="ext-header tc clearfix">
+            <div class="fl ext ext-h1">
+                <span>指标名称</span>
+            </div>
+            <div class="fl ext ext-h2"><span>定义</span></div>
+        </div>
+        <div class="ext-body clearfix"></div>
+    </div>
+</div>
+<script type="text/javascript">
+$(function() {
+    $.ajax({
+        type: 'GET',
+        dataType: 'JSON',
+        data: '',
+        url: '/assets/admin/v4.0.3/json/setweight.json'
+    }).done(function(data) {
+        var loop = new Loop({
+            target: $('#modelTree > .ext-body'),
+            data: data,
+            main: [true, false],
+            width: ['50%', '50%'],
+            collapse: [{
+                title: 'ProductmeasureName',
+                alias: 'th1',
+                formatter: function(val) {
+                    return '<i class="icon icon-toggle"></i><input type="text" class="txt ffs wp100 disabled" value="' + val + '" disabled />';
+                }
+            }, {
+                title: 'MeasureDefinition',
+                alias: 'th2',
+                formatter: function(val) {
+                    return '<input type="text" class="txt ffs wp100 disabled" value="' + val + '" disabled />';
+                }
+            }],
+            callback: function() {}
+        });
+        loop.init();
+    })
+})
+</script>

@@ -1,0 +1,106 @@
+<div id="subjectTypeAsk">
+    <div class="page-notice c-brown ffs mgb10">
+        <div>
+            <p>题目信息</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 col-key tr"><span class="pdr10 c-gray3 fs">题目：</span></div>
+        <div class="col-xs-9 col-val">
+            <textarea name="textarea" class="textarea" id="subjectTypeAskTextarea"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 col-key tr"><span class="pdr10 c-gray3 fs">指标：</span></div>
+        <div class="col-xs-9 col-val">
+            <ul class="inline fl add-tags fs tc" id="askzbList">
+            </ul>
+            <button type="button" class="fl btn bgc-green" id="selectZB"><i class="icon icon-addr"></i>请选择 ...</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 col-key tr"><span class="pdr10 c-gray3 fs">字数限制：</span></div>
+        <div class="col-xs-9 col-val">
+            <input type="text" id="formName" class="txt w100" name="name" autocomplete="off">
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+var selectItems = [{
+    "id": 1001,
+    "name": "指标01"
+}];
+var renderzbList = function(target, arr) {
+    var html = '';
+    for (var i = 0, l = arr.length; i < l; i++) {
+        html += '<li><span class="c-gray2 bgc-gray7">' + arr[i].name + '</span><input type="checkbox" class="hide" id="' + arr[i].id + '"><i class="icon icon-close fs ant" data-ref="' + arr[i].id + '"></i></li>';
+    }
+    target.empty().append(html);
+    target.find('li').each(function() {
+        delzbList.call($(this), arr);
+    })
+}
+var delzbList = function(arr) {
+    var _this = this;
+    _this.find('i').on('click', function() {
+        var id = $(this).data('ref').toString() || '';
+        delzbArr(arr, id);
+        _this.remove();
+    });
+}
+var delzbArr = function(arr, id) {
+    for (var j = 0, l = arr.length; j < l; j++) {
+        var cur = arr[j];
+        debugger;
+        if (cur.id.toString() === id.toString()) {
+            arr.splice(j, 1);
+        }
+        return;
+    }
+    console.log(arr);
+}
+
+
+
+$(function() {
+
+    renderzbList($('#askzbList'), selectItems);
+
+    KindEditor.create("#subjectTypeAskTextarea", {
+        resizeType: 0,
+        autoHeightMode: false,
+        width: "100%",
+        height: "100px",
+        items: ["bold", "italic", "underline"],
+        afterBlur: function() {
+            this.sync();
+        },
+        afterCreate: function() {}
+    });
+
+    $('#selectZB').on('click', function() {
+        ceng.hello({
+            title: '选择指标',
+            content: 'assets/admin/v4.0.3/remotePage/select-zhibiao.html',
+            contentType: 'url',
+            area: [860, 540],
+            yes: function(o, index) {
+                // 提交选中的指标
+                $.ajax({
+                        type: 'GET',
+                        dataType: 'json',
+                        url: 'assets/admin/v4.0.3/json/selected-zb.json',
+                        data: selectItemInzb
+                    }).done(function(data) {
+                        selectItems = data;
+                        // debugger;
+                        renderzbList($('#askzbList'), selectItems);
+                        ceng.close(index);
+                    });
+                
+            },
+            no: function() {}
+        })
+    })
+});
+</script>

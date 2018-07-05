@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="pui-nav">
+        <div class="widthly clearfix">
+            <div class="pui-logo pdt10 fl">
+                <h1 class="pui-title c-blue fnormal ffm fs30">评鉴通 UI （PUI）</h1>
+                <h6 class="ffm fs fnormal c-gray3">Base on PJT4.0</h6>
+            </div>
+            <div class="fr">
+                <ul class="inline ffm fb">
+                    <li class="tc"><a href="pui-layout.html" class="c-gray5 ant">布局</a></li>
+                    <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a></li>
+                    <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                    <li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a></li>
+                    <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                    <li class="tc cur"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                    <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li>
+                    <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="pui-body">
+        <div class="widthly">
+            <h2 class="pui-category c-red fnormal fs20 ffm">Pui-table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="pui-table.html" class="pdr10 c-gray4">基础表格组件</a><span class="txtsp c-gray5">|</span><span class="pdl10">整体封装</span></h2>
+            <div class="queryAccount bgc-white pd20">
+                <form action="" id="queryForm">
+                    <input type="hidden" name="hidIsAdvSearch" value="0">
+                    <input type="hidden" name="ProjectId" value="411">
+                    <input type="hidden" name="ParentProjectId" value="409">
+                    <div class="attach-filter clearfix">
+                        <div class="attach-right fr">
+                            <div class="attach-search clearfix">
+                                <div class="input-group search-group button inline h34">
+                                    <label for="simpleSearchBtn">
+                                        <input type="text" class="txt" name="keyword" maxlength="50" autocomplete="off" placeholder="姓名/帐号/邮箱/手机">
+                                        <span>
+                            <button class="icon icon-search gosubmit simpSubmit" type="button"></button>
+                        </span>
+                                    </label>
+                                </div>
+                                <div class="txt-group mgl10 fr">
+                                    <a href="javascript:void(0);" id="foldDownBtn" class="c-blue tu">高级搜索</a>
+                                </div>
+                                <div class="sp10"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-filter clearfix">
+                        <div class="filter-line" id="divAccountStatus" data-immediately="true">
+                            <b>状态：</b>
+                            <p class="selectItem clearfix">
+                                <a href="javascript:void(0);" class="sall check">全部</a>
+                                <a href="javascript:void(0);">
+                                    <input name="AccountStatus" type="checkbox" value="0"> 未开始
+                                </a>
+                                <a href="javascript:void(0);">
+                                    <input name="AccountStatus" type="checkbox" value="1"> 答题中
+                                </a>
+                                <a href="javascript:void(0);">
+                                    <input name="AccountStatus" type="checkbox" value="2"> 已完成
+                                </a>
+                            </p>
+                        </div>
+                        <div class="filter-line" id="divCommunicationWay" data-immediately="true">
+                            <b>通知方式：</b>
+                            <p class="selectItem clearfix">
+                                <a href="javascript:void(0);" class="sall check">全部</a>
+                                <a href="javascript:void(0);">
+                                    <input name="CommunicationWay" type="checkbox" value="11"> 有邮箱
+                                </a>
+                                <a href="javascript:void(0);">
+                                    <input name="CommunicationWay" type="checkbox" value="12"> 无邮箱
+                                </a>
+                                <a href="javascript:void(0);">
+                                    <input name="CommunicationWay" type="checkbox" value="21"> 有手机
+                                </a>
+                                <a href="javascript:void(0);">
+                                    <input name="CommunicationWay" type="checkbox" value="22"> 无手机
+                                </a>
+                            </p>
+                        </div>
+                        <div class="filter-line" id="divNotify" data-immediately="true">
+                            <b>通知状态：</b>
+                            <p class="selectItem clearfix">
+                                <a href="javascript:void(0);" class="sall check">全部</a>
+                                <a href="javascript:void(0);">
+                                    <input name="Notify" type="checkbox" value="11"> 已发邮件
+                                </a>
+                                <a href="javascript:void(0);">
+                                    <input name="Notify" type="checkbox" value="12"> 未发邮件
+                                </a>
+                                <a href="javascript:void(0);">
+                                    <input name="Notify" type="checkbox" value="21"> 已发短信
+                                </a>
+                                <a href="javascript:void(0);">
+                                    <input name="Notify" type="checkbox" value="22"> 未发短信
+                                </a>
+                            </p>
+                        </div>
+                        <div class="filter-line" id="divLanguage" data-immediately="true">
+                            <b>语言：</b>
+                            <p class="selectItem clearfix">
+                                <a href="javascript:void(0);" class="sall check">全部</a>
+                                <a href="javascript:void(0);">
+                                    <input name="Language" type="checkbox" value="1"> 中文（简体）
+                                </a>
+                                <a href="javascript:void(0);">
+                                    <input name="Language" type="checkbox" value="2"> 英文
+                                </a>
+                                <a href="javascript:void(0);">
+                                    <input name="Language" type="checkbox" value="3"> 中文（繁体）
+                                </a>
+                            </p>
+                        </div>
+                        <div class="highSearch clearfix">
+                            <div class="highSearchInner">
+                                <div class="filter-line nb" id="divRuntime">
+                                    <b>开通时间：</b>
+                                    <p class="selectItem clearfix">
+                                        <a href="javascript:" data-val="" class="check">全部</a>
+                                        <a href="javascript:" dlong="today" data-val="2017-04-19">今天</a>
+                                        <a href="javascript:" dlong="month" data-val="2017-03-19">一个月</a>
+                                        <a href="javascript:" dlong="season" data-val="2017-01-19">三个月</a>
+                                        <a href="javascript:" dlong="year" data-val="2016-04-19">一年</a>
+                                    </p>
+                                </div>
+                                <div class="selectDate clearfix">
+                                    <div class="fl nbsp relative">
+                                        <input class="wpdate txt" id="sjt" name="StartDate" onclick="WdatePicker({ onpicked:function(){$(this).change(); },oncleared:function(){$(this).change();},dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'1949-10-01',maxDate:'#F{$dp.$D(\'ejt\')}'})" type="text" value="" autocomplete="off" readonly="readonly">
+                                    </div>
+                                    <div class="fl nbsp c-gray4 pdl10 pdr10"> --- </div>
+                                    <div class="fl nbsp relative">
+                                        <input class="wpdate txt" id="ejt" name="EndDate" onclick="WdatePicker({ onpicked: function () { $(this).change(); }, oncleared: function () { $(this).change(); }, dateFmt: 'yyyy-MM-dd HH:mm:ss', maxDate: '2049-12-31', minDate: '#F{$dp.$D(\'sjt\')}' })" type="text" value="" autocomplete="off" readonly="readonly">
+                                    </div>
+                                </div>
+                                <div class="spline"></div>
+                                <div class="filter-line nb more" id="divSField">
+                                    <b>搜索条件：</b>
+                                    <p class="selectItem clearfix">
+                                        <a href="javascript:" class="check">
+                                            帐号
+                                            <input type="radio" name="FieldName" checked="" value="UserInfo.Account">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            姓名
+                                            <input type="radio" name="FieldName" value="UserInfo.Name">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            邮箱
+                                            <input type="radio" name="FieldName" value="UserInfo.Email">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            手机
+                                            <input type="radio" name="FieldName" value="UserInfo.Mobile">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            性别
+                                            <input type="radio" name="FieldName" value="UserInfo.Gender">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            最高学历
+                                            <input type="radio" name="FieldName" value="UserInfo.HighestEducation">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            身份证号码
+                                            <input type="radio" name="FieldName" value="UserInfo.IdentityNum">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            出生日期
+                                            <input type="radio" name="FieldName" value="UserInfo.Birthday">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            工作年限
+                                            <input type="radio" name="FieldName" value="UserInfo.WorkYears">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            行业
+                                            <input type="radio" name="FieldName" value="UserInfo.Profession">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            政治面貌
+                                            <input type="radio" name="FieldName" value="UserInfo.PoliticalStatus">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            部门
+                                            <input type="radio" name="FieldName" value="UserInfo.Org">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            职位
+                                            <input type="radio" name="FieldName" value="UserInfo.Position">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            毕业院校
+                                            <input type="radio" name="FieldName" value="UserInfo.School">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            专业
+                                            <input type="radio" name="FieldName" value="UserInfo.Major">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            语言
+                                            <input type="radio" name="FieldName" value="UserInfo.Language">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            自
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField1">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            NULL1234569123456789123456789123456789
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField2">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            &amp;n123456789345678
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField3">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            234567891234567891234567891234567891234567891234567891234
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField4">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            yyy&gt;sss
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField5">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            &amp;&amp;&amp;&amp;%%%&gt;&gt;&gt;''
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField6">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            &lt;~13656&gt;
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField7">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            入
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField8">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            新加--测试修改
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField9">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            新建16966666666
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField10">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            &amp;nbsp
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField11">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            &gt;s
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField12">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            a
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField13">
+                                        </a>
+                                        <a href="javascript:" class="">
+                                            兴趣爱好
+                                            <input type="radio" name="FieldName" value="UserResume.CustomField14">
+                                        </a>
+                                    </p>
+                                    <a class="toggle bgc-gray6"><span>更多</span><i class="ico ico-arrow2"></i></a></div>
+                                <div class="textarea fl">
+                                    <textarea name="BatchContent" placeholder="" id="sfv" class="default"></textarea>
+                                </div>
+                                <div class="subtn fl">
+                                    <button type="button" class="btn btn-green gosubmit highSubmit">搜索</button>
+                                    <a href="javascript:void(0);" id="foldUpBtn" class="c-blue tu">收起高级搜索</a>
+                                </div>
+                                <div class="sp10"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setOrder mgt20 fs ffv">
+                        <ul class="radiuslist">
+                            <li class="relative cur">
+                                <a href="javascript:void(0)" class="sortfield desc" sortfield="JoinTime">
+                            开通时间
+                            <i class="ico ico-order absolute"></i>
+                        </a>
+                            </li>
+                            <li class="relative ">
+                                <a href="javascript:void(0)" class="sortfield desc" sortfield="Account">
+                            帐号
+                            <i class="ico ico-order absolute"></i>
+                        </a>
+                            </li>
+                            <li class="relative ">
+                                <a href="javascript:void(0)" class="sortfield desc" sortfield="Name">
+                            姓名
+                            <i class="ico ico-order absolute"></i>
+                        </a>
+                            </li>
+                            <li class="relative ">
+                                <a href="javascript:void(0)" class="sortfield desc" sortfield="Org">
+                            部门
+                            <i class="ico ico-order absolute"></i>
+                        </a>
+                            </li>
+                        </ul>
+                        <input id="sortField" name="sort" type="hidden" value="">
+                    </div>
+                </form>
+            </div>
+            <div id="MainContent" class="bbthree pd20">
+                <div class="tableSetter bgc-white">
+                    <div class="setFunction clearfix bgc-gray9">
+                        <div class="selectRange check-groups fl">
+                            <label>
+                                <div class="checkone inline isrender">
+                                    <i class="ant icon"></i>
+                                    <input id="isChkPage" type="checkbox" name="range">当前页（<span>10</span>）
+                                </div>
+                            </label>
+                            <label>
+                                <div class="checkone inline isrender">
+                                    <i class="ant icon"></i>
+                                    <input id="isChkAll" type="checkbox" name="range">全部（<span>11</span>）
+                                </div>
+                            </label>
+                        </div>
+                        <div class="funBtns fl">
+                            <ul class="inline">
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-blue" id="btn-add-account">新建帐号</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-blue" id="btn-quote-account">引用帐号</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-blue" id="btn-reset-psw">重置密码</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-blue" id="btn-batch-notify">发送通知</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-blue" id="btn-remove-account">移除</a></li>
+                                <li><a href="javascript:void(0);" class="btn btn-common mgr10 ffv ant c-blue" id="btn-export-account">导出</a></li>
+                            </ul>
+                        </div>
+                        <div class="setBtns fr">
+                            <ul class="radiuslist inline">
+                                <li><a href="javascript: void(0)" class="icon icon-set-info" id="infoSetter"><em>帐号信息显示设定</em></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="ViewContent">
+                    <div class="page-table hasPagination hasRemark">
+                        <div class="overflow-table">
+                            <table class="table table-center table-song table-relative table-big" id="tableObj">
+                                <thead>
+                                    <tr class="header">
+                                        <th></th>
+                                        <th class="tl">管理员帐号</th>
+                                        <th>总人次</th>
+                                        <th>完成人次</th>
+                                        <th>外完成人次</th>
+                                        <th>剩余必填人次</th>
+                                        <th>完成比例</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="remark c-gray3">
+                            <dl class="inline">
+                                <dd><i class="icon icon-mail-waiting c-gray4"></i>邮件等待发送</dd>
+                                <dd><i class="icon icon-mail-success c-green"></i>邮件发送成功</dd>
+                                <dd><i class="icon icon-mail-fail c-red"></i>邮件发送失败</dd>
+                                <dd><i class="icon icon-msg-waiting c-gray4 fs15"></i>短信等待发送</dd>
+                                <dd><i class="icon icon-msg-success c-green fs15"></i>短信发送成功</dd>
+                                <dd><i class="icon icon-msg-fail c-red fs15"></i>短信发送失败</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <script type="text/x-jquery-tmpl" id="tableTmpl">
+                        {{each(i, item) Data}}
+                        <tr>
+                            <td>
+                                <div class="checkone">
+                                    <input type="checkbox" class="chkone" value="${item.Id}" />
+                                </div>
+                            </td>
+                            <td class="tl">
+                                <p>${item.Account}</p>
+                            </td>
+                            <td>
+                                <p>${item.Name}</p>
+                            </td>
+                            <td>
+                                <p>${item.Email}</p>
+                            </td>
+                            <td>
+                                <p>${item.Department}</p>
+                            </td>
+                            <td>
+                                <p>${item.Sex}</p>
+                            </td>
+                            <td>
+                                <p>${item.Mobile}</p>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </script>
+                    <script type="text/javascript">
+                    var tabledata = {
+                        "Data": [{
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "Name": "缝小肛",
+                            "Sex": "男",
+                            "Password": "Ns76tu",
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "School": null,
+                            "CreatedDate": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "ExamStatus": 0,
+                            "UserExtensionFieldId": 280144,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }, {
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "Name": "大卫高拍飞",
+                            "Sex": "男",
+                            "Password": "Ns76tu",
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "School": null,
+                            "CreatedDate": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "ExamStatus": 0,
+                            "UserExtensionFieldId": 280144,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }, {
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "Name": "雷楼某",
+                            "Sex": "男",
+                            "Password": "Ns76tu",
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "School": null,
+                            "CreatedDate": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "ExamStatus": 0,
+                            "UserExtensionFieldId": 280144,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }, {
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "Name": "大飞哥",
+                            "Sex": "男",
+                            "Password": "Ns76tu",
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "School": null,
+                            "CreatedDate": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "ExamStatus": 0,
+                            "UserExtensionFieldId": 280144,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }, {
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "Name": "哥杀一马死",
+                            "Sex": "男",
+                            "Password": "Ns76tu",
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "School": null,
+                            "CreatedDate": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "ExamStatus": 0,
+                            "UserExtensionFieldId": 280144,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }, {
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "Name": "王飞",
+                            "Sex": "男",
+                            "Password": "Ns76tu",
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "School": null,
+                            "CreatedDate": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "ExamStatus": 0,
+                            "UserExtensionFieldId": 280144,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }, {
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "Name": "凤凰男",
+                            "Sex": "男",
+                            "Password": "Ns76tu",
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "School": null,
+                            "CreatedDate": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "ExamStatus": 0,
+                            "UserExtensionFieldId": 280144,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }, {
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "Name": "非诚勿扰",
+                            "Sex": "男",
+                            "Password": "Ns76tu",
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "School": null,
+                            "CreatedDate": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "ExamStatus": 0,
+                            "UserExtensionFieldId": 280144,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }, {
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "Name": "筷子姐妹",
+                            "Sex": "男",
+                            "Password": "Ns76tu",
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "School": null,
+                            "CreatedDate": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "ExamStatus": 0,
+                            "UserExtensionFieldId": 280144,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }, {
+                            "_rowid_": 1,
+                            "UserId": 503443,
+                            "CustomerId": 1000071,
+                            "Account": "123456",
+                            "Name": "Twins",
+                            "Sex": "男",
+                            "Password": "Ns76tu",
+                            "Email": "123@123.com",
+                            "Mobile": "13690875421",
+                            "School": null,
+                            "CreatedDate": "2016-04-22T17:48:01.07",
+                            "Creater": "jianfeng.zou",
+                            "ModifiedDate": "2016-05-25T10:52:02.29",
+                            "Modifier": "admin",
+                            "ExamStatus": 0,
+                            "UserExtensionFieldId": 280144,
+                            "ExamStatusDesc": "未开始",
+                            "EvaluationCount": 0,
+                            "EvaluationRelationshipName": "自评",
+                            "ExamMode": 1,
+                            "JoinTime": "2016-05-25 10:52:02",
+                            "Status": "正常"
+                        }],
+                        "PageIndex": 1,
+                        "PageSize": 10,
+                        "TotalPages": 1,
+                        "TotalRecords": 33
+                    };
+                    </script>
+                </div>
+            </div>
+            <div class="sp10"></div>
+            <div class="sp10"></div>
+            <div class="sp10"></div>
+            <div class="sp10"></div>
+            <div class="sp10"></div>
+            <div class="sp10"></div>
+            <pre><code class="language-markUp">
+    &lt;!-- 继承 HighView --&gt;
+    </code></pre>
+            <div class="sp50"></div>
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

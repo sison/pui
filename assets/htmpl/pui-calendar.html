@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="pui-menu">
+        <div class="inner bgc-white" id="innerMenu">
+            <div class="pui-logo">
+                <h1 class="pui-title c-blue ffm ant">评鉴通 UI （PUI）</h1>
+                <h6 class="pui-subtitle ffm fs fnormal ant c-gray3">Base on PJT4.0</h6>
+                <div class="sp10"></div>
+                <div class="sp10"></div>
+            </div>
+            <ul class="ffm fb">
+                <li class="tc cur"><a href="pui-layout.html" class="c-gray5 ant">布局</a>
+                    <ul>
+                        <li><a href="">栅格系统</a></li>
+                        <li><a href="">面包屑</a></li>
+                        <li><a href="">导航栏</a></li>
+                        <li><a href="">标签</a></li>
+                        <li><a href="">黄底橙字</a></li>
+                        <li><a href="">步骤图</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a>
+                    <ul>
+                        <li><a href="">下拉菜单</a></li>
+                        <li><a href="">输入框</a></li>
+                        <li><a href="">切换</a></li>
+                        <li><a href="">单选框</a></li>
+                        <li><a href="">复选框</a></li>
+                        <li><a href="">按钮</a></li>
+                        <li><a href="">按钮组</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                <li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a>
+                    <ul>
+                        <li><a href="">loading</a></li>
+                        <li><a href="">提示</a></li>
+                        <li><a href="">警示框</a></li>
+                        <li><a href="">询问框</a></li>
+                        <li><a href="">弹出框</a></li>
+                        <li><a href="">iframe框</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                <li class="tc"><a href="pui-page.html" class="c-gray5 ant">分页</a></li>
+                <li class="tc"><a href="pui-tab.html" class="c-gray5 ant">标签页</a></li>
+                <li class="tc">
+                    <a href="pui-popop.html" class="c-gray5 ant">气泡</a>
+                    <ul>
+                        <li><a href="">文字提示</a></li>
+                        <li><a href="">浮动框</a></li>
+                        <li><a href="">确认框</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-calendar.html" class="c-gray5 ant">日历</a></li>
+                <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li>
+                <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+            </ul>        </div>
+    </div>
+    <div class="pui-body">
+        <div class="content">
+            <h2 class="pui-category c-red fnormal fs20 ffm">日历（pui.calendar.js）</h2>
+
+
+            <div class="sp30"></div>
+            <h3 class="pui-subname c-gray ffm">日期时间</h3>
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="daterbox">
+                        <input type="text" class="txt txtdater" id="singleDateTime" readonly="readonly" />
+                    </div>
+                </div>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-5">
+                    <p class="c-gray4">默认范围：1990-01-01 00:00:00 到 2099-12-31 23:59:59</p>
+                </div>
+            </div>
+            <div class="sp20"></div>
+            <pre><code class="language-javascript">
+$('#singleDateTime').daterSmart({
+    format: 'YYYY/MM/DD hh:mm:ss'
+});</code></pre>
+            <div class="sp30"></div>
+            <h3 class="pui-subname c-gray ffm">日期</h3>
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="daterbox">
+                        <input type="text" class="txt txtdater" id="singleDate" readonly="readonly" />
+                    </div>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+            <div class="sp20"></div>
+            <pre><code class="language-javascript">
+$('#singleDate').daterSmart({
+    format: 'YYYY/MM/DD',
+    onshow: function(ipt, dater){   // ipt: 输入框；  dater：日期面板
+        ceng.msger('简单点，说话的方式简单点', 1);
+    },
+    onclear: function(ipt){     // ipt：输入框
+        ceng.msger('年轻人别总想着搞大事情', 0);
+    },
+    onselect: function(ipt, dater, val){    // ipt：输入框； dater：日期面板； val：选中值
+        ceng.msger(val, 1);
+    }
+});</code></pre>
+            <div class="sp30"></div>
+            <h3 class="pui-subname c-gray ffm">自定义分隔符</h3>
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="daterbox">
+                        <input type="text" class="txt txtdater" id="singleFormat" readonly="readonly" />
+                    </div>
+                </div>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-5">
+                    <p class="c-gray4">[ YYYY-MM-DD ]  [ YYYY/MM/DD hh:mm:ss ] 日期分隔符随意</p>
+                </div>
+            </div>
+            <div class="sp20"></div>
+            <pre><code class="language-javascript">
+$('#singleFormat').daterSmart({
+    weeklang: 'en',
+    format: 'YYYY_MM_DD hh:mm'
+});</code></pre>
+            <div class="sp30"></div>
+            <h3 class="pui-subname c-gray ffm">日期时间范围</h3>
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="daterbox">
+                        <input type="text" class="txt txtdater" id="start" readonly="readonly" />
+                    </div>
+                </div>
+                <div class="col-xs-1 tc">~</div>
+                <div class="col-xs-3">
+                    <div class="daterbox">
+                        <input type="text" class="txt txtdater" id="end" readonly="readonly" />
+                    </div>
+                </div>
+            </div>
+            <div class="sp20"></div>
+            <pre><code class="language-javascript">
+$('#start').daterSmart({
+    format: 'YYYY-MM-DD hh:mm:ss',
+    minDate: '2010-03-02 00:00:00',     // 最小日期（请严格遵从format格式）
+    maxDate: $("#end"),                 // 最大日期，可以是日期，也可以是指定输入框的值
+    onselect: function(){
+        $('#end').click();
+    }
+});
+$('#end').daterSmart({
+    format: 'YYYY-MM-DD hh:mm:ss',
+    minDate: $("#start"),
+    maxDate: '2027-08-27 12:20:00'
+})</code></pre>
+            <div class="sp30"></div>
+
+
+            <h3 class="pui-subname c-gray ffm">以周一为第一天</h3>
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="daterbox">
+                        <input type="text" class="txt txtdater" id="weekWed" readonly="readonly" />
+                    </div>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+            <div class="sp20"></div>
+            <pre><code class="language-javascript">
+$('#weekWed').daterSmart({
+    format: 'YYYY-MM-DD',
+    weekfirst: 1            // 默认周日：0; 周一：1； ...
+});</code></pre>
+            <div class="sp30"></div>
+        </div>
+    </div>
+</body>
+
+</html>

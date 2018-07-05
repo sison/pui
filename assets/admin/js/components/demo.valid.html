@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../../../../fonts/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/pui.css">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .examplePopop {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="sp30"></div>
+    <div class="sp30"></div>
+
+    <form class="pui-form" id="demoForm">
+        <div class="row mgt10 required">
+            <div class="col-xs-2 col-key tr">
+                <span class="pdr10">姓名：</span>
+            </div>
+            <div class="col-xs-4 col-val">
+                <input type="text" id="formName" class="txt wp100" name="name" data-req="true" data-reqs="customize" data-customize-rule='{"isNumber": true, "express": "\^(([1-9][0-9]\*)|(([0]\\.\\d{1,2}|[1-9][0-9]\*\\.\\d{1,2})))\$", "tip": {"cn": "请输入大于等于0的数字，最多2位小数"}}' data-number-range="0,100" autocomplete="off">
+            </div>
+        </div>
+    </form>
+
+    <div class="sp80"></div>
+    <div class="sp80"></div>
+    <div class="sp80"></div>
+    <div class="sp80"></div>
+
+    <script type="text/javascript" src="../../../../libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="pui.js"></script>
+    <script type="text/javascript" src="pui.popop.js"></script>
+    <script type="text/javascript" src="pui.base.js"></script>
+    <script type="text/javascript" src="pui.ceng.js"></script>
+    <script type="text/javascript" src="pui.valid.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var validor = new Valid();
+            validor.form($('#demoForm'), {
+                isAsync: true,
+                asyncFun: function () {
+                    ceng.msger('abc',1)
+                }
+            });
+        })
+
+    </script>
+</body>
+
+</html>

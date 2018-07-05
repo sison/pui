@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="pui-menu">
+        <div class="inner bgc-white" id="innerMenu">
+            <div class="pui-logo">
+                <h1 class="pui-title c-blue ffm ant">评鉴通 UI （PUI）</h1>
+                <h6 class="pui-subtitle ffm fs fnormal ant c-gray3">Base on PJT4.0</h6>
+                <div class="sp10"></div>
+                <div class="sp10"></div>
+            </div>
+            <ul class="ffm fb">
+                <li class="tc cur"><a href="pui-layout.html" class="c-gray5 ant">布局</a>
+                    <ul>
+                        <li><a href="">栅格系统</a></li>
+                        <li><a href="">面包屑</a></li>
+                        <li><a href="">导航栏</a></li>
+                        <li><a href="">标签</a></li>
+                        <li><a href="">黄底橙字</a></li>
+                        <li><a href="">步骤图</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a>
+                    <ul>
+                        <li><a href="">下拉菜单</a></li>
+                        <li><a href="">输入框</a></li>
+                        <li><a href="">切换</a></li>
+                        <li><a href="">单选框</a></li>
+                        <li><a href="">复选框</a></li>
+                        <li><a href="">按钮</a></li>
+                        <li><a href="">按钮组</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                <li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a>
+                    <ul>
+                        <li><a href="">loading</a></li>
+                        <li><a href="">提示</a></li>
+                        <li><a href="">警示框</a></li>
+                        <li><a href="">询问框</a></li>
+                        <li><a href="">弹出框</a></li>
+                        <li><a href="">iframe框</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                <li class="tc"><a href="pui-page.html" class="c-gray5 ant">分页</a></li>
+                <li class="tc"><a href="pui-tab.html" class="c-gray5 ant">标签页</a></li>
+                <li class="tc">
+                    <a href="pui-popop.html" class="c-gray5 ant">气泡</a>
+                    <ul>
+                        <li><a href="">文字提示</a></li>
+                        <li><a href="">浮动框</a></li>
+                        <li><a href="">确认框</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-calendar.html" class="c-gray5 ant">日历</a></li>
+                <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li>
+                <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="pui-body">
+        <div class="content">
+            <h2 class="pui-category c-red fnormal fs20 ffm">气泡（pui.popop.js）</h2>
+            <div class="sp30"></div>
+            <h3 class="pui-subname c-gray ffm">常规气泡</h3>
+            <div class="examplePopop">
+                <div class="row">
+                    <div class="col-xs-12 tc">
+                        <button class="btn btn-common pone" dir="top-left" refCont="上左">上左</button>
+                        <button class="btn btn-common pone" dir="top" refCont="上中">上中</button>
+                        <button class="btn btn-common pone" dir="top-right" refCont="上右">上右</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="fl">
+                            <li>
+                                <button class="btn btn-common pone" dir="left-top">左上</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-common pone" dir="left">左中</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-common pone" dir="left-bottom">左下</button>
+                            </li>
+                        </div>
+                        <div class="fr">
+                            <li>
+                                <button class="btn btn-common pone" dir="right-top" actType="click">右上</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-common pone" dir="right" actType="click">右中</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-common pone" dir="right-bottom" actType="click">右下</button>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 tc">
+                        <button class="btn btn-common pone" dir="bottom-left" refCont="下左">下左</button>
+                        <button class="btn btn-common pone" dir="bottom" refCont="下中">下中</button>
+                        <button class="btn btn-common pone" dir="bottom-right" refCont="下右">下右</button>
+                    </div>
+                </div>
+            </div>
+            <div class="sp20"></div>
+            <pre><code class="language-markup">
+&lt;button class="btn btn-common pone" dir="top-left" refCont="上左"&gt;上左&lt;/button&gt;
+&lt;button class="btn btn-common pone" dir="top" refCont="上中"&gt;上中&lt;/button&gt;
+&lt;button class="btn btn-common pone" dir="top-right" refCont="上右"&gt;上右&lt;/button&gt;
+
+&lt;button class="btn btn-common pone" dir="left-top"&gt;左上&lt;/button&gt;
+&lt;button class="btn btn-common pone" dir="left"&gt;左中&lt;/button&gt;
+&lt;button class="btn btn-common pone" dir="left-bottom"&gt;左下&lt;/button&gt;
+
+&lt;button class="btn btn-common pone" dir="right-top" actType="click"&gt;右上&lt;/button&gt;
+&lt;button class="btn btn-common pone" dir="right" actType="click"&gt;右中&lt;/button&gt;
+&lt;button class="btn btn-common pone" dir="right-bottom" actType="click"&gt;右下&lt;/button&gt;
+
+&lt;button class="btn btn-common pone" dir="bottom-left" refCont="下左"&gt;下左&lt;/button&gt;
+&lt;button class="btn btn-common pone" dir="bottom" refCont="下中"&gt;下中&lt;/button&gt;
+&lt;button class="btn btn-common pone" dir="bottom-right" refCont="下右"&gt;下右&lt;/button&gt;</code></pre>
+            <div class="sp20"></div>
+            <pre><code class="language-javascript">
+$('.examplePopop .pone').popSmart({
+    // 权重高低  html属性 > 插件属性 > 插件默认属性
+
+    // dir: 'top-right',        // 显示方向，建议像上面demo一样使用html元素的dir属性
+    refType: 'dom',         // 内容方式 msg（默认）、dom（外部div）、confirm（确认框）
+    actType: 'hover',       // 触发方式：hover（默认）、click
+    refCont: 'html里面没有refCont属性，我是插件属性'    // 气泡内容
+});</code></pre>
+            <div class="sp30"></div>
+            <h3 class="pui-subname c-gray ffm">外部 Div块 气泡</h3>
+            <div class="sp30"></div>
+            <div class="examplePopop">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <button class="btn btn-green pdiv" dir="right">提示来自隐藏层DIV</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <button class="btn btn-green pdiv" dir="right">提示来自隐藏层DIV</button>
+                    </div>
+                </div>
+            </div>
+            <div class="sp20"></div>
+            <pre><code class="language-markup">
+&lt;div class="pop-ready" id="divPop"&gt;
+    &lt;div class="pd10 lh20 c-brown"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;1. 南海仲裁即将宣布 ...&lt;/li&gt;
+            &lt;li&gt;2. 南海仲裁即将宣布 ...&lt;/li&gt;
+            &lt;li&gt;3. 南海仲裁即将宣布 ...&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <div class="sp20"></div>
+            <pre><code class="language-javascript">
+$('.examplePopop .pdiv').popSmart({
+    actType: 'click',
+    refType: 'dom',
+    refCont: $("#divPop")   // 绑定元素
+})</code></pre>
+            <div class="sp30"></div>
+            <h3 class="pui-subname c-gray ffm">Confirm 气泡</h3>
+            <div class="examplePopop">
+                <div class="page-table">
+                    <table class="table table-small table-center">
+                        <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>籍贯</th>
+                                <th>公司</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>马云爸爸</td>
+                                <td>浙江</td>
+                                <td>阿里巴巴</td>
+                                <td>
+                                    <button class="btn btn-red bs" dir="top-left">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>健林爸爸</td>
+                                <td>四川</td>
+                                <td>万达集团</td>
+                                <td>
+                                    <button class="btn btn-red bs" dir="right-top">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>化腾爸爸</td>
+                                <td>浙江</td>
+                                <td>腾讯集团</td>
+                                <td>
+                                    <button class="btn btn-red bs" dir="left-bottom">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>许锋老板</td>
+                                <td>未知</td>
+                                <td>倍智集团</td>
+                                <td>
+                                    <button class="btn btn-red bs" dir="bottom-right">删除</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="sp20"></div>
+            <pre><code class="language-markup">
+&lt;button class="btn btn-red bs" dir="top-left"&gt;删除&lt;/button&gt;
+            </code></pre>
+            <div class="sp20"></div>
+            <pre><code class="language-javascript">
+$('.examplePopop table button').popSmart({
+    actType: 'click',
+    refType: 'confirm',
+    refCont: '确定要删除吗？',      // confirm 内容
+    yes: function(ele, ref){        // 确定后回调事件  ele: button，ref: 弹出层
+        ele.closest('tr').remove();
+        console.log(ele);
+        console.log(ref);
+    }
+})</code></pre>
+            <div class="sp30"></div>
+            <div class="pop-ready" id="divPop">
+                <div class="pd10 lh20 c-brown">
+                    <ul>
+                        <li>1. 南海仲裁即将宣布 ...</li>
+                        <li>2. 南海仲裁即将宣布 ...</li>
+                        <li>3. 南海仲裁即将宣布 ...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

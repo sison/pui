@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+    <link href="./css/vendors.chunk.css?d4336e3ec2c87953bdbb" rel="stylesheet">
+</head>
+
+<body>
+    <div class="pui-menu">
+        <div class="inner bgc-white" id="innerMenu">
+            <div class="pui-logo">
+                <h1 class="pui-title c-blue ffm ant">评鉴通 UI （PUI）</h1>
+                <h6 class="pui-subtitle ffm fs fnormal ant c-gray3">Base on PJT4.0</h6>
+                <div class="sp10"></div>
+                <div class="sp10"></div>
+            </div>
+            <ul class="component-list ffm fb">
+                <li class="tc cur">
+                    <a href="pui-layout.html" class="c-gray5 ant">布局</a>
+                    <ul class="sib">
+                        <li><a href="">栅格系统</a></li>
+                        <li><a href="">面包屑</a></li>
+                        <li><a href="">导航栏</a></li>
+                        <li><a href="">标签</a></li>
+                        <li><a href="">黄底橙字</a></li>
+                        <li><a href="">步骤图</a></li>
+                    </ul>
+                </li>
+                <li class="tc">
+                    <a href="pui-form.html" class="c-gray5 ant">表单</a>
+                    <ul class="sib">
+                        <li><a href="">下拉菜单</a></li>
+                        <li><a href="">输入框</a></li>
+                        <li><a href="">切换</a></li>
+                        <li><a href="">单选框</a></li>
+                        <li><a href="">复选框</a></li>
+                        <li><a href="">按钮</a></li>
+                        <li><a href="">按钮组</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                <li class="tc">
+                    <a href="pui-ceng.html" class="c-gray5 ant">弹层</a>
+                    <ul class="sib">
+                        <li><a href="">loading</a></li>
+                        <li><a href="">提示</a></li>
+                        <li><a href="">警示框</a></li>
+                        <li><a href="">询问框</a></li>
+                        <li><a href="">弹出框</a></li>
+                        <li><a href="">iframe框</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                <li class="tc"><a href="pui-page.html" class="c-gray5 ant">分页</a></li>
+                <li class="tc"><a href="pui-tab.html" class="c-gray5 ant">标签页</a></li>
+                <li class="tc">
+                    <a href="pui-popop.html" class="c-gray5 ant">气泡</a>
+                    <ul class="sib">
+                        <li><a href="">文字提示</a></li>
+                        <li><a href="">浮动框</a></li>
+                        <li><a href="">确认框</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-calendar.html" class="c-gray5 ant">日历</a></li>
+                <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li>
+                <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="pui-body">
+        <div class="content">
+            <h2 class="pui-category fnormal fs20 ffm">布局</h2>
+            <h3 class="pui-subname c-gray ffm">1.1 栅格系统</h3>
+            <div class="row mgt10 bgc-gray5 c-gray4 tc ffm fm">
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+            </div>
+            <div class="row mgt10 bgc-gray5 c-gray4 tc ffm fm">
+                <div class="col-xs-3">3</div>
+                <div class="col-xs-3">3</div>
+                <div class="col-xs-3">3</div>
+                <div class="col-xs-3">3</div>
+            </div>
+            <div class="row pdt10">
+                <div class="col-xs-4 bgc-gray5 c-gray4 tc ffm fm">4</div>
+                <div class="col-xs-4 bgc-gray5 c-gray4 tc ffm fm">4</div>
+                <div class="col-xs-4 bgc-gray5 c-gray4 tc ffm fm">4</div>
+            </div>
+            <div class="row pdt10">
+                <div class="col-xs-6 bgc-gray5 c-gray4 tc ffm fm">6</div>
+                <div class="col-xs-6 bgc-gray5 c-gray4 tc ffm fm">6</div>
+            </div>
+            <div class="row pdt10">
+                <div class="col-xs-12 bgc-gray5 c-gray4 tc ffm fm">12</div>
+            </div>
+            <div class="sp10"></div>
+            <pre><code class="language-markup">
+&lt;div class="row"&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-xs-3"&gt;3&lt;/div&gt;
+    &lt;div class="col-xs-3"&gt;3&lt;/div&gt;
+    &lt;div class="col-xs-3"&gt;3&lt;/div&gt;
+    &lt;div class="col-xs-3"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-xs-4"&gt;4&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;4&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;4&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-xs-6"&gt;6&lt;/div&gt;
+    &lt;div class="col-xs-6"&gt;6&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-xs-12"&gt;12&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <div class="sp20"></div>
+            <h3 class="pui-subname c-gray ffm">1.2 面包屑</h3>
+            <div class="page-crumb slash">
+                <p>
+                    <em>当前位置：</em>
+                    <span><a href="">首页</a></span>
+                    <span><a href="">项目列表</a></span>
+                    <span><a href="">分组管理</a></span>
+                    <b class="t-blue">管理员</b>
+                </p>
+            </div>
+            <div class="page-crumb corner">
+                <p>
+                    <em>当前位置：</em>
+                    <span><a href="">首页</a></span>
+                    <span><a href="">项目列表</a></span>
+                    <span><a href="">分组管理</a></span>
+                    <b class="t-blue">管理员</b>
+                </p>
+            </div>
+            <div class="sp10"></div>
+            <pre><code class="language-markup">
+&lt;div class="page-crumb"&gt;
+    &lt;p&gt;
+        &lt;b&gt;当前位置：&lt;/b&gt;
+        &lt;a href=""&gt;首页&lt;/a&gt;
+        &lt;em&gt;&gt;&lt;/em&gt;
+        &lt;a href=""&gt;项目列表&lt;/a&gt;
+        &lt;em&gt;&gt;&lt;/em&gt;
+        &lt;span class="t-blue"&gt;分组管理&lt;/span&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+            <div class="sp20"></div>
+            <h3 class="pui-subname c-gray ffm">1.3 普通导航栏 &nbsp;&nbsp;&nbsp; <span class="fs c-gray4">纯展示，无交互</span></h3>
+            <div class="sp10"></div>
+            <div class="page-tab line">
+                <div class="tab-header radio-group fs clearfix">
+                    <div class="thone radione checked isrender">
+                        <i class="radicon ant"></i>
+                        <span>分组管理</span>
+                    </div>
+                    <div class="thone radione isrender">
+                        <i class="radicon ant"></i>
+                        <span>管理员列表</span>
+                    </div>
+                    <div class="thone radione isrender">
+                        <i class="radicon ant"></i>
+                        <span>角色管理</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sp20"></div>
+            <div class="sp20"></div>
+            <div class="page-tab box">
+                <div class="tab-header radio-group fs clearfix">
+                    <div class="thone radione checked isrender">
+                        <i class="radicon ant"></i>
+                        <span>分组管理</span>
+                    </div>
+                    <div class="thone radione isrender">
+                        <i class="radicon ant"></i>
+                        <span>管理员列表</span>
+                    </div>
+                    <div class="thone radione isrender">
+                        <i class="radicon ant"></i>
+                        <span>角色管理</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sp20"></div>
+            <div class="sp20"></div>
+            <div class="page-tab radio">
+                <div class="tab-header radio-group fs clearfix">
+                    <div class="thone radione checked isrender">
+                        <i class="radicon ant"></i>
+                        <span>分组管理</span>
+                    </div>
+                    <div class="thone radione isrender">
+                        <i class="radicon ant"></i>
+                        <span>管理员列表</span>
+                    </div>
+                    <div class="thone radione isrender">
+                        <i class="radicon ant"></i>
+                        <span>角色管理</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sp20"></div>
+            <pre><code class="language-html">
+&lt;div class="page-tab line"&gt;&nbsp;&nbsp;&nbsp;&lt;!-- 三种样式： line、box、radio --&gt;
+    &lt;div class="tab-header radio-group fs clearfix"&gt;
+        &lt;div class="thone radione checked isrender"&gt;&nbsp;&nbsp;&nbsp;&lt;!-- checked 状态 --&gt;
+            &lt;i class="radicon ant"&gt;&lt;/i&gt;
+            &lt;span&gt;分组管理&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="thone radione isrender"&gt;
+            &lt;i class="radicon ant"&gt;&lt;/i&gt;
+            &lt;span&gt;管理员列表&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="thone radione isrender"&gt;
+            &lt;i class="radicon ant"&gt;&lt;/i&gt;
+            &lt;span&gt;角色管理&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <div class="sp20"></div>
+            <div class="sp20"></div>
+            <h3 class="pui-subname c-gray ffm">1.4 标签</h3>
+            <div class="sp10"></div>
+            <ul class="inline fl pui-tags fs tc">
+                <li><span class="c-gray2 bgc-gray7">系统管理员</span>
+                    <input type="checkbox" class="hide" adminid="2"><i class="icon icon-close fs ant"></i></li>
+                <li><span class="c-gray2 bgc-gray7">都城快餐</span>
+                    <input type="checkbox" class="hide" adminid="1161"><i class="icon icon-close fs ant"></i></li>
+                <li><span class="c-gray2 bgc-gray7">家乐园</span>
+                    <input type="checkbox" class="hide" adminid="359"><i class="icon icon-close fs ant"></i></li>
+                <li><span class="c-gray2 bgc-gray7">鱼头王</span>
+                    <input type="checkbox" class="hide" adminid="1158"><i class="icon icon-close fs ant"></i></li>
+                <li><span class="c-gray2 bgc-gray7">桂林米粉</span>
+                    <input type="checkbox" class="hide" adminid="502"><i class="icon icon-close fs ant"></i></li>
+            </ul>
+            <div class="sp20"></div>
+            <h3 class="pui-subname c-gray ffm">1.5 黄底橙字</h3>
+            <div class="page-notice full ffs">
+                <p class="c-brown title">温馨提示：</p>
+                <ul class="c-brown">
+                    <li>
+                        <p>TCP建模： 中国成为撒气的对象。有媒体称，这是中国希望维护算盘。</p>
+                    </li>
+                    <li>
+                        <p>全新建模：印度将继续向中国表明，两国相互适应彼此关切和优先选项是推动双边表明。</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="sp10"></div>
+            <pre><code class="language-markup">
+                &lt;div class=&quot;page-notice full ffs&quot;&gt;
+                    &lt;p class=&quot;c-brown title&quot;&gt;温馨提示：&lt;/p&gt;
+                    &lt;ul class=&quot;c-brown&quot;&gt;
+                        &lt;li&gt;
+                            &lt;p&gt;TCP建模： 中国成为撒气的对象。有媒体称，这是中国希望维护算盘。&lt;/p&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;p&gt;全新建模：印度将继续向中国表明，两国相互适应彼此关切和优先选项是推动双边表明。&lt;/p&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            </code></pre>
+            <div class="sp20"></div>
+            <h3 class="pui-subname c-gray ffm">1.5 步骤图</h3>
+            <div class="page-step fm">
+                <ul>
+                    <li class="cur"><a href="javascript:void(0);" class="ant"><span>1 产品信息</span></a></li>
+                    <li class="cur"><a href="javascript:void(0);" class="ant"><span>2 模块结构</span></a></li>
+                    <li><a href="javascript:void(0);" class="ant"><span>3 指标定义</span></a></li>
+                    <li><a href="javascript:void(0);" class="ant"><span>4 问卷信息</span></a></li>
+                    <li><a href="javascript:void(0);" class="ant"><span>5 完成</span></a></li>
+                </ul>
+            </div>
+            <div class="sp20"></div>
+            <div class="page-step fm">
+                <ul>
+                    <li class="cur"><a href="javascript:void(0);" class="ant"><span>1 产品信息</span></a></li>
+                    <li class="cur"><a href="javascript:void(0);" class="ant"><span>2 选择模型</span></a></li>
+                    <li class="cur"><a href="javascript:void(0);" class="ant"><span>3 模型结构</span></a></li>
+                    <li class="cur"><a href="javascript:void(0);" class="ant"><span>4 评估问卷</span></a></li>
+                    <li class="cur"><a href="javascript:void(0);" class="ant"><span>5 评估关系</span></a></li>
+                    <li><a href="javascript:void(0);" class="ant"><span>6 指标权重</span></a></li>
+                    <li><a href="javascript:void(0);" class="ant"><span>7 完成</span></a></li>
+                </ul>
+            </div>
+            <div class="sp10"></div>
+            <pre><code class="language-markup">
+                &lt;div class=&quot;page-step fm&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li class=&quot;cur&quot;&gt;&lt;a href=&quot;javascript:void(0);&quot; class=&quot;ant&quot;&gt;&lt;span&gt;1 产品信息&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;cur&quot;&gt;&lt;a href=&quot;javascript:void(0);&quot; class=&quot;ant&quot;&gt;&lt;span&gt;2 选择模型&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;cur&quot;&gt;&lt;a href=&quot;javascript:void(0);&quot; class=&quot;ant&quot;&gt;&lt;span&gt;3 模型结构&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;cur&quot;&gt;&lt;a href=&quot;javascript:void(0);&quot; class=&quot;ant&quot;&gt;&lt;span&gt;4 评估问卷&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;cur&quot;&gt;&lt;a href=&quot;javascript:void(0);&quot; class=&quot;ant&quot;&gt;&lt;span&gt;5 评估关系&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot; class=&quot;ant&quot;&gt;&lt;span&gt;6 指标权重&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot; class=&quot;ant&quot;&gt;&lt;span&gt;7 完成&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            </code></pre>
+            <div class="sp50"></div>
+        </div>
+    </div>
+</body>
+</html>

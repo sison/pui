@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../../css/pui.css">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.examplePopop{ width: 50%; margin: 0 auto; }
+	</style>
+</head>
+<body>
+
+<div class="sp30"></div>
+<div class="sp30"></div>
+<div class="examplePopop">
+                <div class="row">
+                    <div class="col-xs-12 tc">
+                        <button class="btn btn-common pone" dir="top-left" refcont="上左">上左</button>
+                        <button class="btn btn-common pone" dir="top" refcont="上中">上中</button>
+                        <button class="btn btn-common pone" dir="top-right" refcont="上右">上右</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="fl">
+                            <li>
+                                <button class="btn btn-common pone" dir="left-top" refcont="666">左上</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-common pone" dir="left" refcont="666">左中</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-common pone" dir="left-bottom" refcont="666">左下</button>
+                            </li>
+                        </div>
+                        <div class="fr">
+                            <li>
+                                <button class="btn btn-common pone" dir="right-top" refcont="666">右上</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-common pone" dir="right" refcont="666">右中</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-common pone" dir="right-bottom" refcont="666">右下</button>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 tc">
+                        <button class="btn btn-common pone" dir="bottom-left" refcont="下左">下左</button>
+                        <button class="btn btn-common pone" dir="bottom" refcont="下中">下中</button>
+                        <button class="btn btn-common pone" dir="bottom-right" refcont="下右">下右</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="sp80"></div>
+
+
+
+<script type="text/javascript" src="../../../../libs/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="pui.js"></script>
+<script type="text/javascript" src="pui.popop.js"></script>
+<script type="text/javascript" src="pui.base.js"></script>
+<script type="text/javascript" src="pui.ceng.js"></script>
+<script type="text/javascript">
+
+    var opts = {
+        cengX: 0,
+        cengY: 0,
+        oldX: 0,
+        oldY: 0,
+        flag: false
+    }
+
+    function cdrag(o){
+        var t = o.find('.ceng-title');
+
+        opts.cengX = o.css('left');
+        opts.cengY = o.css('top');
+        // o.css({
+        //     'marginTop': 0,
+        //     'marginLeft': 0,
+        //     'left': opts.cengX,
+        //     'top': opts.cengY
+        // })
+
+        t.on('mousedown', function(e){
+            t.get(0).onselectstart = function(){
+                return false;
+            }
+            opts.flag = true;
+            opts.oldX = e.clientX;
+            opts.oldY = e.clientY;
+        });
+
+        $(document).on('mouseup', function(){
+            opts.flag = false;
+            opts.cengX = o.css('left');
+            opts.cengY = o.css('top');
+        })
+
+        $(document).on('mousemove', function(e){
+            if(opts.flag){
+
+                var disX = e.clientX - opts.oldX;
+                var disY = e.clientY - opts.oldY;
+                o.css({
+                    left: parseInt(opts.cengX) + disX,
+                    top: parseInt(opts.cengY) + disY
+                });
+                e.preventDefault();
+                // return false;
+                // console.log('disx: %s， disy: %s', disX, disY)
+            }
+        })
+    }
+
+	$(function(){
+		$('.examplePopop button').popSmart();
+
+        ceng.comfirm('666', {
+            complete: function(o, z){
+                cdrag(o);
+            }
+        })
+	})
+</script>
+
+
+</body>
+</html>

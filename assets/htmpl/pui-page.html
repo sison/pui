@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="pui-menu">
+        <div class="inner bgc-white" id="innerMenu">
+            <div class="pui-logo">
+                <h1 class="pui-title c-blue ffm ant">评鉴通 UI （PUI）</h1>
+                <h6 class="pui-subtitle ffm fs fnormal ant c-gray3">Base on PJT4.0</h6>
+                <div class="sp10"></div>
+                <div class="sp10"></div>
+            </div>
+            <ul class="ffm fb">
+                <li class="tc cur"><a href="pui-layout.html" class="c-gray5 ant">布局</a>
+                    <ul>
+                        <li><a href="">栅格系统</a></li>
+                        <li><a href="">面包屑</a></li>
+                        <li><a href="">导航栏</a></li>
+                        <li><a href="">标签</a></li>
+                        <li><a href="">黄底橙字</a></li>
+                        <li><a href="">步骤图</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a>
+                    <ul>
+                        <li><a href="">下拉菜单</a></li>
+                        <li><a href="">输入框</a></li>
+                        <li><a href="">切换</a></li>
+                        <li><a href="">单选框</a></li>
+                        <li><a href="">复选框</a></li>
+                        <li><a href="">按钮</a></li>
+                        <li><a href="">按钮组</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                <li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a>
+                    <ul>
+                        <li><a href="">loading</a></li>
+                        <li><a href="">提示</a></li>
+                        <li><a href="">警示框</a></li>
+                        <li><a href="">询问框</a></li>
+                        <li><a href="">弹出框</a></li>
+                        <li><a href="">iframe框</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                <li class="tc"><a href="pui-page.html" class="c-gray5 ant">分页</a></li>
+                <li class="tc"><a href="pui-tab.html" class="c-gray5 ant">标签页</a></li>
+                <li class="tc">
+                    <a href="pui-popop.html" class="c-gray5 ant">气泡</a>
+                    <ul>
+                        <li><a href="">文字提示</a></li>
+                        <li><a href="">浮动框</a></li>
+                        <li><a href="">确认框</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-calendar.html" class="c-gray5 ant">日历</a></li>
+                <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li>
+                <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="pui-body">
+        <div class="content">
+            <h2 class="pui-category c-red fnormal fs20 ffm">分页（pui.page.js）</h2>
+            <div class="pagination" id="pageDemo"></div>
+            <div class="sp10"></div>
+            <pre><code class="language-javascript">
+$('#pageDemo').pager({
+    totalItem: 111,     // 总条目
+    pageSize: 10,       // 每页大小
+    pageIndex: 1,       // 当前页
+    singlePage: false,  // 此属性仅作用在单页翻页切换场景
+    action: function(pi, ps) {
+        ceng.msg('pageIndex： ' + pi + '，pageSize： ' + ps);
+    }
+});
+</code></pre>
+            <div class="sp30"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+/*
+* @Author: zyuan
+* @Date:   2016-09-05 14:17:27
+* @Last Modified by:   zyuan
+* @Last Modified time: 2016-09-05 18:43:07
+*/
+#add-relationship-preview{
+	margin: 18px;
+	color: #333;
+}
+
+#previewRelationship .rowHead{
+	padding-bottom: 5px;
+	border-bottom: 1px solid #aaa;
+}
+#previewRelationship .rowHead .row{
+	line-height: 24px;
+}
+
+#previewRelationship .rowHead .row .tip{
+	text-align: right;
+	padding-right: 10px;
+
+} 
+
+#previewRelationship .rowHead .row .detail{
+	text-align: left;
+}
+
+#previewRelationship .rowContent{
+	padding-top: 10px;
+}
+
+#previewRelationship .rowContent .row{
+	line-height: 24px;
+}
+#previewRelationship .rowContent .textarea{
+	height: 130px;
+}
+
+#previewRelationship .rowContent .levelDetail,#previewRelationship .rowContent .selDetail{
+	text-align: center;
+} 
+#previewRelationship .rowContent .levelDetail span{
+	display: inline-block;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #FFF;
+    border: 1px solid #ccc;
+    margin-top: 21px;
+    margin-bottom: 10px;
+}
+#previewRelationship .rowContent .levelDetail .odd{
+	margin-right: 11px;
+}
+
+#previewRelationship .rowContent .selDetail .odd{
+	margin-right: 22px;
+}
+#previewRelationship .rowContent .levelDetail em{
+    position: absolute;
+    display: inline-block;
+    width: 38px;
+    height: 20px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    left: 22px;
+}

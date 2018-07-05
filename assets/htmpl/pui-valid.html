@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>评鉴通 - UI</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="pui-menu">
+        <div class="inner bgc-white" id="innerMenu">
+            <div class="pui-logo">
+                <h1 class="pui-title c-blue ffm ant">评鉴通 UI （PUI）</h1>
+                <h6 class="pui-subtitle ffm fs fnormal ant c-gray3">Base on PJT4.0</h6>
+                <div class="sp10"></div>
+                <div class="sp10"></div>
+            </div>
+            <ul class="ffm fb">
+                <li class="tc cur"><a href="pui-layout.html" class="c-gray5 ant">布局</a>
+                    <ul>
+                        <li><a href="">栅格系统</a></li>
+                        <li><a href="">面包屑</a></li>
+                        <li><a href="">导航栏</a></li>
+                        <li><a href="">标签</a></li>
+                        <li><a href="">黄底橙字</a></li>
+                        <li><a href="">步骤图</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a>
+                    <ul>
+                        <li><a href="">下拉菜单</a></li>
+                        <li><a href="">输入框</a></li>
+                        <li><a href="">切换</a></li>
+                        <li><a href="">单选框</a></li>
+                        <li><a href="">复选框</a></li>
+                        <li><a href="">按钮</a></li>
+                        <li><a href="">按钮组</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li>
+                <li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a>
+                    <ul>
+                        <li><a href="">loading</a></li>
+                        <li><a href="">提示</a></li>
+                        <li><a href="">警示框</a></li>
+                        <li><a href="">询问框</a></li>
+                        <li><a href="">弹出框</a></li>
+                        <li><a href="">iframe框</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li>
+                <li class="tc"><a href="pui-page.html" class="c-gray5 ant">分页</a></li>
+                <li class="tc"><a href="pui-tab.html" class="c-gray5 ant">标签页</a></li>
+                <li class="tc">
+                    <a href="pui-popop.html" class="c-gray5 ant">气泡</a>
+                    <ul>
+                        <li><a href="">文字提示</a></li>
+                        <li><a href="">浮动框</a></li>
+                        <li><a href="">确认框</a></li>
+                    </ul>
+                </li>
+                <li class="tc"><a href="pui-calendar.html" class="c-gray5 ant">日历</a></li>
+                <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li>
+                <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li>
+                <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="pui-body">
+        <div class="content">
+            <h2 class="pui-category c-red fnormal fs20 ffm">表单验证</h2>
+            <div class="sp20"></div>
+            <div class="row fm">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-9">
+                    <form class="pui-form ffm fm" action="" id="submitForm" action="">
+
+                        <div class="row mgt10 required"><!-- required 红点样式 -->
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">姓名：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <input type="text" id="formName" class="txt wp100" name="name" data-req="true" data-reqs="six" data-empty-msg="小哥请留下您的大名" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="row mgt10 required">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">年龄：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <input type="text" id="age" class="txt wp100" name="age" data-req="true" data-reqs="integerp, spcode, maxlength" data-max-length="3" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="row mgt10 required">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">特殊符号：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <input type="text" id="spcode" class="txt wp100" name="spcode" data-req="true" data-reqs="spcode" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="row mgt10 required">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">旧密码：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <input type="password" id="formPsw1" class="txt wp100 psw1" name="psw1" data-req="true" data-reqs="six,psw1" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="row mgt10 required">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">新密码：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <input type="password" id="formPsw2" class="txt wp100 psw2" name="psw2" data-req="true" data-reqs="six, psw2" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="row mgt10 required">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">确认新密码：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <input type="password" class="txt wp100 psw2b" name="psw2b" data-req="true" data-reqs="six, psw2b" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="row mgt10 required">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">自定义规则：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <input type="text" class="txt wp100 psw2b" name="psw2b" data-req="true" data-reqs="customize" data-customize-rule="/^abc/" data-customize-tip="必须以abc开头的字符串" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="row mgt10 required">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">附件：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <div class="upload-group por100" id="formUpload">
+                                    <div class="pdr10">
+                                        <input name="filetxt" class="txt wp100 fs filetxt" type="text" data-req="true" data-reqs="upload" data-format="jpg,png,gif" readonly />
+                                    </div>
+                                    <div class="abs">
+                                        <input name="filelogo" class="upfile wp100" type="file" id="upLogo" />
+                                        <button class="btn btn-primary c-white wp100 fs" type="button">请选择</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mgt10">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">同步查询：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <input type="text" class="txt wp100 " name="name" data-reqs="query" data-query="/assets/admin/v4.0.3/json/ifsamename.json" query-string='{"moduleId":"2016"}' autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="row mgt10">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">手机：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <input type="text" class="txt wp100 " name="name" data-reqs="mobile" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="row mgt10">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">邮箱：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <input type="text" class="txt wp100 " name="name" data-reqs="mail" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="row mgt10">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">身份证：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <input type="text" class="txt wp100 " name="name" data-reqs="idcard" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="row mgt10 required">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">城市：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <div class="radio-group clearfix" id="formRadio" data-req="true" data-reqs="radio">
+                                    <div class="radione inline">
+                                        <input type="radio" name="radiobj" value="a" />
+                                        <span>帝都</span>
+                                    </div>
+                                    <div class="radione inline">
+                                        <input type="radio" name="radiobj" value="b" />
+                                        <span>魔都</span>
+                                    </div>
+                                    <div class="radione inline">
+                                        <input type="radio" name="radiobj" value="c" />
+                                        <span>成都</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mgt10 required">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">最爱电影：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <div class="check-group clearfix" id="formCheckbox" data-req="true" data-reqs="checkbox">
+                                    <div class="checkone inline">
+                                        <input type="checkbox" name="chkboxbj" value="x" />
+                                        <span>惊天魔盗团</span>
+                                    </div>
+                                    <div class="checkone inline">
+                                        <input type="checkbox" name="chkboxbj" value="y" />
+                                        <span>论文叙老点柳先开</span>
+                                    </div>
+                                    <div class="checkone inline">
+                                        <input type="checkbox" name="chkboxbj" value="z" />
+                                        <span>青春梦工厂</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mgt10 required">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">电视剧：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <div class="select-group">
+                                    <select id="formSelect" name="tv" data-width="200px" class="select" data-req="true">
+                                        <option value="" selected>请选择</option>
+                                        <option value="1">平凡的世界</option>
+                                        <option value="2">琅邪榜</option>
+                                        <option value="3">三国演义</option>
+                                        <option value="4">手撕鬼子</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mgt10 required">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10">简介：</span></div>
+                            <div class="col-xs-9 col-val">
+                                <textarea name="textarea" class="textarea wp100 fl" cols="30" rows="5" data-req="true" data-max-rows="3" data-maxlength="200"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mgt10">
+                            <div class="col-xs-3 col-key tr"><span class="pdr10"></span></div>
+                            <div class="col-xs-9 col-val">
+                                <button class="btn bgc-red" type="submit">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xs-3"></div>
+            </div>
+            <div class="sp10"></div>
+            <pre><code class="language-markup">
+&lt;form class=&quot;pui-form ffm fm&quot; action=&quot;&quot; id=&quot;submitForm&quot; action=&quot;&quot;&gt;
+&lt;div class=&quot;row mgt10 required&quot;&gt;
+    &lt;!-- required 红点样式 --&gt;
+    &lt;div class=&quot;col-xs-3 col-key tr&quot;&gt;&lt;span class=&quot;pdr10&quot;&gt;姓名：&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col-xs-9 col-val&quot;&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-req=&quot;true&quot; data-empty-msg=&quot;小哥请留下您的大名&quot; /&gt;
+        &lt;!-- data-req=&quot;true&quot;         // 为必填项 --&gt;
+        &lt;!-- data-empty-msg=&quot;***&quot;    // 自定义必填框为空的错误提示语句 --&gt;
+
+        &lt;!-- data-reqs                         // 校验规则，可随意组合，请用逗号，隔开 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;six&quot; /&gt;
+        &lt;!-- data-reqs=&quot;six&quot;    // 最小6位 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;spcode&quot; /&gt;
+        &lt;!-- data-reqs=&quot;spcode&quot;    // 特殊符号: &amp;#、&lt;加字母、&lt;!、&lt;/ --&gt;
+        
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;maxlength&quot; /&gt;
+        &lt;!-- data-reqs=&quot;maxlength&quot;    // 最小长度 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;minlength&quot; /&gt;
+        &lt;!-- data-reqs=&quot;minlength&quot;    // 最大长度 --&gt;
+        
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;integer&quot; /&gt;
+        &lt;!-- data-reqs=&quot;integer&quot;    // 整数 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;integerp&quot; /&gt;
+        &lt;!-- data-reqs=&quot;integerp&quot;    // 非零正整数 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;integern&quot; /&gt;
+        &lt;!-- data-reqs=&quot;integern&quot;    // 非零负整数 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;integerp0&quot; /&gt;
+        &lt;!-- data-reqs=&quot;integerp0&quot;    // 含零正整数 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;integern0&quot; /&gt;
+        &lt;!-- data-reqs=&quot;integern0&quot;    // 含零负整数 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;numberange&quot; data-number-range=&quot;-10,10&quot; /&gt;
+        &lt;!-- data-reqs=&quot;numberange&quot;    // 含零负整数 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;mail&quot; /&gt;            
+        &lt;!-- data-reqs=&quot;mail&quot;    // 邮件 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-req=&quot;true&quot; data-reqs=&quot;customize&quot; data-customize-rule=&quot;/^abc/&quot; data-customize-tip=&quot;必须以abc开头的字符串&quot; /&gt;
+        &lt;!-- data-customize-rule=&quot;&quot;     // 正则表达式 --&gt;
+        &lt;!-- data-customize-tip=&quot;&quot;      // 自定义错误信息 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;mobile&quot; /&gt;
+        &lt;!-- data-reqs=&quot;mobile&quot;    // 手机 // 最新支持 13，14，15，16，17，18，19 开头号码 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;idcard&quot; /&gt;
+        &lt;!-- data-reqs=&quot;idcard&quot;    // 身份证 // 支持 15，18位 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;website&quot; /&gt;
+        &lt;!-- data-reqs=&quot;website&quot;    // 网址 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;chinese&quot; /&gt;
+        &lt;!-- data-reqs=&quot;chinese&quot;    // 中文 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;upload&quot; data-format=&quot;jpg,png,gif&quot; /&gt;
+        &lt;!-- data-reqs=&quot;upload&quot;    // 上传 --&gt;
+        &lt;!-- data-format           // 验证格式 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;psw1&quot; /&gt;
+        &lt;!-- data-reqs=&quot;psw1&quot;    // 旧密码 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;psw2&quot; /&gt;
+        &lt;!-- data-reqs=&quot;psw2&quot;    // 新密码 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;psw2b&quot; /&gt;
+        &lt;!-- data-reqs=&quot;psw2b&quot;    // 确认新密码 --&gt;
+
+        &lt;input type=&quot;text&quot; class=&quot;txt wp100&quot; data-reqs=&quot;query&quot; data-query=&quot;url&quot; query-string=&quot;&quot; /&gt;
+        &lt;!-- data-reqs=&quot;query&quot;    // 同步查询 --&gt;
+        &lt;!-- data-query           // 请求路径 --&gt;
+        &lt;!-- [ query-string ] 请求参数，json字符串格式，如 {&quot;id&quot;:&quot;0&quot;,&quot;copyId&quot;:&quot;0&quot;} --&gt;
+
+        &lt;textarea data-reqs=&quot;maxrows&quot; data-max-rows=&quot;5&quot;&gt;&lt;/textarea&gt;
+        &lt;!-- data-reqs=&quot;maxrows&quot;    // 最大行数，只适用于textarea --&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;row mgt10 required&quot;&gt;
+    &lt;div class=&quot;col-xs-3 col-key tr&quot;&gt;&lt;span class=&quot;pdr10&quot;&gt;附件：&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col-xs-9 col-val&quot;&gt;
+        &lt;div class=&quot;upload-group por100&quot; id=&quot;formUpload&quot;&gt;
+            &lt;div class=&quot;pdr10&quot;&gt;
+                &lt;input name=&quot;filetxt&quot; class=&quot;txt wp100 fs filetxt&quot; type=&quot;text&quot; data-req=&quot;true&quot; data-reqs=&quot;upload&quot; data-format=&quot;jpg,png,gif&quot; readonly /&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;abs&quot;&gt;
+                &lt;input name=&quot;filelogo&quot; class=&quot;upfile wp100&quot; type=&quot;file&quot; id=&quot;upLogo&quot; /&gt;
+                &lt;button class=&quot;btn bgc-green c-white wp100 fs&quot; type=&quot;button&quot;&gt;请选择&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- 
+        data-reqs=&quot;upload&quot;  // 上传
+        data-format=&quot;jpg,png,gif&quot; 验证格式
+        --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;row mgt10 required&quot;&gt;
+    &lt;div class=&quot;col-xs-3 col-key tr&quot;&gt;&lt;span class=&quot;pdr10&quot;&gt;城市：&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col-xs-9 col-val&quot;&gt;
+        &lt;div class=&quot;radio-group clearfix&quot; id=&quot;formRadio&quot; data-req=&quot;true&quot; data-reqs=&quot;radio&quot;&gt;
+            &lt;div class=&quot;radione inline&quot;&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;radiobj&quot; value=&quot;a&quot; /&gt;&lt;span&gt;帝都&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;radione inline&quot;&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;radiobj&quot; value=&quot;b&quot; /&gt;&lt;span&gt;魔都&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;radione inline&quot;&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;radiobj&quot; value=&quot;c&quot; /&gt;&lt;span&gt;成都&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- 
+        data-reqs=&quot;radio&quot;   // radio
+        --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row mgt10 required&quot;&gt;
+    &lt;div class=&quot;col-xs-3 col-key tr&quot;&gt;&lt;span class=&quot;pdr10&quot;&gt;最爱电影：&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col-xs-9 col-val&quot;&gt;
+        &lt;div class=&quot;check-group clearfix&quot; id=&quot;formCheckbox&quot; data-req=&quot;true&quot; data-reqs=&quot;checkbox&quot;&gt;
+            &lt;div class=&quot;checkone inline&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; name=&quot;chkboxbj&quot; value=&quot;x&quot; /&gt;&lt;span&gt;惊天魔盗团&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;checkone inline&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; name=&quot;chkboxbj&quot; value=&quot;y&quot; /&gt;&lt;span&gt;论文叙老点柳先开&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;checkone inline&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; name=&quot;chkboxbj&quot; value=&quot;z&quot; /&gt;&lt;span&gt;青春梦工厂&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- 
+        data-reqs=&quot;checkbox&quot;    // checkbox
+        --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row mgt10 required&quot;&gt;
+    &lt;div class=&quot;col-xs-3 col-key tr&quot;&gt;&lt;span class=&quot;pdr10&quot;&gt;电视剧：&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col-xs-9 col-val&quot;&gt;
+        &lt;select id=&quot;formSelect&quot; name=&quot;tv&quot; data-width=&quot;200px&quot; class=&quot;select select-group&quot; data-req=&quot;true&quot;&gt;
+            &lt;option value=&quot;&quot; selected&gt;请选择&lt;/option&gt;
+            &lt;option value=&quot;1&quot;&gt;平凡的世界&lt;/option&gt;
+            &lt;option value=&quot;2&quot;&gt;琅邪榜&lt;/option&gt;
+            &lt;option value=&quot;3&quot;&gt;三国演义&lt;/option&gt;
+            &lt;option value=&quot;4&quot;&gt;手撕鬼子&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;!-- 
+        data-reqs=&quot;select&quot;  // select
+        --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row mgt10 required&quot;&gt;
+    &lt;div class=&quot;col-xs-3 col-key tr&quot;&gt;&lt;span class=&quot;pdr10&quot;&gt;简介：&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col-xs-9 col-val&quot;&gt;
+        &lt;textarea name=&quot;textarea&quot; class=&quot;textarea wp100&quot; cols=&quot;30&quot; rows=&quot;5&quot; data-req=&quot;true&quot; data-reqs=&quot;max&quot; data-max=200&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row mgt10&quot;&gt;
+    &lt;div class=&quot;col-xs-3 col-key tr&quot;&gt;&lt;span class=&quot;pdr10&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col-xs-9 col-val&quot;&gt;
+        &lt;button class=&quot;btn bgc-red&quot; type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+            <pre><code class="language-javascript">
+var validor = new Valid();
+validor.form($('#submitForm'), {
+    language: 'cn',             // cn, hk, en
+    isAsync: true,              // 同步，异步
+    isRenderCheckbox: true,     // 是否渲染 checkbox
+    isRenderRadio: true,        // 是否渲染 radio
+    isRenderSelect: true,       // 是否渲染 select
+    scrollToError: false,       // 出现错误时是否定位到错误高度
+    asyncFun: function() {      // 验证通过时
+        ceng.msger('allow submit', 1)
+    },
+    errFun: function(){         // 验证不通过时
+        ceng.msger('refuse and check', 0)
+    }
+});
+</code></pre>
+            <div class="sp30"></div>
+            <div class="sp30"></div>
+        </div>
+    </div>
+</body>
+
+</html>

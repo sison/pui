@@ -1,0 +1,8 @@
+
+# 此为注释 – 将被忽略
+
+dist/
+node_modules/
+assets/admin/v4.0.3/js/
+assets/admin/v4.0.3/json/
+assets/admin/v4.0.3/remotePage/

@@ -1,0 +1,229 @@
+/*
+* @Author: sison.luo
+* @Date:   2016-03-16 14:14:05
+* @Last Modified by:   sison
+* @Last Modified time: 2017-07-27 10:47:28
+
+    *查询控件*
+*/
+
+;
+(function($, window, undefined) {
+    var defaults = {
+        // dateformat: 'YYYY-MM-DD hh:mm:ss',
+        // suppBack: false,
+        async: function() {}
+    }
+
+    var QueryForm = function(ele, option) {};
+    QueryForm.prototype.submit = function() {
+        var _this = this;
+        $('.gosubmit', _this.ele).on('click', function() {
+            // if ($(this).hasClass('simpSubmit')) {
+            //     $('textarea', _this.ele).val('');
+            // } else {
+            //     $('.search-group input', _this.ele).val('');
+            // }
+            _this.go();
+        });
+        // 下面的方法不支持火狐（坑）
+        // _this.ele.on('submit', function(e) {
+        //     var e = event || window.event;
+        //     if (e.preventDefault) {
+        //         e.preventDefault();
+        //     } else {
+        //         e.returnValue = false;
+        //     };
+        //     _this.go();
+        // })
+    };
+    QueryForm.prototype.go = function() {
+        var _this = this;
+        var querystr = _this.getSerialize();
+        _this.opts.async(querystr);
+    }
+
+
+    // 高级搜索
+    var QueryFormHigher = window.QueryFormHigher = function(ele, option) {
+        this.ele = ele;
+        this.opts = $.extend({}, defaults, option);
+        this.init();
+    }
+    QueryFormHigher.prototype = new QueryForm();
+
+    QueryFormHigher.prototype.init = function() {
+        this.toggleHeightSearch();
+        this.responFilterline();
+        this.submit();
+        this.setOrder();
+        // this.placeholder('每个关键字占一行 \n姓名1 \n姓名2 \n姓名3');
+    };
+    QueryFormHigher.prototype.toggleHeightSearch = function() {
+        var _this = this;
+        $('.filter-line', _this.ele).each(function() {
+            var h = $(this).height();
+            if (h > 43) {
+                $(this).addClass('more').append('<a class="toggle bgc-gray6"><span>更多</span><i class="ico ico-arrow2"></i></a>');
+                $('.toggle', $(this)).on('click', function() {
+                    var state = $(this).attr('state') || 1;
+                    if (state == 1) {
+                        $(this).attr('state', 0).parent().height(h);
+                        $(this).addClass('shown').find('span').html('收起');
+                    } else {
+                        $(this).attr('state', 1).parent().height(35);
+                        $(this).removeClass('shown').find('span').html('更多');
+                    }
+                })
+            }
+        });
+        var higherHeight = $('.highSearchInner', _this.ele).height();
+        _this.ele
+            .on('click', '#foldDownBtn', function() {
+                $('.highSearch').addClass('higher').animate({ 'height': higherHeight }, 300, function() {
+                    $('.attach-search').slideUp(200);
+                });
+                $("input[name='hidIsAdvSearch']").val(1);
+            })
+            .on('click', '#foldUpBtn', function() {
+                $('.highSearch').removeClass('higher').animate({ 'height': 0 }, 300, function() {
+                    $('.attach-search').slideDown(200);
+                });
+                $("input[name='hidIsAdvSearch']").val(0);
+            })
+            .on('blur', '.highSearch textarea', function() {
+                if ($.trim($('.highSearch textarea').val()) != '') {
+                    $('.highSearch textarea').removeClass('default').addClass('c-gray1');
+                } else {
+                    $('.highSearch textarea').removeClass('c-gray1').addClass('default');
+                }
+            }).on('focus', '.highSearch textarea', function() {
+                $('.highSearch textarea').removeClass('default');
+            });
+        return this;
+    };
+    QueryFormHigher.prototype.setOrder = function() {
+        var _this = this;
+        $('.setOrder a', _this.ele).on('click', function() {
+            var str = '';
+            var item = $(this).parent();
+            var sort = '';
+            var sortfield = $(this).attr('sortfield');
+            item.addClass('cur').siblings('li').removeClass('cur');
+            if ($(this).hasClass('desc')) {
+                $(this).removeClass('desc').addClass('asc');
+                sort = 'asc';
+            } else {
+                $(this).removeClass('asc').addClass('desc');
+                sort = 'desc';
+            }
+            $('input[name="sort"]', _this.ele).val(sortfield + ' ' + sort);
+            _this.go();
+        });
+        return this;
+    };
+
+    QueryFormHigher.prototype.responFilterline = function() {
+        var _this = this;
+
+        // 修改日期重置状态
+        $('#sjt, #ejt', _this.ele).on('change', function() {
+            if ($(this).val() == '') {
+                $('#divRuntime a:eq(0)').addClass('check')
+            }
+            $('#divRuntime a.check').removeClass('check');
+        });
+
+        $('.filter-line', _this.ele).each(function() {
+            var line = $(this);
+            line.on('click', '.selectItem a', function() {
+                // 开通时间
+                if (line.attr('id') == 'divRuntime') {
+                    $(this).addClass('check').siblings('a').removeClass('check');
+                    if ($(this).data('val') == '') {
+                        $('#sjt, #ejt').val('');
+                    } else {
+                        var th = ' 00:00:00';
+                        var tf = ' 23:59:59';
+                        var today = line.find('a').eq(1).data('val') + tf;
+                        $('#sjt').val($(this).data('val') + th);
+                        $('#ejt').val(today);
+                    }
+                    // 搜索条件
+                } else if (line.attr('id') == 'divSField') {
+                    $(this).addClass('check').children('input').prop('checked', true);
+                    $(this).siblings('a').removeClass('check').children('input').prop('checked', false);
+                } else {
+                    if ($(this).hasClass('sall')) {
+                        $(this).addClass('check').siblings('a').removeClass('check').children('input').prop('checked', false);
+                    } else {
+                        if ($(this).hasClass('check')) {
+                            $(this).removeClass('check').find('input').prop('checked', false);
+                            if ($(this).siblings('a.check').length == 0) {
+                                line.find('a.sall').addClass('check');
+                            }
+                        } else {
+                            // 值第一位分组，via. 憋足的分组方式 ..
+                            var firstLetter = $(this).children('input').val().substr(0, 1);
+                            $('input', line).each(function() {
+                                if ($(this).val().substr(0, 1) == firstLetter) {
+                                    $(this).prop('checked', false).parent('a').removeClass('check');
+                                }
+                            })
+
+                            // if($(this).children('input').attr('type') == 'radio'){
+                            //     var name = $(this).children('input').attr('name');
+                            //     $('input[name='+ name +']').prop('checked', false).parent('a').removeClass('check');
+                            // }
+                            $(this).addClass('check').children('input').prop('checked', true);
+                            line.find('a.sall').removeClass('check');
+                        }
+                    }
+                }
+                if (line.data('immediately') === true) {
+                    _this.go();
+                }
+            })
+        })
+    };
+    QueryFormHigher.prototype.placeholder = function(message) {
+        var _this = this;
+        var msg = message || '请输入';
+        var textarea = $('#hsearchlist', _this.ele);
+        textarea.addClass('default');
+        textarea
+            .on('blur', function() {
+                if (textarea.val().length > 0) {
+                    textarea.removeClass('default').addClass('c-gray1');
+                } else {
+                    textarea.removeClass('c-gray1').addClass('default');
+                }
+            }).on('keydown', function() {
+                textarea.removeClass('default');
+            });
+        _this.ele.on('click', '.condition.button', function(e) {
+            var e = event || window.event;
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                e.returnValue = false;
+            };
+            _this.go();
+        });
+        return this;
+    };
+    QueryFormHigher.prototype.getSerialize = function() {
+        var _this = this;
+        var datastr = '';
+        if (parseInt($('input[name="hidIsAdvSearch"]').val()) === 1) {
+            $('input[name="keyword"]', _this.ele).val('');
+        } else {
+            $('#divSField p a').removeClass('check').eq(0).addClass('check').children('input').prop('checked', true);
+            $('textarea#sfv', _this.ele).val('').text('');
+        }
+        datastr = _this.ele.serialize();
+        return datastr;
+    };
+
+
+})(jQuery, window, document);
