@@ -1,0 +1,153 @@
+<!DOCTYPE html> <html lang="en"> <head> <title>评鉴通 - UI</title> <meta charset="utf-8"> <link href="./css/commons.chunk.css?3a25de98fcb11be9c80b&3a25de98fcb11be9c80b" rel="stylesheet"><script type="text/javascript" src="./js/commons.bundle.js?3a25de98fcb11be9c80b&3a25de98fcb11be9c80b"></script><script type="text/javascript" src="./js/form.bundle.js?3a25de98fcb11be9c80b&3a25de98fcb11be9c80b"></script><script type="text/javascript" src="./js/vendor.bundle.js?3a25de98fcb11be9c80b&3a25de98fcb11be9c80b"></script></head> <body> <div class="pui-menu"> <div class="inner bgc-white" id="innerMenu"> <div class="pui-logo"> <h1 class="pui-title c-blue ffm ant">评鉴通 UI （PUI）</h1> <h6 class="pui-subtitle ffm fs fnormal ant c-gray3">Base on PJT4.0</h6> <div class="sp10"></div> <div class="sp10"></div> </div> <ul class="ffm fb"> <li class="tc cur"><a href="pui-layout.html" class="c-gray5 ant">布局</a> <ul> <li><a href="">栅格系统</a></li> <li><a href="">面包屑</a></li> <li><a href="">导航栏</a></li> <li><a href="">标签</a></li> <li><a href="">黄底橙字</a></li> <li><a href="">步骤图</a></li> </ul> </li> <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a> <ul> <li><a href="">下拉菜单</a></li> <li><a href="">输入框</a></li> <li><a href="">切换</a></li> <li><a href="">单选框</a></li> <li><a href="">复选框</a></li> <li><a href="">按钮</a></li> <li><a href="">按钮组</a></li> </ul> </li> <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li> <li class="tc"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a> <ul> <li><a href="">loading</a></li> <li><a href="">提示</a></li> <li><a href="">警示框</a></li> <li><a href="">询问框</a></li> <li><a href="">弹出框</a></li> <li><a href="">iframe框</a></li> </ul> </li> <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li> <li class="tc"><a href="pui-page.html" class="c-gray5 ant">分页</a></li> <li class="tc"><a href="pui-tab.html" class="c-gray5 ant">标签页</a></li> <li class="tc"> <a href="pui-popop.html" class="c-gray5 ant">气泡</a> <ul> <li><a href="">文字提示</a></li> <li><a href="">浮动框</a></li> <li><a href="">确认框</a></li> </ul> </li> <li class="tc"><a href="pui-calendar.html" class="c-gray5 ant">日历</a></li> <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li> <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li> <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li> </ul> </div> </div> <div class="pui-body"> <div class="content"> <h2 class="pui-category c-red fnormal fs20 ffm">表单控件</h2> <h3 class="pui-subname c-gray ffm">3.1 下拉菜单（pui.select.js）</h3> <div class="select-group"> <select name="selectAttachGroup" class="select" id="selectAttachGroup" data-width="300px"> <option value="0">全部</option> <option value="1">姓名</option> <option value="2">邮箱</option> <option value="3">角色</option> </select> </div> <div class="sp10"></div> <div class="select-group"> <select name="selectAttachGroup" class="select" id="selectAttachGroupDisabled" data-width="300px" disabled="disabled"> <option value="0">全部</option> <option value="1">姓名</option> <option value="2">邮箱</option> <option value="3">角色</option> </select> </div> <div class="sp10"></div> <div class="select-group"> <select name="selectAttachGroup" class="select" id="selectAttachGroupComfirm" data-width="300px"> <option value="0">全部</option> <option value="1">姓名</option> <option value="2">邮箱</option> <option value="3">角色</option> </select> </div> <div class="sp10"></div> <pre><code class="language-markup">
+&lt;div class="select-group"&gt;
+    &lt;select name="selectAttachGroup" class="select" id="selectAttachGroupDisabled" disabled&gt;
+        &lt;option value="0"&gt;全部&lt;/option&gt;
+        &lt;option value="1"&gt;姓名&lt;/option&gt;
+        &lt;option value="2"&gt;邮箱&lt;/option&gt;
+        &lt;option value="3"&gt;角色&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class="select-group"&gt;
+    &lt;select name="selectAttachGroup" class="select" id="selectAttachGroup" data-width="300px"&gt;
+        &lt;option value="0"&gt;全部&lt;/option&gt;
+        &lt;option value="1"&gt;姓名&lt;/option&gt;
+        &lt;option value="2"&gt;邮箱&lt;/option&gt;
+        &lt;option value="3"&gt;角色&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+</code></pre> <pre><code class="language-javascript">
+$('#selectAttachGroupDisabled').selectSmart();
+$('#selectAttachGroup').selectSmart({
+    isvalid: true,
+    validCallback: function(i, t, v, o, ro, cb){
+        ceng.comfirm('是否要 change？', {
+            yes: function(obj, index){
+                Pui.selectChange(i, t, v, o, ro, cb);
+                ceng.close(index);
+            }
+        });
+    },
+    callback: function(i, t, v) {
+        ceng.msger('SelectIndex：' + i + ' ，Txt：' + t + ' ，Value：' + v, 1);
+    }
+});
+</code></pre> <h3 class="pui-subname c-gray ffm">3.2 输入框</h3> <div class="sp10"></div> <div class="input-group"> <label> <input class="txt" type="text"> </label> </div> <div class="sp10"></div> <div class="input-group"> <label> <span>前缀</span> <input class="txt" type="text"> </label> </div> <div class="sp10"></div> <div class="input-group"> <label> <input class="txt" type="text"> <span>后缀</span> </label> </div> <div class="sp10"></div> <div class="input-group button inline"> <label> <input class="txt" type="text"> <span> <button class="icon icon-search" type="submit"></button> </span> </label> </div> <div class="sp10"></div> <div class="input-group button inline"> <label> <input class="txt ffm wpdate" id="datetime" type="text" readonly="readonly" onfocus='WdatePicker({dateFmt:"yyyy-MM-dd"})'> <span> <button class="icon icon-date" type="submit"></button> </span> </label> </div> <div class="sp10"></div> <pre><code class="language-markup">
+&lt;div class="input-group"&gt;
+    &lt;label&gt;
+        &lt;input class="txt" type="text"&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="input-group"&gt;
+    &lt;label&gt;
+        &lt;span&gt;前缀&lt;/span&gt;
+        &lt;input class="txt" type="text"&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="input-group"&gt;
+    &lt;label&gt;
+        &lt;input class="txt" type="text"&gt;
+        &lt;span&gt;后缀&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="input-group button inline"&gt;
+    &lt;label&gt;
+        &lt;input class="txt" type="text"&gt;
+        &lt;span&gt;
+            &lt;button class="icon icon-search" type="submit"&gt;&lt;/button&gt;
+        &lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;       
+</code></pre> <div class="sp10"></div> <h3 class="pui-subname c-gray ffm">3.3 切换（pui.switch.js）</h3> <div class="row"> <div class="col-xs-2">样式一：</div> <div class="col-xs-9"> <input class="hide switch" type="hidden" id="switch2" value="0"> </div> </div> <div class="sp10"></div> <div class="row"> <div class="col-xs-2">样式二：</div> <div class="col-xs-9"> <input class="hide switch notxt" type="hidden" id="switch22" value="0"> </div> </div> <div class="sp10"></div> <div class="row"> <div class="col-xs-2">外部切换：</div> <div class="col-xs-9"> <input class="btn bs bgc-red" type="button" id="switchanger" value="切换第一个状态"> </div> </div> <div class="sp10"></div> <div class="row"> <div class="col-xs-2">禁用：</div> <div class="col-xs-9"> <input class="hide switch" type="hidden" id="switchDisabled" value="1" disabled="disabled"> </div> </div> <div class="sp10"></div> <div class="row"> <div class="col-xs-2">询问：</div> <div class="col-xs-9"> <input class="hide switch" type="hidden" id="switch3" value="0"> </div> </div> <div class="sp10"></div> <pre><code class="language-markup">
+&lt;input class="hide switch" type="hidden" id="switch2" value="0" /&gt;
+&lt;input class="hide switch notxt" type="hidden" id="switch22" value="0" /&gt;
+&lt;input class="btn bgc-red" type="button" id="switchanger" value="切换上面的状态"&gt;
+&lt;input class="hide switch" type="hidden" id="switchDisabled" value="1" disabled /&gt;
+&lt;input class="hide switch" type="hidden" id="switch3" value="0" /&gt;
+</code></pre> <pre><code class="language-javascript">
+$('.switch').switchSmart({
+    enable: function() {
+        ceng.msger('启用', 1);
+    },
+    disable: function() {
+        ceng.msger('禁用', 0);
+    }
+});
+
+$('#switchanger').on('click', function() {
+    toggleSwitchState($('#switch2'));
+});
+
+$('#switchDisabled').switchSmart();
+
+$('#switch3').switchSmart({
+    isvalid: true,
+    validCallback: function() {
+        ceng.comfirm('最后问一次，是否切换', {
+            btn: ['切换吧', '不换'],
+            yes: function(obj, index) {
+                toggleSwitchState($('#switch3'));
+                ceng.close(index);
+            }
+        })
+    }
+});
+</code></pre> <div class="sp10"></div> <div class="sp10"></div> <h3 class="pui-subname c-gray ffm">3.4 单选框（pui.radio.js）</h3> <div class="radio-group clearfix" id="demoRadio"> <div class="radione inline"> <input type="radio" name="radiobj" value="a"> <span>帝都</span> </div> <div class="radione inline"> <input type="radio" name="radiobj" value="b"> <span>魔都</span> </div> <div class="radione inline"> <input type="radio" name="radiobj" value="c"> <span>成都</span> </div> </div> <div class="sp10"></div> <pre><code class="language-markup">
+&lt;div class="radio-group clearfix" id="demoRadio"&gt;
+    &lt;div class="radione inline"&gt;
+        &lt;input type="radio" name="radiobj" value="a" /&gt;
+        &lt;span&gt;帝都&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="radione inline"&gt;
+        &lt;input type="radio" name="radiobj" value="b" /&gt;
+        &lt;span&gt;魔都&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="radione inline"&gt;
+        &lt;input type="radio" name="radiobj" value="c" /&gt;
+        &lt;span&gt;成都&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre> <pre><code class="language-javascript">
+$('#demoRadio input[type=radio]').radioSmart({
+    callback: function(self, v){}
+    // self 为当前radio
+    // v 为选中的值
+});
+</code></pre> <div class="sp10"></div> <div class="sp10"></div> <h3 class="pui-subname c-gray ffm">3.5 复选框（pui.checkbox.js）</h3> <div class="check-group clearfix" id="demoCheckbox"> <div class="checkone inline"> <input type="checkbox" name="chkboxbj" checked="checked" value="x"> <span>惊天魔盗团</span> </div> <div class="checkone inline"> <input type="checkbox" name="chkboxbj" checked="checked" disabled="disabled" value="y"> <span>论文叙老点柳先开</span> </div> <div class="checkone inline"> <input type="checkbox" name="chkboxbj" disabled="disabled" value="z"> <span>青春梦工厂</span> </div> </div> <div class="sp10"></div> <input class="btn bgc-red" type="button" id="getDemoCheckboxVal" value="取选中值"> <div class="sp10"></div> <pre><code class="language-markup">
+&lt;div class="check-group clearfix" id="demoCheckbox"&gt;
+    &lt;div class="checkone inline"&gt;
+        &lt;input type="checkbox" name="chkboxbj" checked value="x" /&gt;
+        &lt;span&gt;惊天魔盗团&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="checkone inline"&gt;
+        &lt;input type="checkbox" name="chkboxbj" checked disabled value="y" /&gt;
+        &lt;span&gt;论文叙老点柳先开&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="checkone inline"&gt;
+        &lt;input type="checkbox" name="chkboxbj" disabled value="z" /&gt;
+        &lt;span&gt;青春梦工厂&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre> <pre><code class="language-javascript">
+$('#demoCheckbox input[type=checkbox]').checkboxSmart({
+    callback: function(self, bool) {},  // 点击后回调事件
+    checkCallback: function(self, bool) {},   // 选中回调事件
+    uncheckCallback: function(self, bool) {}  // 反选回调事件
+});
+// 取（checkbox组）值
+Pui.getCheckVal()      // checkboxgroup : checkbox 同name组
+
+// 设置值
+Pui.setCheckVal = function(chkobj, bool)
+</code></pre> <h3 class="pui-subname c-gray ffm">3.6 按钮</h3> <button class="btn bs btn-primary">小按钮</button> <button class="btn bs btn-common">小按钮</button> <a href="javascript:;" class="btn btn-primary"><span>普通按钮</span></a> <a href="javascript:;" class="btn btn-secondary"> <i class="icon icon-addr"></i><span>图标按钮</span> </a> <input class="btn btn-red" type="button" value="Input按钮"> <button class="btn btn-common">无背景按钮</button> <button class="btn bb btn-red"><i class="icon icon-addr"></i>大按钮</button> <button class="btn bb btn-common">大按钮</button> <div class="sp10"></div> <pre><code class="language-markup">
+&lt;h3 class=&quot;pui-subname c-gray ffm&quot;&gt;3.6 按钮&lt;/h3&gt;
+&lt;button class=&quot;btn bs btn-primary&quot;&gt;小按钮&lt;/button&gt;
+&lt;button class=&quot;btn bs btn-common&quot;&gt;小按钮&lt;/button&gt;
+&lt;a href=&quot;javascript:;&quot; class=&quot;btn btn-primary&quot;&gt;&lt;span&gt;普通按钮&lt;/span&gt;&lt;/a&gt;
+&lt;a href=&quot;javascript:;&quot; class=&quot;btn btn-secondary&quot;&gt;
+&lt;i class=&quot;icon icon-addr&quot;&gt;&lt;/i&gt;&lt;span&gt;图标按钮&lt;/span&gt;
+&lt;/a&gt;
+&lt;input class=&quot;btn btn-red&quot; type=&quot;button&quot; value=&quot;Input按钮&quot; /&gt;
+&lt;button class=&quot;btn btn-common&quot;&gt;无背景按钮&lt;/button&gt;
+&lt;button class=&quot;btn bb btn-red&quot;&gt;&lt;i class=&quot;icon icon-addr&quot;&gt;&lt;/i&gt;大按钮&lt;/button&gt;
+&lt;button class=&quot;btn bb btn-common&quot;&gt;大按钮&lt;/button&gt;
+            </code></pre> <h3 class="pui-subname c-gray ffm">3.7 按钮</h3> <div class="pd10"> <div class="btn-group clearfix"> <button>左</button> <button>中</button> <button>右</button> </div> </div> <div class="pd10"> <div class="btn-group clearfix"> <button class="btn btn-blue">左</button> <button class="btn btn-blue">中</button> <button class="btn btn-blue">中</button> <button class="btn btn-blue">中</button> <button class="btn btn-blue">中</button> <button class="btn btn-blue">右</button> </div> </div> <div class="pd10"> <div class="btn-group clearfix"> <button class="btn btn-green">左</button> <button class="btn btn-green">中</button> <button class="btn btn-green">中</button> <button class="btn btn-green">中</button> <button class="btn btn-green">中</button> <button class="btn btn-green">中</button> <button class="btn btn-green">中</button> <button class="btn btn-green">右</button> </div> </div> <div class="pd10"> <div class="btn-group clearfix"> <button class="btn btn-red">去年</button> <button class="btn btn-red">买了</button> <button class="btn btn-red">买了</button> <button class="btn btn-red">个表</button> </div> </div> <div class="pd10"> <div class="btn-group order clearfix"> <button class="btn btn-blue">销量</button> <button>价钱</button> <button>款式</button> </div> </div> <div class="sp30"></div> </div> </div> </body> </html> 

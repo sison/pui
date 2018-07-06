@@ -1,0 +1,122 @@
+<!DOCTYPE html> <html lang="en"> <head> <title>评鉴通 - UI</title> <meta charset="utf-8"> <link href="./css/commons.chunk.css?3a25de98fcb11be9c80b&3a25de98fcb11be9c80b" rel="stylesheet"><script type="text/javascript" src="./js/commons.bundle.js?3a25de98fcb11be9c80b&3a25de98fcb11be9c80b"></script><script type="text/javascript" src="./js/ceng.bundle.js?3a25de98fcb11be9c80b&3a25de98fcb11be9c80b"></script><script type="text/javascript" src="./js/vendor.bundle.js?3a25de98fcb11be9c80b&3a25de98fcb11be9c80b"></script></head> <body> <div class="pui-menu"> <div class="inner bgc-white" id="innerMenu"> <div class="pui-logo"> <h1 class="pui-title c-blue ffm ant">评鉴通 UI （PUI）</h1> <h6 class="pui-subtitle ffm fs fnormal ant c-gray3">Base on PJT4.0</h6> <div class="sp10"></div> <div class="sp10"></div> </div> <ul class="component-list ffm fb"> <li class="tc cur"> <a href="pui-layout.html" class="c-gray5 ant">布局</a> <ul class="sib"> <li><a href="">栅格系统</a></li> <li><a href="">面包屑</a></li> <li><a href="">导航栏</a></li> <li><a href="">标签</a></li> <li><a href="">黄底橙字</a></li> <li><a href="">步骤图</a></li> </ul> </li> <li class="tc"> <a href="pui-form.html" class="c-gray5 ant">表单</a> <ul class="sib"> <li><a href="">下拉菜单</a></li> <li><a href="">输入框</a></li> <li><a href="">切换</a></li> <li><a href="">单选框</a></li> <li><a href="">复选框</a></li> <li><a href="">按钮</a></li> <li><a href="">按钮组</a></li> </ul> </li> <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li> <li class="tc"> <a href="pui-ceng.html" class="c-gray5 ant">弹层</a> <ul class="sib"> <li><a href="">loading</a></li> <li><a href="">提示</a></li> <li><a href="">警示框</a></li> <li><a href="">询问框</a></li> <li><a href="">弹出框</a></li> <li><a href="">iframe框</a></li> </ul> </li> <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li> <li class="tc"><a href="pui-page.html" class="c-gray5 ant">分页</a></li> <li class="tc"><a href="pui-tab.html" class="c-gray5 ant">标签页</a></li> <li class="tc"> <a href="pui-popop.html" class="c-gray5 ant">气泡</a> <ul class="sib"> <li><a href="">文字提示</a></li> <li><a href="">浮动框</a></li> <li><a href="">确认框</a></li> </ul> </li> <li class="tc"><a href="pui-calendar.html" class="c-gray5 ant">日历</a></li> <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li> <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li> <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li> </ul> </div> </div> <div class="pui-body"> <div class="content"> <h2 class="pui-category c-red fnormal fs20 ffm">弹出层（pui.ceng.js）</h2> <div class="sp20"></div> <a href="javascript:;" class="btn ffm btn-red" id="cengLoading"> <i class="icon icon-addr"></i> <span>loading</span> </a> <a href="javascript:;" class="btn ffm btn-red" id="cengLoadingTxt"> <i class="icon icon-addr"></i> <span>loading 文字</span> </a> <a href="javascript:;" class="btn ffm btn-green" id="cengMsg1"> <i class="icon icon-addr"></i> <span>消息框（成功）</span> </a> <a href="javascript:;" class="btn ffm btn-green" id="cengMsg0"> <i class="icon icon-addr"></i> <span>消息框（错误 or 警告）</span> </a> <a href="javascript:;" class="btn ffm btn-primary" id="cengMsg"> <i class="icon icon-addr"></i> <span>放首歌</span> </a> <a href="javascript:;" class="btn ffm btn-brown" id="cengAlert"> <i class="icon icon-addr"></i> <span>警示框</span> </a> <a href="javascript:;" class="btn ffm btn-blue" id="cengConfirm1"> <i class="icon icon-addr"></i> <span>询问框</span> </a> <a href="javascript:;" class="btn ffm btn-blue" id="cengConfirm2"> <i class="icon icon-addr"></i> <span>询问框 样式二</span> </a> <br> <br> <a href="javascript:;" class="btn ffm btn-green" id="cengHello"> <i class="icon icon-addr"></i> <span>Dom 弹出层</span> </a> <a href="javascript:;" class="btn ffm btn-secondary" id="cengHelloRemote"> <i class="icon icon-addr"></i> <span>异步弹出层</span> </a> <a href="javascript:;" class="btn ffm btn-common" id="cengiFrame"> <i class="icon icon-addr"></i> <span>iFrame</span> </a> <div class="sp10"></div> <pre><code class="language-javascript">
+$('#cengLoading').on('click', function(){
+    ceng.loading(null, {
+        time: 3000      // 关闭时间：如果不配置，则一直loading
+    });
+});
+
+$('#cengLoadingTxt').on('click', function(){
+    ceng.loading('<p class="bgc-white pd20 round05">别急，加载中（5s） ...</p>', {
+        opacity: 0.3,   // 遮罩层透明度
+        time: 5000
+    });
+});
+
+ceng.closeLoading()     // 关闭 loading
+
+ceng.closeAll()         // 关闭所有弹出层
+
+$('#cengMsg').on('click', function() {
+    ceng.msg('国乒女团三连冠', {
+        state: 'notice', // resolve || notice
+        time: 3000,
+        end: function(obj){   // 层销毁后的回调，适用于各种类型弹出层，obj为当前弹出层
+            console.log(obj);
+        }
+    })
+});
+
+ceng.msg 语法糖
+
+ceng.msger(txt, status, time, cb)
+
+// txt: 提示语
+// status: 状态（1：ok， 2：warning）
+// time: 持续时间
+// cb： 结束回调
+
+$('cengMsg1').on('click', function(){
+    ceng.msger('国乒女团三连冠', 1, 1500, function(){
+        ceng.alert('ceng.msger 回调事件')
+    })    
+});
+
+$('cengMsg0').on('click', function(){
+    ceng.msger('国乒女团三连冠', 0, 1500, function(){
+        ceng.alert('ceng.msger 回调事件')
+    })
+});
+
+$('#cengAlert').on('click', function() {
+    ceng.alert('<p class="ffs c-gray3">中国女排3-1夺冠</p>', {
+        title: '提示层',
+        btn: ['确定'],
+        yes: function() {
+            ceng.msg('毫无悬念');
+        }
+    })
+});
+
+$('#cengConfirm1').on('click', function() {
+    ceng.comfirm('<p class="ffs c-gray3">国旗又错了！女排颁奖升起了错误国旗</p>', {
+        title: '询问层',
+        btn: ['确定', '取消'],   // 默认 ['确定', '取消']
+        yes: function(obj, index){
+            ceng.msg('弄死那个逗比！');
+            ceng.close(index);
+        }
+    })
+});
+
+$('#cengConfirm2').on('click', function() {
+    var _htm = '<p>问君能有几多愁？</p><p>恰似一群太监上春楼！</p>';
+    ceng.comfirm(_htm, {
+        style: 2,
+        complete: function(o, z) {
+            ceng.msg('complete');
+        },
+        yes: function(o, z) {
+            ceng.close(z);
+        }
+    })
+});
+
+$('#cengHello').on('click', function() {
+    ceng.hello({
+        style: 2,
+        content: $('#divHello'),
+        contentType: 'dom', // dom, url
+        area: [600, 'auto'],
+        btn: 0
+    })
+});
+
+$('#cengHelloRemote').on('click', function() {
+    ceng.hello({
+        title: '页面层',
+        content: 'assets/admin/v4.0.3/remotePage/demo.html',
+        contentType: 'url', // dom, url
+        contentData: 'a=1&b=2&c=3',
+        area: [800, 'auto'],
+        btn: ['按钮一', '按钮二', '按钮三'],
+        btn1: function() {},
+        btn2: function() {
+            ceng.alert('abc', {
+                yes: function() {
+                    ceng.closeAll();
+                }
+            })
+        },
+        btn3: function() {}
+    })
+});
+
+$('#cengiFrame').on('click', function() {
+    ceng.iframe({
+        title: '2016国际体验设计大会',
+        url: 'http://www.cepin.com',
+        area: [1200, 600],
+        yes: function() {}
+    })
+});
+</code></pre> <div class="sp30"></div> <div class="sp30"></div> </div> <div class="sp30"></div> <div class="sp30"></div> </div> <div class="ceng-ready" id="divHello"> <div class="pd30"> <p class="lh34">蔡英文回应“未承认92共识致两岸沟通机制停摆”</p> <ul class="lh24"> <li>1<span>南海仲裁即将宣布</span></li> <li>2<span>南海仲裁即将宣布</span></li> <li>3<span>南海仲裁即将宣布</span></li> </ul> </div> </div> </body> </html> 
